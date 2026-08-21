@@ -196,39 +196,102 @@ ol {
 
 .top-bar {
   position: relative;
-  z-index: 1000;
+  width: 100%;
   background: #06213d;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
+  z-index: 1001;
 }
 .top-bar .container {
   min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
-.top-bar .top-left,
-.top-bar .top-right {
+
+.top-left,
+.top-right {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 25px;
 }
-.top-bar .top-item {
-  display: flex;
+
+.top-item {
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  opacity: 0.9;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
-.top-bar .top-item i {
+.top-item i {
   color: #e21b23;
   font-size: 12px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.top-item-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+.top-item-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.top-item-link:hover i {
+  color: #ffffff;
+  transform: scale(1.12);
+}
+.top-item-link:focus-visible {
+  outline: 2px solid #e21b23;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.whatsapp-top-link:hover {
+  color: #25D366;
+}
+.whatsapp-top-link:hover i {
+  color: #25D366;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .top-bar .container {
+    min-height: 36px;
+    gap: 15px;
+  }
+  .top-left,
+  .top-right {
+    gap: 15px;
+  }
+  .top-item {
+    font-size: 11px;
+  }
 }
 @media (max-width: 768px) {
-  .top-bar {
+  .top-bar .container {
+    min-height: 38px;
+    justify-content: center;
+    gap: 0;
+  }
+  .top-left {
+    width: 100%;
+    justify-content: center;
+  }
+  .top-right {
+    display: none;
+  }
+  .top-item {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .top-left .top-item:first-child {
     display: none;
   }
 }
-
 .main-navbar {
   position: absolute;
   top: 38px;

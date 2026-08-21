@@ -2,51 +2,229 @@
 // SUNRISE - NAVBAR
 // ============================================
 
+// ============================================
+// TOP BAR
+// ============================================
+
 .top-bar {
     position: relative;
 
-    z-index: 1000;
+    width: 100%;
 
     background: $navy;
 
     color: $white;
 
-    font-size: 13px;
+    font-size: 12px;
+
+    z-index: 1001;
+
 
     .container {
+
         min-height: 38px;
 
-        @include flex-between;
-    }
-
-    .top-left,
-    .top-right {
         display: flex;
+
         align-items: center;
 
-        gap: 22px;
-    }
+        justify-content: space-between;
 
-    .top-item {
-        display: flex;
-        align-items: center;
-
-        gap: 7px;
-
-        opacity: 0.9;
-
-        i {
-            color: $primary;
-
-            font-size: 12px;
-        }
-    }
-
-    @include mobile {
-        display: none;
+        gap: 20px;
     }
 }
 
+
+// ============================================
+// TOP BAR LEFT / RIGHT
+// ============================================
+
+.top-left,
+.top-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+// ============================================
+// TOP BAR ITEM
+// ============================================
+
+.top-item {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+    
+    i {
+
+        color: $primary;
+
+        font-size: 12px;
+
+        transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+    }
+}
+
+
+// ============================================
+// CLICKABLE TOP ITEMS
+// ============================================
+
+.top-item-link {
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+
+    &:hover {
+
+        color: $white;
+
+        transform: translateY(-1px);
+
+
+        i {
+
+            color: $white;
+
+            transform: scale(1.12);
+        }
+    }
+
+
+    &:focus-visible {
+
+        outline: 2px solid $primary;
+
+        outline-offset: 4px;
+
+        border-radius: 3px;
+    }
+}
+
+
+// ============================================
+// WHATSAPP
+// ============================================
+
+.whatsapp-top-link {
+
+    &:hover {
+
+        color: #25D366;
+
+
+        i {
+
+            color: #25D366;
+        }
+    }
+}
+
+
+// ============================================
+// TABLET
+// ============================================
+
+@include tablet {
+
+    .top-bar {
+
+        .container {
+
+            min-height: 36px;
+
+            gap: 15px;
+        }
+    }
+
+
+    .top-left,
+    .top-right {
+
+        gap: 15px;
+    }
+
+
+    .top-item {
+
+        font-size: 11px;
+    }
+}
+
+
+// ============================================
+// MOBILE
+// ============================================
+
+@include mobile {
+
+    .top-bar {
+
+        .container {
+
+            min-height: 38px;
+
+            justify-content: center;
+
+            gap: 0;
+        }
+    }
+
+
+    .top-left {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .top-right {
+
+        display: none;
+    }
+
+
+    .top-item {
+
+        font-size: 10px;
+
+        gap: 6px;
+    }
+
+
+    .top-left {
+
+        .top-item:first-child {
+
+            display: none;
+        }
+    }
+}
 // ============================================
 // Main Navbar
 // ============================================
