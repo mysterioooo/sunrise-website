@@ -433,38 +433,104 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
-@media (max-width: 768px) {
-  .mobile-toggle {
-    display: flex;
-  }
-}
 
 @media (max-width: 768px) {
   .main-navbar {
-    top: 0;
+    position: relative;
+    z-index: 1000;
+    height: 70px;
+  }
+  .main-navbar .container {
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .navbar-logo img {
+    width: 145px;
+    max-width: 145px;
+    height: auto;
+    display: block;
+  }
+  .mobile-toggle {
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #06213d;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    z-index: 1005;
+  }
+  .mobile-toggle:hover {
+    color: #e21b23;
+  }
+  .mobile-toggle:focus-visible {
+    outline: 2px solid #e21b23;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
   .nav-menu {
     position: absolute;
-    top: 78px;
+    top: 100%;
     left: 0;
+    right: 0;
     width: 100%;
+    max-height: calc(100vh - 110px);
+    margin: 0;
+    padding: 12px 24px 24px;
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
-    padding: 15px 20px 25px;
+    overflow-y: auto;
     background: #ffffff;
-    box-shadow: 0 10px 35px rgba(6, 33, 61, 0.1);
+    box-shadow: 0 15px 35px rgba(3, 23, 43, 0.18);
+    z-index: 1004;
   }
   .nav-menu.open {
     display: flex;
   }
+  .nav-menu li {
+    width: 100%;
+    list-style: none;
+  }
   .nav-menu .nav-link {
     width: 100%;
-    padding: 13px 0;
+    min-height: 50px;
+    padding: 15px 4px;
+    display: flex;
+    align-items: center;
+    color: #172033;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(3, 23, 43, 0.08);
   }
   .nav-menu .nav-link::after {
     display: none;
+  }
+  .nav-menu .nav-link:hover {
+    color: #e21b23;
+  }
+  .nav-menu .nav-link.active {
+    color: #e21b23;
   }
   .nav-cta {
     display: none;
