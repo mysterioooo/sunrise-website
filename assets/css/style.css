@@ -486,16 +486,23 @@ body {
     padding: 0 18px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
   .top-left {
     display: flex;
   }
+  /* On mobile only show email (hr), phone and WhatsApp — hide working hours */
+  .top-left .top-item:first-child {
+    display: none !important;
+  }
+  /* Extra rule to explicitly hide the working-hours anchor by aria-label in case of specificity conflicts */
+  .top-bar a[aria-label="View Sunrise working hours"] {
+    display: none !important;
+  }
   .top-right {
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 22px;
   }
   .top-item {
@@ -608,6 +615,8 @@ body {
     transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
   }
   .nav-menu.open {
+    /* Ensure the menu is rendered on mobile when open */
+    display: flex;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

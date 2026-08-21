@@ -142,7 +142,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     mobileToggle.addEventListener(
         "click",
-        toggleMenu
+        function (e) {
+
+            // Prevent the document click handler from immediately closing the menu
+            e.stopPropagation();
+
+            toggleMenu();
+
+        }
+    );
+
+    // Ensure touch devices don't trigger the document click handler when tapping the toggle
+    // Also handle touch/pointer directly to make toggling reliable on iOS Safari/Chrome
+    mobileToggle.addEventListener(
+        "touchstart",
+        function (e) {
+            e.stopPropagation();
+            // Toggle immediately on touchstart for better responsiveness on some iOS browsers
+            toggleMenu();
+        },
+        { passive: true }
+    );
+
+    // Pointer events fallback (for devices that use pointer events)
+    mobileToggle.addEventListener(
+        "pointerdown",
+        function (e) {
+            e.stopPropagation();
+            // Do not prevent default; just toggle
+            toggleMenu();
+        }
     );
 
 
@@ -211,6 +240,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let resizeTicking = false;
 
+    function updateTopBarMobile() {
+        try {
+            const workHours = document.querySelector('a[aria-label="View Sunrise working hours"]');
+            if (!workHours) return;
+            if (window.innerWidth <= 768) {
+                // use inline style with important to ensure visibility is hidden on all browsers
+                try { workHours.style.setProperty('display','none','important'); } catch(e) { workHours.style.display = 'none'; }
+            } else {
+                try { workHours.style.removeProperty('display'); } catch(e) { workHours.style.display = ''; }
+            }
+        } catch (e) {
+            // ignore
+        }
+    }
+
+    // initial call
+    updateTopBarMobile();
+
     window.addEventListener(
         "resize",
         function () {
@@ -221,9 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             window.requestAnimationFrame(function () {
 
-                if (window.innerWidth > 768) {
+                // Close menu when switching to desktop widths (>= 768)
+                if (window.innerWidth >= 768) {
                     closeMenu();
                 }
+
+                // show/hide top bar working hours on resize
+                updateTopBarMobile();
 
                 resizeTicking = false;
 
