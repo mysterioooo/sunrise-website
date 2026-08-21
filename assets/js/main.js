@@ -13,7 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".reveal");
 
 
-    if ("IntersectionObserver" in window) {
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if ("IntersectionObserver" in window && !reduceMotion) {
 
         const observer =
             new IntersectionObserver(

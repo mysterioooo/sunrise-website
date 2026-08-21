@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -15,6 +16,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -26,6 +29,15 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #e21b23;
+  outline-offset: 3px;
 }
 
 button,
@@ -114,7 +126,7 @@ ol {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   color: #ffffff;
   background: #e21b23;
 }
@@ -137,7 +149,7 @@ ol {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.7);
   background: transparent;
@@ -160,7 +172,7 @@ ol {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   color: #ffffff;
   background: #06213d;
 }
@@ -173,7 +185,7 @@ ol {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.active {
@@ -181,6 +193,24 @@ ol {
   transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -308,7 +338,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
+}
+
+.main-navbar .container > nav {
+  display: flex;
+  flex: 1;
+  min-width: 0;
 }
 
 .navbar-logo {
@@ -330,7 +366,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: clamp(16px, 2vw, 30px);
   flex: 1;
   margin: 0;
   padding: 0;
@@ -355,7 +391,7 @@ body {
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-menu .nav-link::after {
@@ -363,10 +399,12 @@ body {
   position: absolute;
   left: 0;
   bottom: 19px;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: #e21b23;
-  transition: all 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
 }
 
 .nav-menu .nav-link:hover,
@@ -376,7 +414,7 @@ body {
 
 .nav-menu .nav-link:hover::after,
 .nav-menu .nav-link.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -391,7 +429,7 @@ body {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -405,7 +443,7 @@ body {
   line-height: 1;
   white-space: nowrap;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .nav-cta:hover {
@@ -451,7 +489,7 @@ body {
     justify-content: center;
   }
   .top-left {
-    display: none;
+    display: flex;
   }
   .top-right {
     width: 100%;
@@ -497,6 +535,10 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+  }
+  .main-navbar .container > nav {
+    display: block;
+    flex: none;
   }
   .navbar-logo {
     display: flex;
@@ -546,7 +588,7 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    max-height: calc(100vh - 110px);
+    max-height: calc(100dvh - 110px);
     margin: 0;
     padding: 12px 24px 24px;
     display: none;
@@ -559,9 +601,19 @@ body {
     background: #ffffff;
     box-shadow: 0 15px 35px rgba(3, 23, 43, 0.18);
     z-index: 1004;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
   }
   .nav-menu.open {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+    will-change: transform, opacity;
   }
   .nav-menu li {
     width: 100%;
@@ -674,6 +726,25 @@ body {
   }
   to {
     transform: translateY(0);
+  }
+}
+@media (min-width: 993px) and (max-width: 1100px) {
+  .main-navbar .container {
+    gap: 14px;
+  }
+  .navbar-logo img {
+    width: 155px;
+    max-width: 155px;
+  }
+  .nav-menu {
+    gap: 14px;
+  }
+  .nav-menu .nav-link {
+    font-size: 13px;
+  }
+  .nav-cta {
+    padding: 11px 16px;
+    font-size: 12px;
   }
 }
 .hero {
@@ -965,7 +1036,7 @@ body {
   border: 1px solid #e4e7ec;
   border-radius: 14px;
   background: #ffffff;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
 .service-card::before {
@@ -978,7 +1049,7 @@ body {
   background: #e21b23;
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .service-card:hover {
   transform: translateY(-8px);
@@ -1008,7 +1079,7 @@ body {
   color: #e21b23;
   background: rgba(226, 27, 35, 0.08);
   font-size: 22px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .service-card h3 {
@@ -1035,7 +1106,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .service-link i,
 .service-card a i {
@@ -1073,7 +1144,7 @@ body {
   color: #e21b23;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .view-all-services:hover {
   gap: 13px;
@@ -1101,8 +1172,7 @@ body {
 .about-image {
   width: 100%;
   height: 430px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 14px;
 }
 
@@ -1151,7 +1221,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .about-highlight:hover {
   background: rgba(255, 255, 255, 0.06);
@@ -1219,7 +1289,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 15px rgba(6, 33, 61, 0.06);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
 .client-logo-card img {
@@ -1228,11 +1298,10 @@ body {
   height: auto;
   max-width: 170px;
   max-height: 65px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: grayscale(20%);
   opacity: 0.9;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .client-logo-card:hover {
   transform: translateY(-5px);
@@ -1267,7 +1336,7 @@ body {
   color: #e21b23;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .clients-more-link:hover {
   gap: 14px;
@@ -1298,7 +1367,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 15px rgba(6, 33, 61, 0.06);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .award-card:hover {
   transform: translateY(-6px);
@@ -1324,11 +1393,9 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
-  transition: all 0.3s ease;
+  object-fit: contain;
+  object-position: center;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .award-card:hover .award-image img {
@@ -1350,7 +1417,6 @@ body {
 
 .award-year {
   display: inline-flex;
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 12px;
   padding: 5px 10px;
@@ -1386,8 +1452,7 @@ body {
   .award-image img {
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
   .award-content {
     padding: 25px;
@@ -1471,7 +1536,7 @@ body {
   background: #ffffff;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .cta-button:hover {
   color: #b9141b;
@@ -1533,7 +1598,7 @@ body {
   gap: 7px;
   color: rgba(255, 255, 255, 0.62);
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .footer-links a:hover {
   color: #ffffff;
@@ -1573,7 +1638,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .footer-social a:hover {
   color: #ffffff;
@@ -1691,8 +1756,7 @@ body {
 .service-detail-image {
   width: 100%;
   height: 480px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 14px;
 }
 @media (max-width: 768px) {
@@ -1783,7 +1847,7 @@ body {
   padding: 14px 0;
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .service-sidebar-links a i {
   font-size: 11px;
@@ -1894,8 +1958,7 @@ body {
 .company-story-image img {
   width: 100%;
   height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 14px;
 }
 @media (max-width: 768px) {
@@ -2000,7 +2063,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .vm-card::before {
   content: "";
@@ -2012,7 +2075,7 @@ body {
   background: #e21b23;
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .vm-card:hover {
   transform: translateY(-7px);
@@ -2037,7 +2100,7 @@ body {
   color: #e21b23;
   background: rgba(226, 27, 35, 0.08);
   font-size: 22px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .vm-card h3 {
@@ -2111,7 +2174,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.035);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .expectation-item:hover {
   background: rgba(255, 255, 255, 0.07);
@@ -2166,7 +2229,7 @@ body {
   border: 1px solid #e4e7ec;
   border-radius: 14px;
   background: #ffffff;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .about-stat:hover {
   box-shadow: 0 10px 35px rgba(6, 33, 61, 0.1);
@@ -2269,7 +2332,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .client-filter:hover {
   color: #e21b23;
@@ -2310,7 +2373,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 15px rgba(6, 33, 61, 0.06);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
 .client-page-card[data-hidden=true] {
@@ -2326,7 +2389,7 @@ body {
   background: #e21b23;
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .client-page-card:hover {
   transform: translateY(-7px);
@@ -2352,11 +2415,10 @@ body {
 .client-page-logo img {
   max-width: 85%;
   max-height: 70px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
 .client-page-name {
@@ -2397,7 +2459,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .client-trust-card:hover {
   transform: translateY(-6px);
@@ -2591,10 +2653,9 @@ body {
   width: 100%;
   height: 430px;
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background: #f7f7f7;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .award-timeline-image img {
@@ -2617,7 +2678,7 @@ body {
   color: #ffffff;
   background: rgba(3, 23, 43, 0.45);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .award-image-overlay i {
   width: 50px;
@@ -2638,7 +2699,6 @@ body {
 }
 
 .award-year-badge {
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-flex;
   align-items: center;
@@ -2716,7 +2776,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .recognition-card:hover {
   transform: translateY(-6px);
@@ -2777,8 +2837,7 @@ body {
   width: 100%;
   max-height: 85vh;
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .certificate-modal-close {
@@ -2796,7 +2855,7 @@ body {
   background: #06213d;
   cursor: pointer;
   z-index: 2;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .certificate-modal-close:hover {
   background: #e21b23;
@@ -2887,7 +2946,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .gallery-filter:hover {
   color: #e21b23;
@@ -2925,7 +2984,7 @@ body {
   border-radius: 14px;
   background: #f7f9fc;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .gallery-item[data-hidden=true] {
   display: none;
@@ -2934,8 +2993,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
 .gallery-item:hover img {
@@ -2984,7 +3042,7 @@ body {
   padding: 25px;
   background: linear-gradient(0deg, rgba(3, 23, 43, 0.85), rgba(3, 23, 43, 0.05) 75%);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .gallery-overlay {
@@ -3075,8 +3133,7 @@ body {
   max-height: 85vh;
   display: block;
   border-radius: 8px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .gallery-lightbox-close,
@@ -3093,7 +3150,7 @@ body {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   z-index: 10001;
 }
 .gallery-lightbox-close:hover,
@@ -3239,7 +3296,7 @@ body {
   border: 1px solid #e4e7ec;
   border-radius: 14px;
   background: #ffffff;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .contact-info-card {
@@ -3267,7 +3324,7 @@ body {
   color: #e21b23;
   background: rgba(226, 27, 35, 0.08);
   font-size: 18px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .contact-info-icon {
@@ -3292,7 +3349,7 @@ body {
 .contact-info-content a {
   color: #667085;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .contact-info-content a:hover {
   color: #e21b23;
@@ -3389,7 +3446,7 @@ body {
   background: #ffffff;
   font-family: inherit;
   font-size: 13px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   box-sizing: border-box;
 }
 .contact-form-group input:focus,
@@ -3422,10 +3479,10 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 .contact-submit:hover {
-  background: rgb(189.5541501976, 22.6458498024, 29.3557312253);
+  background: rgb(74.3349608618%, 8.8807254127%, 11.5120514609%);
   transform: translateY(-2px);
 }
 
@@ -3536,7 +3593,7 @@ body {
   border-radius: 14px;
   background: #ffffff;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .quick-contact-card {
@@ -3596,7 +3653,7 @@ body {
   font-size: 22px;
   text-decoration: none;
   z-index: 999;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 @media (max-width: 768px) {
   .floating-contact {
@@ -3610,4 +3667,4 @@ body {
 .floating-contact:hover {
   color: #ffffff;
   transform: translateY(-4px);
-}/*# sourceMappingURL=style.css.map */
+}

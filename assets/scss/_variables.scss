@@ -76,11 +76,11 @@ $shadow-lg: 0 20px 60px rgba(6, 33, 61, 0.15);
 // Transitions
 // -----------------------------
 
-$transition-fast: all 0.2s ease;
+$transition-fast: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 
-$transition: all 0.3s ease;
+$transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 
-$transition-slow: all 0.5s ease;
+$transition-slow: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
 
 // -----------------------------
 // Breakpoints

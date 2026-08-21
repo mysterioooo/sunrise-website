@@ -228,7 +228,15 @@ body {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 20px;
+}
+
+.main-navbar .container > nav {
+    display: flex;
+
+    flex: 1;
+
+    min-width: 0;
 }
 
 
@@ -270,7 +278,7 @@ body {
 
     justify-content: center;
 
-    gap: 30px;
+    gap: clamp(16px, 2vw, 30px);
 
     flex: 1;
 
@@ -322,7 +330,7 @@ body {
 
     white-space: nowrap;
 
-    transition: $transition;
+    transition: color 0.25s ease;
 }
 
 
@@ -339,13 +347,16 @@ body {
 
     bottom: 19px;
 
-    width: 0;
+    width: 100%;
 
     height: 2px;
 
     background: $primary;
 
-    transition: $transition;
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform 0.25s ease;
 }
 
 
@@ -360,7 +371,7 @@ body {
 
 .nav-menu .nav-link:hover::after,
 .nav-menu .nav-link.active::after {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 
@@ -397,7 +408,10 @@ body {
 
     text-decoration: none;
 
-    transition: $transition;
+    transition:
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 
@@ -484,7 +498,7 @@ body {
 
 
     .top-left {
-        display: none;
+        display: flex;
     }
 
 
@@ -584,6 +598,12 @@ body {
         justify-content: space-between;
 
         gap: 15px;
+    }
+
+    .main-navbar .container > nav {
+        display: block;
+
+        flex: none;
     }
 
 
@@ -692,7 +712,7 @@ body {
 
         width: 100%;
 
-        max-height: calc(100vh - 110px);
+        max-height: calc(100dvh - 110px);
 
         margin: 0;
 
@@ -717,6 +737,19 @@ body {
         box-shadow: 0 15px 35px rgba(3, 23, 43, 0.18);
 
         z-index: 1004;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        pointer-events: none;
+
+        transform: translateY(-8px);
+
+        transition:
+            opacity 0.22s ease,
+            transform 0.22s ease,
+            visibility 0s linear 0.22s;
     }
 
 
@@ -725,7 +758,17 @@ body {
     // ----------------------------------------
 
     .nav-menu.open {
-        display: flex;
+        opacity: 1;
+
+        visibility: visible;
+
+        pointer-events: auto;
+
+        transform: translateY(0);
+
+        transition-delay: 0s;
+
+        will-change: transform, opacity;
     }
 
 
@@ -968,4 +1011,29 @@ body {
         transform: translateY(0);
     }
 
+}
+
+@media (min-width: 993px) and (max-width: 1100px) {
+
+    .main-navbar .container {
+        gap: 14px;
+    }
+
+    .navbar-logo img {
+        width: 155px;
+        max-width: 155px;
+    }
+
+    .nav-menu {
+        gap: 14px;
+    }
+
+    .nav-menu .nav-link {
+        font-size: 13px;
+    }
+
+    .nav-cta {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
 }

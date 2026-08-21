@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sticky Navbar
     // --------------------------------------------
 
-    function handleScroll() {
+    let ticking = false;
+
+    function updateNavbar() {
 
         if (window.scrollY > 50) {
 
@@ -34,16 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+        ticking = false;
+
     }
 
 
     window.addEventListener(
         "scroll",
-        handleScroll
+        function () {
+
+            if (!ticking) {
+
+                window.requestAnimationFrame(updateNavbar);
+
+                ticking = true;
+
+            }
+
+        },
+        { passive: true }
     );
 
 
-    handleScroll();
+    updateNavbar();
 
 
     // --------------------------------------------
@@ -194,17 +209,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // Close menu when switching to desktop
     // --------------------------------------------
 
+    let resizeTicking = false;
+
     window.addEventListener(
         "resize",
         function () {
 
-            if (window.innerWidth > 768) {
-
-                closeMenu();
-
+            if (resizeTicking) {
+                return;
             }
 
-        }
+            window.requestAnimationFrame(function () {
+
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+
+                resizeTicking = false;
+
+            });
+
+            resizeTicking = true;
+
+        },
+        { passive: true }
     );
 
 });
