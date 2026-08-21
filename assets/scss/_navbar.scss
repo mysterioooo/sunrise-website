@@ -5,6 +5,23 @@
 // ============================================
 // TOP BAR
 // ============================================
+html,
+body {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+}
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
 
 .top-bar {
     position: relative;
@@ -177,7 +194,7 @@
 
 
 // ============================================
-// MOBILE
+// MOBILE TOP BAR
 // ============================================
 
 @include mobile {
@@ -186,78 +203,161 @@
 
         .container {
 
-            min-height: 38px;
+            min-height: 40px;
+
+            padding: 0 18px;
+
+            display: flex;
+
+            align-items: center;
 
             justify-content: center;
 
-            gap: 0;
         }
+
     }
 
 
     .top-left {
 
-        width: 100%;
+        display: none;
 
-        justify-content: center;
     }
 
 
     .top-right {
 
-        display: none;
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 22px;
+
     }
 
 
     .top-item {
 
-        font-size: 10px;
+        font-size: 11px;
 
         gap: 6px;
+
     }
 
 
-    .top-left {
+    .top-item-link {
 
-        .top-item:first-child {
+        min-height: 38px;
 
-            display: none;
-        }
+        display: inline-flex;
+
+        align-items: center;
+
     }
+
+
+    .top-right .top-item:first-child {
+
+        padding-right: 22px;
+
+        border-right: 1px solid rgba(255,255,255,.18);
+
+    }
+
 }
 // ============================================
-// Main Navbar
+// MOBILE NAVBAR
 // ============================================
 
-.main-navbar {
-    position: absolute;
+@include mobile {
 
-    top: 38px;
-    left: 0;
+    .main-navbar {
 
-    width: 100%;
+        height: 70px;
 
-    z-index: 999;
-
-    background: $white;
-
-    transition: $transition;
-
-    .container {
-        min-height: 78px;
-
-        @include flex-between;
     }
 
-    &.scrolled {
-        position: fixed;
 
-        top: 0;
+    .main-navbar .container {
 
-        box-shadow: $shadow-md;
+        height: 70px;
 
-        animation: slideDown 0.3s ease;
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
     }
+
+
+    .navbar-logo {
+
+        display: flex;
+
+        align-items: center;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .navbar-logo img {
+
+        width: 125px;
+
+        max-width: 125px;
+
+        height: auto;
+
+        display: block;
+
+    }
+
+
+    .nav-cta {
+
+        display: none;
+
+    }
+
+
+    .mobile-toggle {
+
+        width: 44px;
+
+        height: 44px;
+
+        margin-left: auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        color: $navy;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+    }
+
 }
 
 // ============================================

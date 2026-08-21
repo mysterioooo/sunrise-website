@@ -25,12 +25,30 @@
 
     overflow: hidden;
 
+
+    // ========================================
+    // MOBILE
+    // ========================================
+
     @include mobile {
-        min-height: 680px;
+
+        min-height: auto;
+
+        display: block;
 
         background-position: 65% center;
+
+        padding-top: 45px;
+
+        padding-bottom: 95px;
+
     }
 }
+
+
+// ============================================
+// HERO CONTENT
+// ============================================
 
 .hero-content {
     position: relative;
@@ -41,10 +59,24 @@
 
     padding-top: 80px;
 
+
     @include mobile {
-        padding-top: 50px;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding-top: 25px;
+
+        padding-bottom: 10px;
+
     }
 }
+
+
+// ============================================
+// HERO LABEL
+// ============================================
 
 .hero-label {
     display: inline-flex;
@@ -65,17 +97,47 @@
 
     text-transform: uppercase;
 
+
     &::before {
         content: "";
 
         width: 35px;
+
         height: 2px;
 
         background: $primary;
     }
+
+
+    @include mobile {
+
+        gap: 9px;
+
+        margin-bottom: 18px;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+
+        &::before {
+
+            width: 32px;
+
+            flex-shrink: 0;
+
+        }
+
+    }
 }
 
+
+// ============================================
+// HERO TITLE
+// ============================================
+
 .hero-title {
+
     margin-bottom: 24px;
 
     color: $white;
@@ -88,18 +150,32 @@
 
     letter-spacing: -1.5px;
 
+
     @include mobile {
+
+        margin-bottom: 20px;
+
         font-size: 42px;
 
+        line-height: 1.08;
+
         letter-spacing: -0.5px;
+
     }
+
 
     span {
         color: $primary;
     }
 }
 
+
+// ============================================
+// HERO DESCRIPTION
+// ============================================
+
 .hero-description {
+
     max-width: 620px;
 
     margin-bottom: 35px;
@@ -110,36 +186,80 @@
 
     line-height: 1.7;
 
+
     @include mobile {
+
+        max-width: 100%;
+
+        margin-bottom: 28px;
+
         font-size: 16px;
+
+        line-height: 1.65;
+
     }
 }
 
+
+// ============================================
+// HERO BUTTONS
+// ============================================
+
 .hero-buttons {
+
     display: flex;
 
     align-items: center;
 
     gap: 14px;
 
+
     @include mobile {
+
+        width: 100%;
+
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: stretch;
+
+        gap: 12px;
+
     }
 }
 
+
 // ============================================
-// Decorative Elements
+// MOBILE BUTTON WIDTH
+// ============================================
+
+@include mobile {
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+        min-height: 56px;
+
+        justify-content: center;
+
+    }
+}
+
+
+// ============================================
+// DECORATIVE ELEMENTS
 // ============================================
 
 .hero-decoration {
+
     position: absolute;
 
     right: -120px;
+
     bottom: -120px;
 
     width: 350px;
+
     height: 350px;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -147,7 +267,9 @@
     border-radius: 50%;
 }
 
+
 .hero-decoration::before {
+
     content: "";
 
     position: absolute;
@@ -157,4 +279,34 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 50%;
+}
+
+
+// ============================================
+// MOBILE DECORATION
+// ============================================
+
+@include mobile {
+
+    .hero-decoration {
+
+        right: -180px;
+
+        bottom: -180px;
+
+        width: 330px;
+
+        height: 330px;
+
+        opacity: 0.5;
+
+    }
+
+
+    .hero-decoration::before {
+
+        inset: 35px;
+
+    }
+
 }
