@@ -2,26 +2,28 @@
 // SUNRISE - NAVBAR
 // ============================================
 
+
 // ============================================
-// TOP BAR
+// GLOBAL RESET / OVERFLOW
 // ============================================
+
 html,
 body {
-
     width: 100%;
-
     max-width: 100%;
-
     overflow-x: hidden;
-
 }
+
 *,
 *::before,
 *::after {
-
     box-sizing: border-box;
-
 }
+
+
+// ============================================
+// TOP BAR
+// ============================================
 
 .top-bar {
     position: relative;
@@ -36,9 +38,7 @@ body {
 
     z-index: 1001;
 
-
     .container {
-
         min-height: 38px;
 
         display: flex;
@@ -58,7 +58,6 @@ body {
 
 .top-left,
 .top-right {
-
     display: flex;
 
     align-items: center;
@@ -72,7 +71,6 @@ body {
 // ============================================
 
 .top-item {
-
     display: inline-flex;
 
     align-items: center;
@@ -87,13 +85,13 @@ body {
 
     white-space: nowrap;
 
+    text-decoration: none;
+
     transition:
         color 0.25s ease,
         transform 0.25s ease;
 
-    
     i {
-
         color: $primary;
 
         font-size: 12px;
@@ -110,30 +108,23 @@ body {
 // ============================================
 
 .top-item-link {
-
     text-decoration: none;
 
     cursor: pointer;
 
-
     &:hover {
-
         color: $white;
 
         transform: translateY(-1px);
 
-
         i {
-
             color: $white;
 
             transform: scale(1.12);
         }
     }
 
-
     &:focus-visible {
-
         outline: 2px solid $primary;
 
         outline-offset: 4px;
@@ -148,14 +139,10 @@ body {
 // ============================================
 
 .whatsapp-top-link {
-
     &:hover {
-
         color: #25D366;
 
-
         i {
-
             color: #25D366;
         }
     }
@@ -163,7 +150,7 @@ body {
 
 
 // ============================================
-// TABLET
+// TABLET TOP BAR
 // ============================================
 
 @include tablet {
@@ -171,25 +158,306 @@ body {
     .top-bar {
 
         .container {
-
             min-height: 36px;
 
             gap: 15px;
         }
     }
 
-
     .top-left,
     .top-right {
-
         gap: 15px;
     }
 
-
     .top-item {
-
         font-size: 11px;
     }
+}
+
+
+// ============================================
+// MAIN NAVBAR
+// ============================================
+
+.main-navbar {
+    position: relative;
+
+    width: 100%;
+
+    height: 88px;
+
+    background: $white;
+
+    z-index: 1000;
+
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+// ============================================
+// STICKY / SCROLLED NAVBAR
+// ============================================
+
+.main-navbar.scrolled {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    box-shadow: 0 8px 25px rgba(3, 23, 43, 0.10);
+}
+
+
+// ============================================
+// NAVBAR CONTAINER
+// ============================================
+
+.main-navbar .container {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+// ============================================
+// LOGO
+// ============================================
+
+.navbar-logo {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    line-height: 0;
+}
+
+.navbar-logo img {
+    display: block;
+
+    width: 175px;
+
+    max-width: 175px;
+
+    height: auto;
+}
+
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+.nav-menu {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex: 1;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+// ============================================
+// NAVIGATION ITEM
+// ============================================
+
+.nav-menu li {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+// ============================================
+// NAVIGATION LINK
+// ============================================
+
+.nav-menu .nav-link {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    height: 88px;
+
+    padding: 0;
+
+    color: $text-dark;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition: $transition;
+}
+
+
+// ============================================
+// NAVIGATION ACTIVE LINE
+// ============================================
+
+.nav-menu .nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 19px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: $primary;
+
+    transition: $transition;
+}
+
+
+// ============================================
+// NAVIGATION HOVER / ACTIVE
+// ============================================
+
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link.active {
+    color: $primary;
+}
+
+.nav-menu .nav-link:hover::after,
+.nav-menu .nav-link.active::after {
+    width: 100%;
+}
+
+
+// ============================================
+// GET A QUOTE BUTTON
+// ============================================
+
+.nav-cta {
+    @include button-base;
+
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 13px 22px;
+
+    color: $white;
+
+    background: $primary;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transition: $transition;
+}
+
+
+.nav-cta:hover {
+    color: $white;
+
+    background: $primary-dark;
+
+    transform: translateY(-1px);
+}
+
+
+// ============================================
+// MOBILE TOGGLE
+// ============================================
+
+.mobile-toggle {
+    display: none;
+
+    width: 44px;
+
+    height: 44px;
+
+    padding: 0;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    outline: none;
+
+    color: $navy;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: color 0.25s ease;
+}
+
+
+.mobile-toggle:hover {
+    color: $primary;
+}
+
+
+.mobile-toggle:focus-visible {
+    outline: 2px solid $primary;
+
+    outline-offset: 3px;
+
+    border-radius: 4px;
 }
 
 
@@ -202,7 +470,6 @@ body {
     .top-bar {
 
         .container {
-
             min-height: 40px;
 
             padding: 0 18px;
@@ -212,21 +479,16 @@ body {
             align-items: center;
 
             justify-content: center;
-
         }
-
     }
 
 
     .top-left {
-
         display: none;
-
     }
 
 
     .top-right {
-
         width: 100%;
 
         display: flex;
@@ -236,240 +498,36 @@ body {
         justify-content: center;
 
         gap: 22px;
-
     }
 
 
     .top-item {
-
         font-size: 11px;
 
         gap: 6px;
-
     }
 
 
     .top-item-link {
-
         min-height: 38px;
 
         display: inline-flex;
 
         align-items: center;
-
     }
 
 
     .top-right .top-item:first-child {
-
         padding-right: 22px;
 
-        border-right: 1px solid rgba(255,255,255,.18);
-
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
     }
 
 }
+
+
 // ============================================
 // MOBILE NAVBAR
-// ============================================
-
-@include mobile {
-
-    .main-navbar {
-
-        height: 70px;
-
-    }
-
-
-    .main-navbar .container {
-
-        height: 70px;
-
-        padding-left: 20px;
-
-        padding-right: 20px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-    }
-
-
-    .navbar-logo {
-
-        display: flex;
-
-        align-items: center;
-
-        flex-shrink: 0;
-
-    }
-
-
-    .navbar-logo img {
-
-        width: 125px;
-
-        max-width: 125px;
-
-        height: auto;
-
-        display: block;
-
-    }
-
-
-    .nav-cta {
-
-        display: none;
-
-    }
-
-
-    .mobile-toggle {
-
-        width: 44px;
-
-        height: 44px;
-
-        margin-left: auto;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        flex-shrink: 0;
-
-        border: 0;
-
-        background: transparent;
-
-        color: $navy;
-
-        font-size: 22px;
-
-        cursor: pointer;
-
-    }
-
-}
-
-// ============================================
-// Logo
-// ============================================
-
-.navbar-logo {
-    display: flex;
-    align-items: center;
-
-    img {
-        width: 175px;
-
-        @include mobile {
-            width: 145px;
-        }
-    }
-}
-
-// ============================================
-// Navigation
-// ============================================
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-
-    .nav-link {
-        position: relative;
-
-        color: $text-dark;
-
-        font-size: 14px;
-        font-weight: 600;
-
-        padding: 29px 0;
-
-        transition: $transition;
-
-        &::after {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: 19px;
-
-            width: 0;
-            height: 2px;
-
-            background: $primary;
-
-            transition: $transition;
-        }
-
-        &:hover,
-        &.active {
-            color: $primary;
-
-            &::after {
-                width: 100%;
-            }
-        }
-    }
-}
-
-.nav-cta {
-    @include button-base;
-
-    padding: 12px 22px;
-
-    color: $white;
-
-    background: $primary;
-
-    &:hover {
-        color: $white;
-
-        background: $primary-dark;
-    }
-}
-
-// ============================================
-// Mobile Toggle
-// ============================================
-
-.mobile-toggle {
-
-    display: none;
-
-    width: 42px;
-
-    height: 42px;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: $navy;
-
-    background: transparent;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-}
-
-// ============================================
-// MOBILE NAVIGATION
 // ============================================
 
 @include mobile {
@@ -479,17 +537,39 @@ body {
     // ----------------------------------------
 
     .main-navbar {
-
         position: relative;
 
-        z-index: 1000;
+        width: 100%;
 
         height: 70px;
 
+        z-index: 1000;
     }
 
 
+    // ----------------------------------------
+    // Scrolled Navbar
+    // ----------------------------------------
+
+    .main-navbar.scrolled {
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        right: 0;
+
+        box-shadow: 0 8px 25px rgba(3, 23, 43, 0.12);
+    }
+
+
+    // ----------------------------------------
+    // Navbar Container
+    // ----------------------------------------
+
     .main-navbar .container {
+        width: 100%;
 
         height: 70px;
 
@@ -503,6 +583,7 @@ body {
 
         justify-content: space-between;
 
+        gap: 15px;
     }
 
 
@@ -511,35 +592,41 @@ body {
     // ----------------------------------------
 
     .navbar-logo {
-
         display: flex;
 
         align-items: center;
 
         flex-shrink: 0;
 
+        line-height: 0;
     }
 
 
     .navbar-logo img {
+        display: block;
 
         width: 145px;
 
         max-width: 145px;
 
         height: auto;
-
-        display: block;
-
     }
 
 
     // ----------------------------------------
-    // Hamburger
+    // Hide Desktop CTA
+    // ----------------------------------------
+
+    .nav-cta {
+        display: none;
+    }
+
+
+    // ----------------------------------------
+    // Hamburger Toggle
     // ----------------------------------------
 
     .mobile-toggle {
-
         width: 44px;
 
         height: 44px;
@@ -560,9 +647,9 @@ body {
 
         outline: none;
 
-        background: transparent;
-
         color: $navy;
+
+        background: transparent;
 
         font-size: 22px;
 
@@ -573,34 +660,28 @@ body {
         position: relative;
 
         z-index: 1005;
-
     }
 
 
     .mobile-toggle:hover {
-
         color: $primary;
-
     }
 
 
     .mobile-toggle:focus-visible {
-
         outline: 2px solid $primary;
 
         outline-offset: 3px;
 
         border-radius: 4px;
-
     }
 
 
     // ----------------------------------------
-    // Mobile Menu
+    // Mobile Navigation Menu
     // ----------------------------------------
 
     .nav-menu {
-
         position: absolute;
 
         top: 100%;
@@ -623,7 +704,11 @@ body {
 
         align-items: stretch;
 
+        justify-content: flex-start;
+
         gap: 0;
+
+        flex: none;
 
         overflow-y: auto;
 
@@ -632,39 +717,45 @@ body {
         box-shadow: 0 15px 35px rgba(3, 23, 43, 0.18);
 
         z-index: 1004;
-
     }
 
 
     // ----------------------------------------
-    // Open State
+    // Open Mobile Menu
     // ----------------------------------------
 
     .nav-menu.open {
-
         display: flex;
-
     }
 
 
     // ----------------------------------------
-    // Menu Items
+    // Mobile Menu Items
     // ----------------------------------------
 
     .nav-menu li {
-
         width: 100%;
 
-        list-style: none;
+        margin: 0;
 
+        padding: 0;
+
+        list-style: none;
     }
 
 
+    // ----------------------------------------
+    // Mobile Navigation Links
+    // ----------------------------------------
+
     .nav-menu .nav-link {
+        position: relative;
 
         width: 100%;
 
         min-height: 50px;
+
+        height: auto;
 
         padding: 15px 4px;
 
@@ -674,52 +765,197 @@ body {
 
         color: $text-dark;
 
+        background: transparent;
+
         font-size: 15px;
 
         font-weight: 600;
 
+        line-height: 1.4;
+
         text-decoration: none;
 
         border-bottom: 1px solid rgba(3, 23, 43, 0.08);
-
     }
 
+
+    // ----------------------------------------
+    // Remove Desktop Active Line
+    // ----------------------------------------
 
     .nav-menu .nav-link::after {
-
         display: none;
-
     }
 
+
+    // ----------------------------------------
+    // Mobile Hover
+    // ----------------------------------------
 
     .nav-menu .nav-link:hover {
-
         color: $primary;
-
     }
 
+
+    // ----------------------------------------
+    // Mobile Active
+    // ----------------------------------------
 
     .nav-menu .nav-link.active {
-
         color: $primary;
-
     }
 
 
     // ----------------------------------------
-    // Get Quote
+    // Menu Shadow / Last Item
     // ----------------------------------------
 
-    .nav-cta {
-
-        display: none;
-
+    .nav-menu li:last-child .nav-link {
+        border-bottom: none;
     }
 
 }
 
+
 // ============================================
-// Animation
+// TABLET NAVBAR
+// ============================================
+
+@include tablet {
+
+    .main-navbar .container {
+        gap: 20px;
+    }
+
+
+    .navbar-logo img {
+        width: 155px;
+
+        max-width: 155px;
+    }
+
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+
+    .nav-menu .nav-link {
+        font-size: 13px;
+    }
+
+
+    .nav-cta {
+        padding: 11px 17px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+// ============================================
+// MOBILE - SMALL DEVICES
+// ============================================
+
+@media (max-width: 480px) {
+
+    .top-bar {
+
+        .container {
+            padding-left: 12px;
+
+            padding-right: 12px;
+        }
+    }
+
+
+    .top-right {
+        gap: 14px;
+    }
+
+
+    .top-item {
+        font-size: 10px;
+    }
+
+
+    .top-right .top-item:first-child {
+        padding-right: 14px;
+    }
+
+
+    .main-navbar .container {
+        padding-left: 16px;
+
+        padding-right: 16px;
+    }
+
+
+    .navbar-logo img {
+        width: 135px;
+
+        max-width: 135px;
+    }
+
+
+    .mobile-toggle {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 21px;
+    }
+
+
+    .nav-menu {
+        padding-left: 20px;
+
+        padding-right: 20px;
+    }
+
+}
+
+
+// ============================================
+// MOBILE - VERY SMALL DEVICES
+// ============================================
+
+@media (max-width: 360px) {
+
+    .top-item {
+        font-size: 9px;
+    }
+
+
+    .top-right {
+        gap: 10px;
+    }
+
+
+    .top-right .top-item:first-child {
+        padding-right: 10px;
+    }
+
+
+    .navbar-logo img {
+        width: 125px;
+
+        max-width: 125px;
+    }
+
+
+    .main-navbar .container {
+        padding-left: 12px;
+
+        padding-right: 12px;
+    }
+
+}
+
+
+// ============================================
+// NAVBAR ANIMATION
 // ============================================
 
 @keyframes slideDown {
