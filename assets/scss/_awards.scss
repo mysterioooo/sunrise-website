@@ -1,0 +1,223 @@
+// ============================================
+// SUNRISE - AWARDS
+// ============================================
+
+.awards-section {
+    background: $background;
+}
+
+.awards-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+// ============================================
+// Award Card
+// ============================================
+
+.award-card {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    min-height: 230px;
+
+    overflow: hidden;
+
+    border: 1px solid $border;
+
+    border-radius: $radius-md;
+
+    background: $white;
+
+    box-shadow: $shadow-sm;
+
+    transition: $transition;
+
+    &:hover {
+
+        transform: translateY(-6px);
+
+        box-shadow: $shadow-lg;
+
+    }
+
+    @include mobile {
+
+        grid-template-columns: 1fr;
+
+    }
+}
+
+
+// ============================================
+// Award Image
+// ============================================
+
+.award-image {
+
+    width: 180px;
+
+    min-height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    overflow: hidden;
+
+    img {
+
+        display: block;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        object-position: center;
+
+        transition: $transition;
+
+    }
+}
+
+
+.award-card:hover {
+
+    .award-image img {
+
+        transform: scale(1.04);
+
+    }
+
+}
+
+
+// ============================================
+// Award Content
+// ============================================
+
+.award-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+.award-icon {
+
+    margin-bottom: 12px;
+
+    color: #c5962d;
+
+    font-size: 22px;
+
+}
+
+.award-year {
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    margin-bottom: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: 30px;
+
+    color: $primary;
+
+    background:
+        rgba(226, 27, 35, 0.08);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+.award-content h3 {
+
+    margin-bottom: 10px;
+
+    color: $navy;
+
+    font-size: 19px;
+
+    line-height: 1.35;
+
+}
+
+.award-content p {
+
+    margin: 0;
+
+    color: $text-muted;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+// ============================================
+// Mobile
+// ============================================
+
+@include mobile {
+
+    .award-image {
+
+        width: 100%;
+
+        height: 220px;
+
+        min-height: 220px;
+
+        padding: 20px;
+
+    }
+
+    .award-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+    }
+
+    .award-content {
+
+        padding: 25px;
+
+    }
+
+}

@@ -1,0 +1,27 @@
+// ============================================
+// SUNRISE WEBSITE - MAIN SCSS
+// ============================================
+
+// Global
+@import "variables";
+@import "mixins";
+@import "base";
+
+// Layout
+@import "navbar";
+@import "hero";
+@import "stats";
+
+// Homepage Sections
+@import "services";
+@import "about";
+@import "clients";
+@import "awards";
+@import "cta";
+@import "footer";
+@import "service-detail";
+@import "about-page";
+@import "clients-page";
+@import "awards-page";
+@import "gallery-page";
+@import "contact-page";

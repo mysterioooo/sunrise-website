@@ -1,0 +1,177 @@
+// ============================================
+// SUNRISE - CLIENTS
+// ============================================
+
+.clients-section {
+    background: $white;
+
+    overflow: hidden;
+}
+
+.clients-heading {
+    text-align: center;
+}
+
+.client-trust {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+    color: $text-muted;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+// ============================================
+// Client Grid
+// ============================================
+
+.clients-logo-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        6,
+        minmax(0, 1fr)
+    );
+
+    gap: 20px;
+
+    @include tablet {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+        gap: 14px;
+    }
+}
+
+
+// ============================================
+// Client Card
+// ============================================
+
+.client-logo-card {
+    height: 135px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 22px 28px;
+
+    border: 1px solid $border;
+
+    border-radius: $radius-md;
+
+    background: $white;
+
+    box-shadow: $shadow-sm;
+
+    transition: $transition;
+
+    overflow: hidden;
+
+    img {
+        display: block;
+
+        width: auto;
+        height: auto;
+
+        max-width: 170px;
+        max-height: 65px;
+
+        object-fit: contain;
+
+        filter: grayscale(20%);
+
+        opacity: 0.9;
+
+        transition: $transition;
+    }
+
+    &:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow: $shadow-md;
+
+        border-color:
+            rgba(226, 27, 35, 0.2);
+
+        img {
+
+            filter: grayscale(0);
+
+            opacity: 1;
+
+            transform: scale(1.05);
+
+        }
+    }
+
+    @include mobile {
+
+        height: 105px;
+
+        padding: 15px;
+
+        img {
+
+            max-width: 120px;
+
+            max-height: 48px;
+
+        }
+    }
+}
+
+
+// ============================================
+// View All
+// ============================================
+
+.clients-more {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+.clients-more-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: $primary;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: $transition;
+
+    &:hover {
+
+        gap: 14px;
+
+        color: $primary-dark;
+
+    }
+}

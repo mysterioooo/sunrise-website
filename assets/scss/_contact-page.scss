@@ -1,0 +1,515 @@
+// ============================================
+// GLOBAL MOBILE FIXES
+// ============================================
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+// ============================================
+// SUNRISE - CONTACT PAGE
+// ============================================
+
+.contact-page-hero {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 23, 43, 0.95) 0%,
+            rgba(3, 23, 43, 0.78) 50%,
+            rgba(3, 23, 43, 0.40) 100%
+        ),
+        url("../images/hero/contact-hero.jpg");
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        min-height: 320px;
+        padding: 40px 0;
+    }
+}
+
+.contact-page-hero-content {
+    max-width: 720px;
+    padding-top: 50px;
+
+    @media (max-width: 768px) {
+        padding-top: 20px;
+    }
+}
+
+.contact-page-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: $primary;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &::before {
+        content: "";
+        width: 32px;
+        height: 2px;
+        background: $primary;
+    }
+}
+
+.contact-page-title {
+    margin-bottom: 20px;
+    color: $white;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+}
+
+.contact-page-description {
+    max-width: 620px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 17px;
+    line-height: 1.8;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+
+// ============================================
+// Contact Information
+// ============================================
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 70px;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 28px;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    background: $white;
+    transition: $transition;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: $shadow-md;
+
+        .contact-info-icon {
+            color: $white;
+            background: $primary;
+        }
+    }
+}
+
+.contact-info-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    color: $primary;
+    background: rgba(226, 27, 35, 0.08);
+    font-size: 18px;
+    transition: $transition;
+
+    @media (max-width: 768px) {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+.contact-info-content {
+    h3 {
+        margin-bottom: 7px;
+        color: $navy;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    a {
+        color: $text-muted;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+
+// ============================================
+// Contact Main Grid
+// ============================================
+
+.contact-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 50px;
+    align-items: start;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+// ============================================
+// Contact Form
+// ============================================
+
+.contact-form-wrapper {
+    padding: 40px;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    background: $white;
+    box-shadow: $shadow-sm;
+
+    @media (max-width: 768px) {
+        padding: 25px 20px;
+    }
+}
+
+.contact-form-header {
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        color: $navy;
+        font-size: 30px;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+.contact-form-group {
+    margin-bottom: 18px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        color: $navy;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 13px 15px;
+        border: 1px solid $border;
+        border-radius: 8px;
+        outline: none;
+        color: $text;
+        background: $white;
+        font-family: inherit;
+        font-size: 13px;
+        transition: $transition;
+        box-sizing: border-box;
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 3px rgba(226, 27, 35, 0.08);
+        }
+    }
+
+    textarea {
+        min-height: 140px;
+        resize: vertical;
+
+        @media (max-width: 768px) {
+            min-height: 110px;
+        }
+    }
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 22px;
+    border: 0;
+    border-radius: 8px;
+    color: $white;
+    background: $primary;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        background: darken($primary, 8%);
+        transform: translateY(-2px);
+    }
+}
+
+.contact-form-message {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 7px;
+    color: #155724;
+    background: #d4edda;
+    font-size: 13px;
+
+    &.active {
+        display: block;
+    }
+}
+
+
+// ============================================
+// Map / Location
+// ============================================
+
+.contact-location-wrapper {
+    overflow: hidden;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    background: $white;
+    box-shadow: $shadow-sm;
+}
+
+.contact-location-header {
+    padding: 25px 28px;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+
+    h2 {
+        margin-bottom: 8px;
+        color: $navy;
+        font-size: 24px;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    p {
+        margin: 0;
+        color: $text-muted;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+.contact-map {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    display: block;
+
+    @media (max-width: 768px) {
+        height: 250px;
+    }
+}
+
+.contact-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 22px 28px;
+    border-top: 1px solid $border;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+
+    i {
+        margin-top: 3px;
+        color: $primary;
+        font-size: 15px;
+    }
+
+    span {
+        color: $text-muted;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+
+// ============================================
+// Quick Contact
+// ============================================
+
+.quick-contact-section {
+    background: $background;
+}
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+.quick-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    background: $white;
+    text-decoration: none;
+    transition: $transition;
+
+    @media (max-width: 768px) {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-md;
+    }
+}
+
+.quick-contact-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $white;
+    background: $primary;
+
+    @media (max-width: 768px) {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+}
+
+.quick-contact-card h3 {
+    margin-bottom: 4px;
+    color: $navy;
+    font-size: 16px;
+}
+
+.quick-contact-card p {
+    margin: 0;
+    color: $text-muted;
+    font-size: 13px;
+}
+
+
+// ============================================
+// Mobile Floating Contact
+// ============================================
+
+.floating-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $white;
+    background: #25D366;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    font-size: 22px;
+    text-decoration: none;
+    z-index: 999;
+    transition: $transition;
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        right: 15px;
+        bottom: 15px;
+        font-size: 20px;
+    }
+
+    &:hover {
+        color: $white;
+        transform: translateY(-4px);
+    }
+}

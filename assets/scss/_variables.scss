@@ -1,0 +1,93 @@
+// ============================================
+// SUNRISE WEBSITE - GLOBAL VARIABLES
+// ============================================
+
+// -----------------------------
+// Brand Colors
+// -----------------------------
+
+$primary: #e21b23;
+$primary-dark: #b9141b;
+$primary-light: #ff4a50;
+
+$navy: #06213d;
+$navy-dark: #03172b;
+$navy-light: #0b3157;
+
+$white: #ffffff;
+$black: #000000;
+
+$background: #f7f9fc;
+$background-light: #fbfcfe;
+
+$text-dark: #172033;
+$text: #344054;
+$text-muted: #667085;
+$text-light: #98a2b3;
+
+$border: #e4e7ec;
+
+// -----------------------------
+// Typography
+// -----------------------------
+
+$font-primary: "Outfit", sans-serif;
+
+$font-xs: 12px;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 18px;
+$font-xl: 20px;
+
+$heading-sm: 28px;
+$heading-md: 38px;
+$heading-lg: 52px;
+$heading-xl: 64px;
+
+// -----------------------------
+// Layout
+// -----------------------------
+
+$container-width: 1200px;
+
+$section-padding: 100px;
+$section-padding-mobile: 65px;
+
+// -----------------------------
+// Border Radius
+// -----------------------------
+
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 24px;
+$radius-xl: 32px;
+
+// -----------------------------
+// Shadows
+// -----------------------------
+
+$shadow-sm: 0 4px 15px rgba(6, 33, 61, 0.06);
+
+$shadow-md: 0 10px 35px rgba(6, 33, 61, 0.10);
+
+$shadow-lg: 0 20px 60px rgba(6, 33, 61, 0.15);
+
+// -----------------------------
+// Transitions
+// -----------------------------
+
+$transition-fast: all 0.2s ease;
+
+$transition: all 0.3s ease;
+
+$transition-slow: all 0.5s ease;
+
+// -----------------------------
+// Breakpoints
+// -----------------------------
+
+$mobile: 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+$large-desktop: 1400px;

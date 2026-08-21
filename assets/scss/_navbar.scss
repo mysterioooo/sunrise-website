@@ -1,0 +1,255 @@
+// ============================================
+// SUNRISE - NAVBAR
+// ============================================
+
+.top-bar {
+    position: relative;
+
+    z-index: 1000;
+
+    background: $navy;
+
+    color: $white;
+
+    font-size: 13px;
+
+    .container {
+        min-height: 38px;
+
+        @include flex-between;
+    }
+
+    .top-left,
+    .top-right {
+        display: flex;
+        align-items: center;
+
+        gap: 22px;
+    }
+
+    .top-item {
+        display: flex;
+        align-items: center;
+
+        gap: 7px;
+
+        opacity: 0.9;
+
+        i {
+            color: $primary;
+
+            font-size: 12px;
+        }
+    }
+
+    @include mobile {
+        display: none;
+    }
+}
+
+// ============================================
+// Main Navbar
+// ============================================
+
+.main-navbar {
+    position: absolute;
+
+    top: 38px;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
+
+    background: $white;
+
+    transition: $transition;
+
+    .container {
+        min-height: 78px;
+
+        @include flex-between;
+    }
+
+    &.scrolled {
+        position: fixed;
+
+        top: 0;
+
+        box-shadow: $shadow-md;
+
+        animation: slideDown 0.3s ease;
+    }
+}
+
+// ============================================
+// Logo
+// ============================================
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 175px;
+
+        @include mobile {
+            width: 145px;
+        }
+    }
+}
+
+// ============================================
+// Navigation
+// ============================================
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    .nav-link {
+        position: relative;
+
+        color: $text-dark;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        padding: 29px 0;
+
+        transition: $transition;
+
+        &::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 19px;
+
+            width: 0;
+            height: 2px;
+
+            background: $primary;
+
+            transition: $transition;
+        }
+
+        &:hover,
+        &.active {
+            color: $primary;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.nav-cta {
+    @include button-base;
+
+    padding: 12px 22px;
+
+    color: $white;
+
+    background: $primary;
+
+    &:hover {
+        color: $white;
+
+        background: $primary-dark;
+    }
+}
+
+// ============================================
+// Mobile Toggle
+// ============================================
+
+.mobile-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: $navy;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    @include mobile {
+        display: flex;
+    }
+}
+
+@include mobile {
+
+    .main-navbar {
+        top: 0;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 15px 20px 25px;
+
+        background: $white;
+
+        box-shadow: $shadow-md;
+
+        &.open {
+            display: flex;
+        }
+
+        .nav-link {
+            width: 100%;
+
+            padding: 13px 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .nav-cta {
+        display: none;
+    }
+}
+
+// ============================================
+// Animation
+// ============================================
+
+@keyframes slideDown {
+
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}

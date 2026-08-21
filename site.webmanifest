@@ -1,0 +1,16 @@
+{
+    "name": "Sunrise Staffing Solution Private Limited",
+    "short_name": "Sunrise",
+    "description": "Sunrise Staffing Solution provides integrated facility management and workforce support services.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#03172b",
+    "icons": [
+        {
+            "src": "/assets/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

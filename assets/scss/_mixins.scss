@@ -1,0 +1,93 @@
+// ============================================
+// SUNRISE WEBSITE - MIXINS
+// ============================================
+
+@mixin container {
+    width: 100%;
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin transition {
+    transition: $transition;
+}
+
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 26px;
+
+    border-radius: $radius-sm;
+
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: $transition;
+}
+
+@mixin section-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: $primary;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+@mixin section-title {
+    margin: 0;
+
+    color: $navy;
+
+    font-size: $heading-md;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+@mixin mobile {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $tablet) and (max-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $laptop) {
+        @content;
+    }
+}
