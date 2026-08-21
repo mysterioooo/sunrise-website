@@ -3668,3 +3668,16 @@ body {
   color: #ffffff;
   transform: translateY(-4px);
 }
+/* ---- Mobile logo & footer fixes (injected) ---- */
+@media (max-width: 768px) {
+  .navbar-logo { background-image: url("../images/logo/sunrise-logo-white.png"); background-repeat: no-repeat; background-size: contain; background-position: left center; display: block; width: 145px; height: 44px; }
+  .navbar-logo img { visibility: hidden; width: 0; height: auto; display: inline-block; }
+  .site-footer .container { padding-left: 20px; padding-right: 20px; }
+  .footer-legal { gap: 12px; flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 360px) {
+  .site-footer .container { padding-left: 16px; padding-right: 16px; }
+}
+.footer-contact span { overflow-wrap: anywhere; word-break: break-word; }
+/* ---- End injection ---- */
+

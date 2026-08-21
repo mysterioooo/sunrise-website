@@ -619,6 +619,9 @@ body {
         flex-shrink: 0;
 
         line-height: 0;
+
+        /* For mobile/dark contexts: show the white SVG logo via background-image
+           and keep the existing <img> in place for desktop/light contexts. */
     }
 
 
@@ -630,6 +633,30 @@ body {
         max-width: 145px;
 
         height: auto;
+
+        /* ensure visible by default on desktop */
+    }
+
+    /* Mobile: use the white SVG logo as a background for better contrast on dark navbars */
+    @include mobile {
+        .navbar-logo {
+            background-image: url("../images/logo/sunrise-logo-white.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left center;
+            /* keep element sizing so layout is unchanged */
+            display: block;
+            width: 145px;
+            height: 44px; /* keeps navbar height intact */
+        }
+
+        /* Hide the raster img visually on mobile; keep it in DOM for accessibility */
+        .navbar-logo img {
+            visibility: hidden;
+            width: 0;
+            height: auto;
+            display: inline-block;
+        }
     }
 
 
@@ -1037,3 +1064,4 @@ body {
         font-size: 12px;
     }
 }
+

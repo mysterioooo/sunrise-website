@@ -36,10 +36,36 @@
 
 .footer-brand {
 
+    /* Replace raster footer logo visually with the white SVG to ensure
+       small descriptor lines are visible on the dark footer background. */
     .footer-logo {
         width: 175px;
 
         margin-bottom: 20px;
+    }
+
+    /* Use the white SVG as a background for the brand block so the
+       small lines render crisply in white on dark backgrounds. Hide the
+       existing <img> visually but keep it for accessibility/semantics. */
+    .footer-logo {
+        display: block;
+    }
+
+    /* insert SVG as background on the brand container (works across viewports) */
+    .footer-brand {
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-size: contain;
+        background-image: url("../images/logo/sunrise-logo-white.png");
+        padding-top: 0; /* keep spacing controlled by grid */
+    }
+
+    /* hide raster image while keeping it in DOM for screen readers */
+    .footer-brand img.footer-logo {
+        visibility: hidden;
+        width: 0;
+        height: auto;
+        display: inline-block;
     }
 
     .footer-description {
@@ -177,6 +203,46 @@
 
         transform: translateY(-3px);
     }
+}
+
+/* Mobile footer container padding to avoid overflow and ensure consistent
+   horizontal spacing on small devices. */
+.site-footer .container {
+width: 100%;
+}
+
+@include mobile {
+.site-footer .container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+}
+
+@media (max-width: 360px) {
+.site-footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+}
+
+/* Ensure contact info wraps cleanly on small devices */
+.footer-contact span {
+overflow-wrap: anywhere;
+word-break: break-word;
+}
+
+/* Footer-legal: allow vertical stacking on small devices */
+@include mobile {
+.footer-bottom .container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.footer-legal {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 }
 
 // ============================================

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" preserveAspectRatio="xMinYMid meet">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap');
+      .sunrise { fill: #d61b23; font-family: 'Outfit', Arial, Helvetica, sans-serif; font-weight: 800; font-size: 160px; }
+      .line1 { fill: #ffffff; font-family: 'Outfit', Arial, Helvetica, sans-serif; font-weight: 700; font-size: 36px; }
+      .line2 { fill: #ffffff; font-family: 'Outfit', Arial, Helvetica, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <!-- Large SUNRISE text -->
+  <text x="20" y="140" class="sunrise">SUNRISE</text>
+
+  <!-- Smaller descriptor lines (white) -->
+  <text x="22" y="190" class="line1">ENTERPRISES</text>
+  <text x="22" y="225" class="line2">FACILITY MANAGEMENT SERVICES</text>
+
+</svg>
