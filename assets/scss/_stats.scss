@@ -23,6 +23,10 @@
 
     box-shadow: $shadow-lg;
 
+    opacity: 0;
+
+    animation: sunriseHeroEnter 0.7s 0.42s ease-out forwards;
+
     @include mobile {
         grid-template-columns: repeat(2, 1fr);
 

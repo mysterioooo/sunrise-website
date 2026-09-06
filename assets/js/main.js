@@ -10,7 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     const revealElements =
-        document.querySelectorAll(".reveal");
+        document.querySelectorAll(
+            ".reveal, .client-page-card, .gallery-item"
+        );
+
+    revealElements.forEach(function (element) {
+
+        element.classList.add("reveal");
+
+    });
 
 
     const reduceMotion = window.matchMedia(
@@ -27,9 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (entry.isIntersecting) {
 
-                            entry.target
-                                .classList
-                                .add("active");
+                            entry.target.classList.add(
+                                "active",
+                                "is-visible"
+                            );
 
                             observer.unobserve(
                                 entry.target
@@ -41,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 },
                 {
-                    threshold: 0.15
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
                 }
             );
 
