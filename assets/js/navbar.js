@@ -144,33 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function (e) {
 
-            // Prevent the document click handler from immediately closing the menu
             e.stopPropagation();
 
             toggleMenu();
 
-        }
-    );
-
-    // Ensure touch devices don't trigger the document click handler when tapping the toggle
-    // Also handle touch/pointer directly to make toggling reliable on iOS Safari/Chrome
-    mobileToggle.addEventListener(
-        "touchstart",
-        function (e) {
-            e.stopPropagation();
-            // Toggle immediately on touchstart for better responsiveness on some iOS browsers
-            toggleMenu();
-        },
-        { passive: true }
-    );
-
-    // Pointer events fallback (for devices that use pointer events)
-    mobileToggle.addEventListener(
-        "pointerdown",
-        function (e) {
-            e.stopPropagation();
-            // Do not prevent default; just toggle
-            toggleMenu();
         }
     );
 

@@ -665,7 +665,7 @@ body {
     max-height: calc(100dvh - 110px);
     margin: 0;
     padding: 12px 24px 24px;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
