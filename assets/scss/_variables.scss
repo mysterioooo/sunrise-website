@@ -1,37 +1,52 @@
 // ============================================
-// SUNRISE WEBSITE - GLOBAL VARIABLES
+// SUNRISE WEBSITE - GLOBAL VARIABLES & TOKENS
 // ============================================
 
 // -----------------------------
-// Brand Colors
+// Refined Master Brand Palette
 // -----------------------------
 
-$primary: #e21b23;
-$primary-dark: #b9141b;
-$primary-light: #ff4a50;
+$midnight-navy:   #071B2D; // Deep midnight navy
+$corporate-navy:  #0B2742; // Rich corporate navy
+$primary-crimson: #D7192D; // Primary crimson
+$ruby-red:        #B5122A; // Premium ruby red
+$coral-accent:    #F05A67; // Soft coral accent
+$warm-white:      #F7F8FA; // Warm off-white
+$pure-white:      #FFFFFF; // Pure white
+$slate-text:      #596579; // Slate body text
+$subtle-border:   #E3E8EF; // Subtle borders
 
-$navy: #06213d;
-$navy-dark: #03172b;
-$navy-light: #0b3157;
+// -----------------------------
+// Semantic Color Aliases
+// -----------------------------
 
-$white: #ffffff;
-$black: #000000;
+$primary:         $primary-crimson;
+$primary-dark:    $ruby-red;
+$primary-light:   $coral-accent;
 
-$background: #f7f9fc;
-$background-light: #fbfcfe;
+$navy:            $corporate-navy;
+$navy-dark:       $midnight-navy;
+$navy-light:      #12365A;
 
-$text-dark: #172033;
-$text: #344054;
-$text-muted: #667085;
-$text-light: #98a2b3;
+$white:           $pure-white;
+$black:           #000000;
 
-$border: #e4e7ec;
+$background:       $warm-white;
+$background-light: $pure-white;
+
+$text-dark:       $midnight-navy;
+$text:            $slate-text;
+$text-muted:      #6E7D93;
+$text-light:      #98A2B3;
+
+$border:          $subtle-border;
+$border-dark:     #CCD6E2;
 
 // -----------------------------
 // Typography
 // -----------------------------
 
-$font-primary: "Outfit", sans-serif;
+$font-primary: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 $font-xs: 12px;
 $font-sm: 14px;
@@ -39,10 +54,10 @@ $font-md: 16px;
 $font-lg: 18px;
 $font-xl: 20px;
 
-$heading-sm: 28px;
-$heading-md: 38px;
-$heading-lg: 52px;
-$heading-xl: 64px;
+$heading-sm: 26px;
+$heading-md: 36px;
+$heading-lg: 48px;
+$heading-xl: 60px;
 
 // -----------------------------
 // Layout
@@ -50,37 +65,40 @@ $heading-xl: 64px;
 
 $container-width: 1200px;
 
-$section-padding: 100px;
-$section-padding-mobile: 65px;
+$section-padding: 96px;
+$section-padding-mobile: 60px;
 
 // -----------------------------
 // Border Radius
 // -----------------------------
 
+$radius-xs: 4px;
 $radius-sm: 8px;
 $radius-md: 14px;
-$radius-lg: 24px;
-$radius-xl: 32px;
+$radius-lg: 20px;
+$radius-xl: 28px;
+$radius-full: 9999px;
 
 // -----------------------------
 // Shadows
 // -----------------------------
 
-$shadow-sm: 0 4px 15px rgba(6, 33, 61, 0.06);
-
-$shadow-md: 0 10px 35px rgba(6, 33, 61, 0.10);
-
-$shadow-lg: 0 20px 60px rgba(6, 33, 61, 0.15);
+$shadow-sm:   0 2px 8px rgba(7, 27, 45, 0.05);
+$shadow-md:   0 8px 24px rgba(7, 27, 45, 0.08);
+$shadow-lg:   0 16px 40px rgba(7, 27, 45, 0.12);
+$shadow-glow: 0 6px 24px rgba(215, 25, 45, 0.22);
 
 // -----------------------------
-// Transitions
+// Transitions & Easings
 // -----------------------------
 
-$transition-fast: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+$ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 
-$transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+$transition-fast: color 0.18s $ease-out-smooth, background-color 0.18s $ease-out-smooth, border-color 0.18s $ease-out-smooth, transform 0.18s $ease-out-smooth, box-shadow 0.18s $ease-out-smooth, opacity 0.18s $ease-out-smooth;
 
-$transition-slow: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease;
+$transition: color 0.28s $ease-out-smooth, background-color 0.28s $ease-out-smooth, border-color 0.28s $ease-out-smooth, transform 0.28s $ease-out-smooth, box-shadow 0.28s $ease-out-smooth, opacity 0.28s $ease-out-smooth;
+
+$transition-slow: color 0.45s $ease-out-smooth, background-color 0.45s $ease-out-smooth, border-color 0.45s $ease-out-smooth, transform 0.45s $ease-out-smooth, box-shadow 0.45s $ease-out-smooth, opacity 0.45s $ease-out-smooth;
 
 // -----------------------------
 // Breakpoints

@@ -1,10 +1,9 @@
 // ============================================
-// SUNRISE - NAVBAR
+// SUNRISE - NAVBAR & TOP BAR
 // ============================================
 
-
 // ============================================
-// GLOBAL RESET / OVERFLOW
+// GLOBAL RESET / OVERFLOW SAFETY
 // ============================================
 
 html,
@@ -14,129 +13,73 @@ body {
     overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-
 // ============================================
 // TOP BAR
 // ============================================
 
 .top-bar {
     position: relative;
-
     width: 100%;
-
-    background: $navy;
-
+    background: $midnight-navy;
     color: $white;
-
     font-size: 12px;
-
     z-index: 1001;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     .container {
-        min-height: 38px;
-
+        min-height: 40px;
         display: flex;
-
         align-items: center;
-
         justify-content: space-between;
-
         gap: 20px;
     }
 }
 
-
-// ============================================
-// TOP BAR LEFT / RIGHT
-// ============================================
-
 .top-left,
 .top-right {
     display: flex;
-
     align-items: center;
-
-    gap: 25px;
+    gap: 24px;
 }
-
-
-// ============================================
-// TOP BAR ITEM
-// ============================================
 
 .top-item {
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
     color: rgba(255, 255, 255, 0.88);
-
     font-size: 12px;
-
     font-weight: 500;
-
     white-space: nowrap;
-
     text-decoration: none;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    transition: $transition-fast;
 
     i {
-        color: $primary;
-
+        color: $coral-accent;
         font-size: 12px;
-
-        transition:
-            color 0.25s ease,
-            transform 0.25s ease;
+        transition: $transition-fast;
     }
 }
 
-
-// ============================================
-// CLICKABLE TOP ITEMS
-// ============================================
-
 .top-item-link {
     text-decoration: none;
-
     cursor: pointer;
 
     &:hover {
         color: $white;
-
         transform: translateY(-1px);
 
         i {
             color: $white;
-
-            transform: scale(1.12);
+            transform: scale(1.15);
         }
     }
 
     &:focus-visible {
         outline: 2px solid $primary;
-
-        outline-offset: 4px;
-
-        border-radius: 3px;
+        outline-offset: 3px;
+        border-radius: 4px;
     }
 }
-
-
-// ============================================
-// WHATSAPP
-// ============================================
 
 .whatsapp-top-link {
     &:hover {
@@ -148,97 +91,133 @@ body {
     }
 }
 
-
-// ============================================
-// TABLET TOP BAR
-// ============================================
-
+// Tablet Top Bar
 @include tablet {
-
     .top-bar {
-
         .container {
-            min-height: 36px;
-
+            min-height: 38px;
             gap: 15px;
         }
     }
 
     .top-left,
     .top-right {
-        gap: 15px;
+        gap: 16px;
     }
 
     .top-item {
         font-size: 11px;
     }
+
+    // Hide working hours on tablet & mobile
+    .top-item[aria-label*="working hours"],
+    .top-item[aria-label*="Working hours"] {
+        display: none !important;
+    }
 }
 
+// Mobile Top Bar
+@include mobile {
+    .top-bar {
+        .container {
+            min-height: 38px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .top-left {
+        display: none;
+    }
+
+    .top-right {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .top-item {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .top-item-link {
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .top-right .top-item:first-child {
+        padding-right: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    // Hide working hours on mobile
+    .top-item[aria-label*="working hours"],
+    .top-item[aria-label*="Working hours"] {
+        display: none !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .top-item {
+        font-size: 10px;
+    }
+
+    .top-right {
+        gap: 12px;
+    }
+
+    .top-right .top-item:first-child {
+        padding-right: 12px;
+    }
+}
 
 // ============================================
-// MAIN NAVBAR
+// MAIN NAVBAR (Sticky & Butter-Smooth)
 // ============================================
 
 .main-navbar {
-    position: relative;
-
-    width: 100%;
-
-    height: 88px;
-
-    background: $white;
-
-    z-index: 1000;
-
-    transition:
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-}
-
-
-// ============================================
-// STICKY / SCROLLED NAVBAR
-// ============================================
-
-.main-navbar.scrolled {
-    position: fixed;
-
+    position: sticky;
     top: 0;
-
-    left: 0;
-
-    right: 0;
-
-    box-shadow: 0 8px 25px rgba(3, 23, 43, 0.10);
+    width: 100%;
+    height: 88px;
+    background: $white;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    transition:
+        background-color 0.28s $ease-out-smooth,
+        box-shadow 0.28s $ease-out-smooth,
+        border-color 0.28s $ease-out-smooth;
 }
 
-
-// ============================================
-// NAVBAR CONTAINER
-// ============================================
+// Scrolled sticky navbar with subtle blur and shadow (no layout shift!)
+.main-navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 20px rgba(7, 27, 45, 0.08);
+    border-bottom-color: $subtle-border;
+}
 
 .main-navbar .container {
     width: 100%;
-
     height: 100%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    gap: 20px;
+    gap: 24px;
 }
 
 .main-navbar .container > nav {
     display: flex;
-
     flex: 1;
-
     min-width: 0;
 }
-
 
 // ============================================
 // LOGO
@@ -246,826 +225,368 @@ body {
 
 .navbar-logo {
     display: flex;
-
     align-items: center;
-
     flex-shrink: 0;
-
     text-decoration: none;
-
     line-height: 0;
+
+    img {
+        display: block;
+        width: 175px;
+        max-width: 175px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.2s $ease-out-smooth;
+    }
+
+    &:hover img {
+        transform: scale(1.02);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
 }
-
-.navbar-logo img {
-    display: block;
-
-    width: 175px;
-
-    max-width: 175px;
-
-    height: auto;
-}
-
 
 // ============================================
-// NAVIGATION
+// DESKTOP NAVIGATION
 // ============================================
 
 .nav-menu {
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    gap: clamp(16px, 2vw, 30px);
-
+    gap: clamp(16px, 2.2vw, 32px);
     flex: 1;
-
     margin: 0;
-
     padding: 0;
-
     list-style: none;
+
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 88px;
+        padding: 0;
+        color: $midnight-navy;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 0.25s $ease-out-smooth;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            width: 100%;
+            height: 2.5px;
+            background: linear-gradient(90deg, $primary-crimson, $coral-accent);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.25s $ease-out-smooth;
+        }
+
+        &:hover,
+        &.active {
+            color: $primary-crimson;
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+
+        &:focus-visible {
+            outline: 2px solid $primary;
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+    }
 }
 
-
 // ============================================
-// NAVIGATION ITEM
-// ============================================
-
-.nav-menu li {
-    margin: 0;
-
-    padding: 0;
-
-    list-style: none;
-}
-
-
-// ============================================
-// NAVIGATION LINK
-// ============================================
-
-.nav-menu .nav-link {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    height: 88px;
-
-    padding: 0;
-
-    color: $text-dark;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    line-height: 1;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    transition: color 0.25s ease;
-}
-
-
-// ============================================
-// NAVIGATION ACTIVE LINE
-// ============================================
-
-.nav-menu .nav-link::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    bottom: 19px;
-
-    width: 100%;
-
-    height: 2px;
-
-    background: $primary;
-
-    transform: scaleX(0);
-    transform-origin: left center;
-
-    transition: transform 0.25s ease;
-}
-
-
-// ============================================
-// NAVIGATION HOVER / ACTIVE
-// ============================================
-
-.nav-menu .nav-link:hover,
-.nav-menu .nav-link.active {
-    color: $primary;
-}
-
-.nav-menu .nav-link:hover::after,
-.nav-menu .nav-link.active::after {
-    transform: scaleX(1);
-}
-
-
-// ============================================
-// GET A QUOTE BUTTON
+// GET A QUOTE CTA BUTTON
 // ============================================
 
 .nav-cta {
     @include button-base;
-
     flex-shrink: 0;
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
-    padding: 13px 22px;
-
+    gap: 8px;
+    padding: 12px 22px;
     color: $white;
-
     background: $primary;
-
-    border-radius: 7px;
-
+    border-radius: $radius-sm;
     font-size: 13px;
-
     font-weight: 700;
-
     line-height: 1;
-
     white-space: nowrap;
-
     text-decoration: none;
+    box-shadow: 0 4px 14px rgba(215, 25, 45, 0.2);
+    transition: $transition-fast;
 
-    transition:
-        background-color 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+    &:hover {
+        color: $white;
+        background: $primary-dark;
+        transform: translateY(-1px);
+        box-shadow: $shadow-glow;
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
 }
-
-
-.nav-cta:hover {
-    color: $white;
-
-    background: $primary-dark;
-
-    transform: translateY(-1px);
-}
-
 
 // ============================================
-// MOBILE TOGGLE
+// MOBILE TOGGLE (HAMBURGER)
 // ============================================
 
 .mobile-toggle {
     display: none;
-
     width: 44px;
-
     height: 44px;
-
     padding: 0;
-
     align-items: center;
-
     justify-content: center;
-
     flex-shrink: 0;
-
     border: none;
-
     outline: none;
-
-    color: $navy;
-
+    color: $midnight-navy;
     background: transparent;
-
     font-size: 22px;
-
     line-height: 1;
-
     cursor: pointer;
+    border-radius: $radius-sm;
+    transition: color 0.2s $ease-out-smooth, background-color 0.2s $ease-out-smooth;
 
-    transition: color 0.25s ease;
+    &:hover {
+        color: $primary;
+        background: rgba(7, 27, 45, 0.04);
+    }
+
+    &:active {
+        transform: scale(0.94);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+    }
 }
-
-
-.mobile-toggle:hover {
-    color: $primary;
-}
-
-.mobile-toggle:active {
-    transform: scale(0.94);
-}
-
-
-.mobile-toggle:focus-visible {
-    outline: 2px solid $primary;
-
-    outline-offset: 3px;
-
-    border-radius: 4px;
-}
-
 
 // ============================================
-// MOBILE TOP BAR
+// TABLET BREAKPOINTS (768px - 992px)
 // ============================================
 
-@include mobile {
+@include tablet {
+    .main-navbar .container {
+        gap: 16px;
+    }
 
-    .top-bar {
+    .navbar-logo img {
+        width: 150px;
+        max-width: 150px;
+    }
 
-        .container {
-            min-height: 40px;
+    .nav-menu {
+        gap: 16px;
 
-            padding: 0 18px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
+        .nav-link {
+            font-size: 13px;
         }
     }
 
-
-    .top-left {
-        display: flex;
+    .nav-cta {
+        padding: 10px 16px;
+        font-size: 12px;
     }
-
-
-    .top-right {
-        width: 100%;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 22px;
-    }
-
-
-    .top-item {
-        font-size: 11px;
-
-        gap: 6px;
-    }
-
-
-    .top-item-link {
-        min-height: 38px;
-
-        display: inline-flex;
-
-        align-items: center;
-    }
-
-
-    .top-right .top-item:first-child {
-        padding-right: 22px;
-
-        border-right: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
 }
 
+// Narrow laptop screen adjustment (993px - 1100px)
+@media (min-width: 993px) and (max-width: 1100px) {
+    .main-navbar .container {
+        gap: 14px;
+    }
+
+    .navbar-logo img {
+        width: 150px;
+        max-width: 150px;
+    }
+
+    .nav-menu {
+        gap: 14px;
+
+        .nav-link {
+            font-size: 13px;
+        }
+    }
+
+    .nav-cta {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
 
 // ============================================
-// MOBILE NAVBAR
+// MOBILE BREAKPOINT (<= 768px)
 // ============================================
 
 @include mobile {
-
-    // ----------------------------------------
-    // Main Navbar
-    // ----------------------------------------
-
     .main-navbar {
-        position: relative;
-
-        width: 100%;
-
-        height: 70px;
-
-        z-index: 1000;
+        height: 72px;
     }
-
-
-    // ----------------------------------------
-    // Scrolled Navbar
-    // ----------------------------------------
-
-    .main-navbar.scrolled {
-        position: fixed;
-
-        top: 0;
-
-        left: 0;
-
-        right: 0;
-
-        box-shadow: 0 8px 25px rgba(3, 23, 43, 0.12);
-    }
-
-
-    // ----------------------------------------
-    // Navbar Container
-    // ----------------------------------------
 
     .main-navbar .container {
-        width: 100%;
-
-        height: 70px;
-
+        height: 72px;
         padding-left: 20px;
-
         padding-right: 20px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 15px;
+        gap: 12px;
     }
 
     .main-navbar .container > nav {
         display: block;
-
         flex: none;
     }
-
-
-    // ----------------------------------------
-    // Logo
-    // ----------------------------------------
 
     .navbar-logo {
         display: flex;
-
         align-items: center;
 
-        flex-shrink: 0;
-
-        line-height: 0;
-
-        /* For mobile/dark contexts: show the white SVG logo via background-image
-           and keep the existing <img> in place for desktop/light contexts. */
-    }
-
-
-    .navbar-logo img {
-        display: block;
-
-        width: 145px;
-
-        max-width: 145px;
-
-        height: auto;
-
-        /* ensure visible by default on desktop */
-    }
-
-    /* Mobile: use the white SVG logo as a background for better contrast on dark navbars */
-    @include mobile {
-        .navbar-logo {
-            background-image: url("../images/logo/sunrise-logo-white.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: left center;
-            /* keep element sizing so layout is unchanged */
+        img {
             display: block;
-            width: 145px;
-            height: 44px; /* keeps navbar height intact */
-        }
-
-        /* Hide the raster img visually on mobile; keep it in DOM for accessibility */
-        .navbar-logo img {
-            visibility: hidden;
-            width: 0;
+            visibility: visible;
+            width: 140px;
+            max-width: 140px;
             height: auto;
-            display: inline-block;
         }
     }
-
-
-    // ----------------------------------------
-    // Hide Desktop CTA
-    // ----------------------------------------
 
     .nav-cta {
         display: none;
     }
 
-
-    // ----------------------------------------
-    // Hamburger Toggle
-    // ----------------------------------------
-
     .mobile-toggle {
-        width: 44px;
-
-        height: 44px;
-
-        margin-left: auto;
-
-        padding: 0;
-
         display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        flex-shrink: 0;
-
-        border: none;
-
-        outline: none;
-
-        color: $navy;
-
-        background: transparent;
-
-        font-size: 22px;
-
-        line-height: 1;
-
-        cursor: pointer;
-
-        position: relative;
-
+        margin-left: auto;
         z-index: 1005;
     }
 
-
-    .mobile-toggle:hover {
-        color: $primary;
-    }
-
-
-    .mobile-toggle:focus-visible {
-        outline: 2px solid $primary;
-
-        outline-offset: 3px;
-
-        border-radius: 4px;
-    }
-
-
-    // ----------------------------------------
-    // Mobile Navigation Menu
-    // ----------------------------------------
-
+    // Mobile Navigation Drawer / Dropdown
     .nav-menu {
         position: absolute;
-
         top: 100%;
-
         left: 0;
-
         right: 0;
-
         width: 100%;
-
-        max-height: calc(100dvh - 110px);
-
+        max-height: calc(100vh - 110px);
         margin: 0;
-
-        padding: 12px 24px 24px;
-
+        padding: 12px 20px 24px;
         display: flex;
-
         flex-direction: column;
-
         align-items: stretch;
-
         justify-content: flex-start;
-
         gap: 0;
-
         flex: none;
-
         overflow-y: auto;
-
         background: $white;
-
-        box-shadow: 0 15px 35px rgba(3, 23, 43, 0.18);
-
+        border-top: 1px solid $subtle-border;
+        box-shadow: 0 16px 36px rgba(7, 27, 45, 0.14);
         z-index: 1004;
-
         opacity: 0;
-
         visibility: hidden;
-
         pointer-events: none;
-
         transform: translateY(-8px);
-
         transition:
-            opacity 0.22s ease,
-            transform 0.22s ease,
-            visibility 0s linear 0.22s;
-    }
-
-
-    // ----------------------------------------
-    // Open Mobile Menu
-    // ----------------------------------------
-
-    .nav-menu.open {
-        opacity: 1;
-
-        visibility: visible;
-
-        pointer-events: auto;
-
-        transform: translateY(0);
-
-        transition-delay: 0s;
-
-        will-change: transform, opacity;
-    }
-
-
-    // ----------------------------------------
-    // Mobile Menu Items
-    // ----------------------------------------
-
-    .nav-menu li {
-        width: 100%;
-
-        margin: 0;
-
-        padding: 0;
-
-        list-style: none;
-    }
-
-
-    // ----------------------------------------
-    // Mobile Navigation Links
-    // ----------------------------------------
-
-    .nav-menu .nav-link {
-        position: relative;
-
-        width: 100%;
-
-        min-height: 50px;
-
-        height: auto;
-
-        padding: 15px 4px;
-
-        display: flex;
-
-        align-items: center;
-
-        color: $text-dark;
-
-        background: transparent;
-
-        font-size: 15px;
-
-        font-weight: 600;
-
-        line-height: 1.4;
-
-        text-decoration: none;
-
-        border-bottom: 1px solid rgba(3, 23, 43, 0.08);
-    }
-
-
-    // ----------------------------------------
-    // Remove Desktop Active Line
-    // ----------------------------------------
-
-    .nav-menu .nav-link::after {
-        display: none;
-    }
-
-
-    // ----------------------------------------
-    // Mobile Hover
-    // ----------------------------------------
-
-    .nav-menu .nav-link:hover {
-        color: $primary;
-    }
-
-
-    // ----------------------------------------
-    // Mobile Active
-    // ----------------------------------------
-
-    .nav-menu .nav-link.active {
-        color: $primary;
-    }
-
-
-    // ----------------------------------------
-    // Menu Shadow / Last Item
-    // ----------------------------------------
-
-    .nav-menu li:last-child .nav-link {
-        border-bottom: none;
-    }
-
-}
-
-
-// ============================================
-// TABLET NAVBAR
-// ============================================
-
-@include tablet {
-
-    .main-navbar .container {
-        gap: 20px;
-    }
-
-
-    .navbar-logo img {
-        width: 155px;
-
-        max-width: 155px;
-    }
-
-
-    .nav-menu {
-        gap: 20px;
-    }
-
-
-    .nav-menu .nav-link {
-        font-size: 13px;
-    }
-
-
-    .nav-cta {
-        padding: 11px 17px;
-
-        font-size: 12px;
-    }
-
-}
-
-
-// ============================================
-// MOBILE - SMALL DEVICES
-// ============================================
-
-@media (max-width: 480px) {
-
-    .top-bar {
-
-        .container {
-            padding-left: 12px;
-
-            padding-right: 12px;
+            opacity 0.24s $ease-out-smooth,
+            transform 0.24s $ease-out-smooth,
+            visibility 0s linear 0.24s;
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+
+        li {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-link {
+            position: relative;
+            width: 100%;
+            min-height: 50px;
+            height: auto;
+            padding: 14px 8px;
+            display: flex;
+            align-items: center;
+            color: $midnight-navy;
+            background: transparent;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+            border-bottom: 1px solid rgba(7, 27, 45, 0.06);
+
+            &::after {
+                display: none;
+            }
+
+            &:hover,
+            &.active {
+                color: $primary-crimson;
+                padding-left: 12px;
+            }
+        }
+
+        li:last-child .nav-link {
+            border-bottom: none;
         }
     }
+}
 
-
-    .top-right {
-        gap: 14px;
-    }
-
-
-    .top-item {
-        font-size: 10px;
-    }
-
-
-    .top-right .top-item:first-child {
-        padding-right: 14px;
-    }
-
-
+@media (max-width: 480px) {
     .main-navbar .container {
         padding-left: 16px;
-
         padding-right: 16px;
     }
 
-
     .navbar-logo img {
-        width: 135px;
-
-        max-width: 135px;
+        width: 130px;
+        max-width: 130px;
     }
-
 
     .mobile-toggle {
         width: 42px;
-
         height: 42px;
-
-        font-size: 21px;
+        font-size: 20px;
     }
-
-
-    .nav-menu {
-        padding-left: 20px;
-
-        padding-right: 20px;
-    }
-
 }
 
-
-// ============================================
-// MOBILE - VERY SMALL DEVICES
-// ============================================
-
 @media (max-width: 360px) {
-
-    .top-item {
-        font-size: 9px;
-    }
-
-
-    .top-right {
-        gap: 10px;
-    }
-
-
-    .top-right .top-item:first-child {
-        padding-right: 10px;
-    }
-
-
-    .navbar-logo img {
-        width: 125px;
-
-        max-width: 125px;
-    }
-
-
     .main-navbar .container {
         padding-left: 12px;
-
         padding-right: 12px;
     }
 
-}
-
-
-// ============================================
-// NAVBAR ANIMATION
-// ============================================
-
-@keyframes slideDown {
-
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-
-}
-
-@media (min-width: 993px) and (max-width: 1100px) {
-
-    .main-navbar .container {
-        gap: 14px;
-    }
-
     .navbar-logo img {
-        width: 155px;
-        max-width: 155px;
-    }
-
-    .nav-menu {
-        gap: 14px;
-    }
-
-    .nav-menu .nav-link {
-        font-size: 13px;
-    }
-
-    .nav-cta {
-        padding: 11px 16px;
-        font-size: 12px;
+        width: 120px;
+        max-width: 120px;
     }
 }
-

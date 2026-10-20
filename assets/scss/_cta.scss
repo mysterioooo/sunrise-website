@@ -1,138 +1,131 @@
 // ============================================
-// SUNRISE - CTA
+// SUNRISE - CALL TO ACTION SECTION
 // ============================================
 
 .cta-section {
     position: relative;
-
-    padding: 65px 0;
-
-    background: $primary;
-
+    padding: 70px 0;
+    background: linear-gradient(135deg, $primary-crimson 0%, $ruby-red 100%);
     overflow: hidden;
 
     &::before {
         content: "";
-
         position: absolute;
-
-        width: 350px;
-        height: 350px;
-
-        right: -120px;
-        top: -180px;
-
-        border: 1px solid rgba(255, 255, 255, 0.12);
-
+        width: 380px;
+        height: 380px;
+        right: -100px;
+        top: -160px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 50%;
+        pointer-events: none;
     }
 
     &::after {
         content: "";
-
         position: absolute;
-
-        width: 220px;
-        height: 220px;
-
-        right: -40px;
-        top: -110px;
-
-        border: 1px solid rgba(255, 255, 255, 0.1);
-
+        width: 240px;
+        height: 240px;
+        right: -30px;
+        top: -90px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
         border-radius: 50%;
+        pointer-events: none;
+    }
+
+    @include mobile {
+        padding: 55px 0;
     }
 }
 
 .cta-wrapper {
     position: relative;
-
     z-index: 2;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    gap: 35px;
+    gap: 36px;
 
     @include mobile {
         flex-direction: column;
-
         align-items: flex-start;
+        gap: 24px;
     }
 }
 
 .cta-content {
-
     h2 {
         margin-bottom: 8px;
-
         color: $white;
-
-        font-size: 28px;
-
+        font-size: 30px;
         font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.4px;
+
+        @include mobile {
+            font-size: 24px;
+        }
     }
 
     p {
         margin: 0;
-
-        color: rgba(255, 255, 255, 0.8);
-
+        color: rgba(255, 255, 255, 0.90);
         font-size: 15px;
+        line-height: 1.6;
     }
 }
 
 .cta-icon {
-    width: 55px;
-    height: 55px;
-
-    margin-bottom: 15px;
-
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-
     color: $white;
-
-    font-size: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    font-size: 22px;
 }
 
 .cta-button {
     flex-shrink: 0;
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 10px;
-
-    padding: 15px 27px;
-
+    padding: 16px 28px;
     border-radius: $radius-sm;
-
-    color: $primary;
-
+    color: $primary-crimson;
     background: $white;
-
     font-size: 14px;
-
     font-weight: 700;
-
-    transition: $transition;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(7, 27, 45, 0.15);
+    transition: $transition-fast;
 
     &:hover {
-        color: $primary-dark;
-
+        color: $ruby-red;
         transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(7, 27, 45, 0.22);
+    }
 
-        box-shadow: $shadow-md;
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $white;
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+
+    @include mobile {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 24px;
     }
 }

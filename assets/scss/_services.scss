@@ -1,5 +1,5 @@
 // ============================================
-// SUNRISE - SERVICES
+// SUNRISE - SERVICES SECTION
 // ============================================
 
 .services-section {
@@ -8,47 +8,35 @@
 
 .service-card {
     position: relative;
-
     height: 100%;
-
-    padding: 32px 28px;
-
-    border: 1px solid $border;
-
+    padding: 34px 28px;
+    border: 1px solid $subtle-border;
     border-radius: $radius-md;
-
     background: $white;
-
-    transition: $transition;
-
+    box-shadow: $shadow-sm;
+    transition:
+        transform 0.28s $ease-out-smooth,
+        box-shadow 0.28s $ease-out-smooth,
+        border-color 0.28s $ease-out-smooth;
     overflow: hidden;
 
     &::before {
         content: "";
-
         position: absolute;
-
         top: 0;
         left: 0;
-
         width: 100%;
         height: 3px;
-
-        background: $primary;
-
+        background: linear-gradient(90deg, $primary-crimson, $coral-accent);
         transform: scaleX(0);
-
         transform-origin: left;
-
-        transition: $transition;
+        transition: transform 0.28s $ease-out-smooth;
     }
 
     &:hover {
-        transform: translateY(-8px);
-
-        border-color: transparent;
-
-        box-shadow: $shadow-lg;
+        transform: translateY(-6px);
+        border-color: rgba(215, 25, 45, 0.22);
+        box-shadow: 0 14px 36px rgba(7, 27, 45, 0.09);
 
         &::before {
             transform: scaleX(1);
@@ -56,107 +44,99 @@
 
         .service-icon {
             color: $white;
-
             background: $primary;
-
-            transform: scale(1.05);
+            transform: scale(1.06) rotate(-2deg);
+            box-shadow: 0 6px 18px rgba(215, 25, 45, 0.25);
         }
 
-        .service-link i {
+        .service-link i,
+        a i {
             transform: translateX(4px);
         }
+    }
+
+    @include mobile {
+        padding: 26px 20px;
     }
 }
 
 .service-icon {
     width: 58px;
     height: 58px;
-
-    margin-bottom: 25px;
-
+    margin-bottom: 24px;
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     border-radius: 14px;
-
     color: $primary;
-
-    background: rgba(226, 27, 35, 0.08);
-
+    background: rgba(215, 25, 45, 0.08);
+    border: 1px solid rgba(215, 25, 45, 0.14);
     font-size: 22px;
-
-    transition: $transition;
+    transition:
+        color 0.25s $ease-out-smooth,
+        background-color 0.25s $ease-out-smooth,
+        transform 0.25s $ease-out-smooth,
+        box-shadow 0.25s $ease-out-smooth;
 }
 
 .service-card h3 {
     margin-bottom: 12px;
-
-    color: $navy;
-
+    color: $midnight-navy;
     font-size: 20px;
-
     font-weight: 700;
+    line-height: 1.3;
 }
 
 .service-card p {
-    min-height: 82px;
-
+    min-height: 76px;
     margin-bottom: 22px;
-
-    color: $text-muted;
-
+    color: $slate-text;
     font-size: 14px;
-
     line-height: 1.7;
+
+    @include mobile {
+        min-height: auto;
+        margin-bottom: 18px;
+    }
 }
 
 .service-link,
 .service-card a {
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
-    color: $primary;
-
+    color: $primary-crimson;
     font-size: 13px;
-
     font-weight: 700;
-
+    letter-spacing: 0.3px;
     text-transform: uppercase;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    transition: color 0.2s $ease-out-smooth;
 
     i {
         font-size: 11px;
-
-        transition: transform 0.25s ease;
+        transition: transform 0.2s $ease-out-smooth;
     }
 
     &:hover {
-        color: $primary-dark;
+        color: $ruby-red;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+        border-radius: 3px;
     }
 }
 
-
 // ============================================
-// View All Services
+// Header Action / View All Services
 // ============================================
 
 .services-header-action {
     display: flex;
-
     align-items: flex-end;
-
     justify-content: space-between;
-
     gap: 30px;
-
     margin-bottom: 50px;
 
     .section-header {
@@ -167,35 +147,37 @@
         display: block;
 
         .section-header {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
     }
 }
 
 .view-all-services {
     flex-shrink: 0;
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
-
-    color: $primary;
-
+    padding: 8px 0;
+    color: $primary-crimson;
     font-size: 14px;
-
     font-weight: 700;
+    transition: color 0.2s $ease-out-smooth;
 
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    i {
+        transition: transform 0.2s $ease-out-smooth;
+    }
 
     &:hover {
-        color: $primary-dark;
+        color: $ruby-red;
 
         i {
             transform: translateX(4px);
         }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+        border-radius: 4px;
     }
 }

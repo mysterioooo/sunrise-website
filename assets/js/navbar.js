@@ -1,5 +1,5 @@
 // ============================================
-// SUNRISE - NAVBAR
+// SUNRISE - NAVBAR JAVASCRIPT
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,257 +8,114 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileToggle = document.getElementById("mobileToggle");
     const navMenu = document.getElementById("navMenu");
 
-
-    // --------------------------------------------
-    // Safety check
-    // --------------------------------------------
-
     if (!navbar) {
         return;
     }
 
-
     // --------------------------------------------
-    // Sticky Navbar
+    // Sticky Scrolled Navbar State
     // --------------------------------------------
-
     let ticking = false;
 
     function updateNavbar() {
-
-        if (window.scrollY > 50) {
-
+        if (window.scrollY > 40) {
             navbar.classList.add("scrolled");
-
         } else {
-
             navbar.classList.remove("scrolled");
-
         }
-
         ticking = false;
-
     }
-
 
     window.addEventListener(
         "scroll",
         function () {
-
             if (!ticking) {
-
                 window.requestAnimationFrame(updateNavbar);
-
                 ticking = true;
-
             }
-
         },
         { passive: true }
     );
 
-
     updateNavbar();
 
-
     // --------------------------------------------
-    // Mobile Menu
+    // Mobile Navigation Menu Toggle
     // --------------------------------------------
-
     if (!mobileToggle || !navMenu) {
         return;
     }
 
-
     const icon = mobileToggle.querySelector("i");
 
-
     function openMenu() {
-
         navMenu.classList.add("open");
-
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        mobileToggle.setAttribute(
-            "aria-label",
-            "Close navigation"
-        );
-
+        mobileToggle.setAttribute("aria-expanded", "true");
+        mobileToggle.setAttribute("aria-label", "Close navigation");
 
         if (icon) {
-
             icon.classList.remove("fa-bars");
-
             icon.classList.add("fa-xmark");
-
         }
-
     }
-
 
     function closeMenu() {
-
         navMenu.classList.remove("open");
-
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        mobileToggle.setAttribute(
-            "aria-label",
-            "Open navigation"
-        );
-
+        mobileToggle.setAttribute("aria-expanded", "false");
+        mobileToggle.setAttribute("aria-label", "Open navigation");
 
         if (icon) {
-
             icon.classList.remove("fa-xmark");
-
             icon.classList.add("fa-bars");
-
         }
-
     }
-
 
     function toggleMenu() {
-
         if (navMenu.classList.contains("open")) {
-
             closeMenu();
-
         } else {
-
             openMenu();
-
         }
-
     }
 
+    mobileToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleMenu();
+    });
 
-    mobileToggle.addEventListener(
-        "click",
-        function (e) {
-
-            e.stopPropagation();
-
-            toggleMenu();
-
-        }
-    );
-
-
-    // --------------------------------------------
-    // Close menu after clicking a link
-    // --------------------------------------------
-
-    navMenu
-        .querySelectorAll(".nav-link")
-        .forEach(function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    closeMenu();
-
-                }
-            );
-
+    // Close menu when clicking any nav-link
+    navMenu.querySelectorAll(".nav-link").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeMenu();
         });
+    });
 
-
-    // --------------------------------------------
-    // Close menu when clicking outside
-    // --------------------------------------------
-
-    document.addEventListener(
-        "click",
-        function (event) {
-
-            const clickedInsideNavbar =
-                navbar.contains(event.target);
-
-            if (!clickedInsideNavbar) {
-
-                closeMenu();
-
-            }
-
+    // Close menu when clicking outside navbar
+    document.addEventListener("click", function (event) {
+        if (!navbar.contains(event.target)) {
+            closeMenu();
         }
-    );
+    });
 
-
-    // --------------------------------------------
-    // Close menu on Escape
-    // --------------------------------------------
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                closeMenu();
-
-            }
-
+    // Close menu on Escape key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeMenu();
         }
-    );
+    });
 
-
-    // --------------------------------------------
-    // Close menu when switching to desktop
-    // --------------------------------------------
-
-    let resizeTicking = false;
-
-    function updateTopBarMobile() {
-        try {
-            const workHours = document.querySelector('a[aria-label="View Sunrise working hours"]');
-            if (!workHours) return;
-            if (window.innerWidth <= 768) {
-                // use inline style with important to ensure visibility is hidden on all browsers
-                try { workHours.style.setProperty('display','none','important'); } catch(e) { workHours.style.display = 'none'; }
-            } else {
-                try { workHours.style.removeProperty('display'); } catch(e) { workHours.style.display = ''; }
-            }
-        } catch (e) {
-            // ignore
-        }
-    }
-
-    // initial call
-    updateTopBarMobile();
-
+    // Close mobile menu when viewport expands to desktop
+    let resizeTimer = null;
     window.addEventListener(
         "resize",
         function () {
-
-            if (resizeTicking) {
-                return;
-            }
-
-            window.requestAnimationFrame(function () {
-
-                // Close menu when switching to desktop widths (>= 768)
+            if (resizeTimer) return;
+            resizeTimer = setTimeout(function () {
                 if (window.innerWidth >= 768) {
                     closeMenu();
                 }
-
-                // show/hide top bar working hours on resize
-                updateTopBarMobile();
-
-                resizeTicking = false;
-
-            });
-
-            resizeTicking = true;
-
+                resizeTimer = null;
+            }, 100);
         },
         { passive: true }
     );

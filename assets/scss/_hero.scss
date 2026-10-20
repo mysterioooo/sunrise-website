@@ -1,50 +1,50 @@
 // ============================================
-// SUNRISE - HERO
+// SUNRISE - PREMIUM HERO SECTION
 // ============================================
 
 .hero {
     position: relative;
-
     min-height: 720px;
-
     display: flex;
-
     align-items: center;
-
     background-image:
         linear-gradient(
-            90deg,
-            rgba(3, 23, 43, 0.95) 0%,
-            rgba(3, 23, 43, 0.85) 42%,
-            rgba(3, 23, 43, 0.35) 100%
+            135deg,
+            rgba(7, 27, 45, 0.95) 0%,
+            rgba(11, 39, 66, 0.88) 48%,
+            rgba(7, 27, 45, 0.45) 100%
         ),
         url("../images/hero/hero-main.jpg");
-
     background-position: center;
     background-size: cover;
-
+    background-repeat: no-repeat;
     overflow: hidden;
 
-
-    // ========================================
-    // MOBILE
-    // ========================================
+    @include tablet {
+        min-height: 640px;
+    }
 
     @include mobile {
-
         min-height: auto;
-
         display: block;
-
         background-position: 65% center;
-
-        padding-top: 45px;
-
+        padding-top: 48px;
         padding-bottom: 95px;
-
     }
 }
 
+// Subtle ambient backdrop glow
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(215, 25, 45, 0.15) 0%, rgba(7, 27, 45, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
 
 // ============================================
 // HERO CONTENT
@@ -52,27 +52,22 @@
 
 .hero-content {
     position: relative;
-
     z-index: 2;
-
-    max-width: 720px;
-
+    max-width: 740px;
     padding-top: 80px;
 
+    @include tablet {
+        max-width: 650px;
+        padding-top: 50px;
+    }
 
     @include mobile {
-
         width: 100%;
-
         max-width: 100%;
-
-        padding-top: 25px;
-
+        padding-top: 20px;
         padding-bottom: 10px;
-
     }
 }
-
 
 // ============================================
 // HERO LABEL
@@ -80,257 +75,186 @@
 
 .hero-label {
     display: inline-flex;
-
     align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 20px;
-
-    color: $primary;
-
-    font-size: 14px;
-
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 6px 14px 6px 10px;
+    color: $white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 30px;
+    font-size: 13px;
     font-weight: 700;
-
     letter-spacing: 0.8px;
-
     text-transform: uppercase;
-
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
     &::before {
         content: "";
-
-        width: 35px;
-
-        height: 2px;
-
-        background: $primary;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $coral-accent;
+        box-shadow: 0 0 10px $coral-accent;
+        flex-shrink: 0;
     }
-
 
     @include mobile {
-
-        gap: 9px;
-
         margin-bottom: 18px;
-
-        font-size: 13px;
-
-        line-height: 1.5;
-
-
-        &::before {
-
-            width: 32px;
-
-            flex-shrink: 0;
-
-        }
-
+        font-size: 11px;
+        padding: 5px 12px 5px 8px;
+        line-height: 1.4;
     }
 }
-
 
 // ============================================
 // HERO TITLE
 // ============================================
 
 .hero-title {
-
     margin-bottom: 24px;
-
     color: $white;
-
     font-size: $heading-xl;
-
     font-weight: 700;
-
-    line-height: 1.08;
-
-    letter-spacing: -1.5px;
-
-
-    @include mobile {
-
-        margin-bottom: 20px;
-
-        font-size: 42px;
-
-        line-height: 1.08;
-
-        letter-spacing: -0.5px;
-
-    }
-
+    line-height: 1.1;
+    letter-spacing: -1px;
 
     span {
-        color: $primary;
+        color: $coral-accent;
+        background: linear-gradient(135deg, #F05A67 0%, #D7192D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    @include tablet {
+        font-size: 48px;
+        line-height: 1.12;
+    }
+
+    @include mobile {
+        margin-bottom: 20px;
+        font-size: 38px;
+        line-height: 1.14;
+        letter-spacing: -0.5px;
     }
 }
 
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 32px;
+    }
+}
 
 // ============================================
 // HERO DESCRIPTION
 // ============================================
 
 .hero-description {
-
-    max-width: 620px;
-
-    margin-bottom: 35px;
-
-    color: rgba(255, 255, 255, 0.85);
-
+    max-width: 640px;
+    margin-bottom: 36px;
+    color: rgba(255, 255, 255, 0.88);
     font-size: 18px;
+    line-height: 1.75;
+    font-weight: 400;
 
-    line-height: 1.7;
-
+    @include tablet {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
 
     @include mobile {
-
         max-width: 100%;
-
         margin-bottom: 28px;
-
-        font-size: 16px;
-
+        font-size: 15px;
         line-height: 1.65;
-
     }
 }
-
 
 // ============================================
 // HERO BUTTONS
 // ============================================
 
 .hero-buttons {
-
     display: flex;
-
     align-items: center;
+    gap: 16px;
 
-    gap: 14px;
-
+    .btn-primary-custom,
+    .btn-outline-custom {
+        padding: 15px 28px;
+        font-size: 15px;
+    }
 
     @include mobile {
-
         width: 100%;
-
         flex-direction: column;
-
         align-items: stretch;
-
         gap: 12px;
 
+        .btn-primary-custom,
+        .btn-outline-custom {
+            width: 100%;
+            min-height: 52px;
+            justify-content: center;
+        }
     }
 }
 
-
 // ============================================
-// MOBILE BUTTON WIDTH
-// ============================================
-
-@include mobile {
-
-    .hero-buttons .btn {
-
-        width: 100%;
-
-        min-height: 56px;
-
-        justify-content: center;
-
-    }
-}
-
-
-// ============================================
-// DECORATIVE ELEMENTS
+// DECORATIVE ELEMENTS (Refined, Subtle)
 // ============================================
 
 .hero-decoration {
-
     position: absolute;
-
-    right: -120px;
-
-    bottom: -120px;
-
-    width: 350px;
-
-    height: 350px;
-
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    border-radius: 50%;
-}
-
-
-.hero-decoration::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 40px;
-
+    right: -100px;
+    bottom: -100px;
+    width: 380px;
+    height: 380px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-
     border-radius: 50%;
-}
+    pointer-events: none;
+    z-index: 1;
 
-
-// ============================================
-// MOBILE DECORATION
-// ============================================
-
-@include mobile {
-
-    .hero-decoration {
-
-        right: -180px;
-
-        bottom: -180px;
-
-        width: 330px;
-
-        height: 330px;
-
-        opacity: 0.5;
-
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 45px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
     }
 
-
-    .hero-decoration::before {
-
-        inset: 35px;
-
+    @include mobile {
+        right: -160px;
+        bottom: -160px;
+        width: 300px;
+        height: 300px;
+        opacity: 0.35;
     }
-
 }
 
-// One-time entrance motion keeps the hero feeling responsive without
-// continuously animating the large background image.
+// ============================================
+// HERO ENTRANCE MOTION (Performant, One-Time)
+// ============================================
+
 .hero-content > * {
     opacity: 0;
-
-    animation: sunriseHeroEnter 0.65s ease-out forwards;
+    animation: sunriseHeroEnter 0.65s $ease-out-smooth forwards;
 }
 
 .hero-content > :nth-child(1) {
-    animation-delay: 0.04s;
+    animation-delay: 0.05s;
 }
 
 .hero-content > :nth-child(2) {
-    animation-delay: 0.12s;
+    animation-delay: 0.14s;
 }
 
 .hero-content > :nth-child(3) {
-    animation-delay: 0.2s;
+    animation-delay: 0.22s;
 }
 
 .hero-content > :nth-child(4) {
-    animation-delay: 0.28s;
+    animation-delay: 0.30s;
 }
