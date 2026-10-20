@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNRISE STAFFING SOLUTIONS PVT. LTD. - Company Profile</title>
+    <meta name="description" content="Official Corporate Profile of SUNRISE STAFFING SOLUTIONS PVT. LTD. - Premier Integrated Facility Management Services in Pune, Maharashtra.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* ============================================================
+           PRINT & A4 PAGE GEOMETRY SPECIFICATION
+        ============================================================ */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #596579;
+            background-color: #E2E8F0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 210mm x 297mm True A4 Page */
+        .pdf-page {
+            width: 210mm;
+            height: 297mm;
+            max-height: 297mm;
+            position: relative;
+            background: #FFFFFF;
+            overflow: hidden;
+            page-break-after: always;
+            break-after: page;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media screen {
+            .pdf-page {
+                margin: 20px auto;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* ============================================================
+           COLOR TOKENS & UTILITIES
+        ============================================================ */
+        :root {
+            --midnight-navy:   #071B2D;
+            --corporate-navy:  #0B2742;
+            --primary-crimson: #D7192D;
+            --ruby-red:        #B5122A;
+            --coral-accent:    #F05A67;
+            --warm-white:      #F7F8FA;
+            --pure-white:      #FFFFFF;
+            --slate-text:      #596579;
+            --subtle-border:   #E3E8EF;
+            --gold-accent:     #D4AF37;
+        }
+
+        /* Running Header */
+        .page-header {
+            height: 18mm;
+            padding: 0 16mm;
+            background: #FFFFFF;
+            border-bottom: 1.5px solid var(--subtle-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .header-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-logo-group img {
+            height: 10mm;
+            width: auto;
+            object-fit: contain;
+        }
+        .header-doc-title {
+            text-align: right;
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--corporate-navy);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .header-doc-title span {
+            color: var(--primary-crimson);
+            font-weight: 700;
+        }
+
+        /* Running Footer */
+        .page-footer {
+            height: 13mm;
+            padding: 0 16mm;
+            background: #FFFFFF;
+            border-top: 1px solid var(--subtle-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 7.5pt;
+            color: var(--slate-text);
+            flex-shrink: 0;
+        }
+        .footer-left {
+            font-weight: 600;
+            color: var(--corporate-navy);
+        }
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+        .footer-page-num {
+            background: var(--midnight-navy);
+            color: #FFFFFF;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 7pt;
+        }
+
+        /* Page Content Area */
+        .page-body {
+            flex: 1;
+            padding: 12mm 16mm;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Section Headings */
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-crimson);
+            margin-bottom: 2mm;
+        }
+        .section-eyebrow::before {
+            content: "";
+            width: 14px;
+            height: 2px;
+            background: var(--primary-crimson);
+        }
+        .section-main-title {
+            font-size: 19pt;
+            font-weight: 800;
+            color: var(--midnight-navy);
+            line-height: 1.15;
+            margin-bottom: 3mm;
+        }
+        .section-main-title span {
+            color: var(--primary-crimson);
+        }
+        .section-subtitle {
+            font-size: 9.5pt;
+            color: var(--slate-text);
+            line-height: 1.5;
+            margin-bottom: 6mm;
+        }
+
+        /* ============================================================
+           PAGE 1: COVER PAGE
+        ============================================================ */
+        .cover-page {
+            background: linear-gradient(135deg, #071B2D 0%, #0B2742 60%, #071B2D 100%);
+            color: #FFFFFF;
+            padding: 18mm 18mm 14mm;
+            justify-content: space-between;
+        }
+        .cover-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 6mm;
+        }
+        .cover-logo-box {
+            background: #FFFFFF;
+            padding: 3mm 6mm;
+            border-radius: 8px;
+            display: inline-flex;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .cover-logo-box img {
+            height: 13mm;
+            width: auto;
+        }
+        .cover-tag-badge {
+            background: rgba(215, 25, 45, 0.2);
+            border: 1px solid rgba(215, 25, 45, 0.4);
+            color: #FFFFFF;
+            padding: 3mm 6mm;
+            border-radius: 30px;
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+        .cover-center {
+            margin: 6mm 0;
+        }
+        .cover-pre-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--coral-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 3mm;
+        }
+        .cover-title {
+            font-size: 27pt;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #FFFFFF;
+            margin-bottom: 4mm;
+        }
+        .cover-title span {
+            color: var(--coral-accent);
+        }
+        .cover-desc {
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 155mm;
+            margin-bottom: 6mm;
+        }
+        .cover-hero-image-wrap {
+            width: 100%;
+            height: 98mm;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+        .cover-hero-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left center;
+        }
+        .cover-hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(7, 27, 45, 0.85) 0%, transparent 100%);
+            padding: 5mm 7mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .cover-hero-caption {
+            color: #FFFFFF;
+            font-size: 8.5pt;
+            font-weight: 600;
+        }
+        .cover-hero-caption span {
+            display: block;
+            font-size: 7pt;
+            color: var(--coral-accent);
+            font-weight: 400;
+        }
+        .cover-pill-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 5mm;
+        }
+        .cover-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 6px;
+            padding: 2.5mm 4.5mm;
+            font-size: 8pt;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cover-pill i {
+            color: var(--coral-accent);
+        }
+        .cover-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 5mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .cover-bottom strong {
+            color: #FFFFFF;
+        }
+
+        /* ============================================================
+           PAGE 2: EXECUTIVE OVERVIEW
+        ============================================================ */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 7mm;
+            margin-bottom: 6mm;
+        }
+        .overview-text {
+            font-size: 8.8pt;
+            line-height: 1.65;
+            color: var(--slate-text);
+            text-align: justify;
+        }
+        .overview-text p {
+            margin-bottom: 3.5mm;
+        }
+        .overview-image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--subtle-border);
+            box-shadow: 0 4px 15px rgba(7, 27, 45, 0.08);
+            height: 60mm;
+            background: #F8FAFC;
+        }
+        .overview-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .stats-ribbon {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4mm;
+            background: var(--warm-white);
+            border: 1px solid var(--subtle-border);
+            border-radius: 10px;
+            padding: 4mm;
+            margin-bottom: 6mm;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 2mm;
+            border-right: 1px solid var(--subtle-border);
+        }
+        .stat-box:last-child {
+            border-right: none;
+        }
+        .stat-num {
+            font-size: 17pt;
+            font-weight: 800;
+            color: var(--primary-crimson);
+            line-height: 1.1;
+        }
+        .stat-label {
+            font-size: 7.5pt;
+            font-weight: 600;
+            color: var(--corporate-navy);
+            margin-top: 1mm;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4.5mm;
+        }
+        .pillar-card {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-left: 3.5px solid var(--primary-crimson);
+            border-radius: 6px;
+            padding: 3.5mm 4mm;
+        }
+        .pillar-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pillar-title i {
+            color: var(--primary-crimson);
+            font-size: 9pt;
+        }
+        .pillar-desc {
+            font-size: 8pt;
+            color: var(--slate-text);
+            line-height: 1.5;
+        }
+
+        /* ============================================================
+           PAGE 3: VISION, MISSION, OBJECTIVES
+        ============================================================ */
+        .vmo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5mm;
+            margin-bottom: 6mm;
+        }
+        .vmo-card {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 10px;
+            padding: 5mm 4.5mm;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(7, 27, 45, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .vmo-icon-wrap {
+            width: 14mm;
+            height: 14mm;
+            border-radius: 50%;
+            background: rgba(215, 25, 45, 0.08);
+            color: var(--primary-crimson);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14pt;
+            margin-bottom: 3.5mm;
+        }
+        .vmo-card h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            margin-bottom: 2mm;
+        }
+        .vmo-card p {
+            font-size: 8pt;
+            line-height: 1.6;
+            color: var(--slate-text);
+        }
+        .desires-container {
+            background: var(--warm-white);
+            border: 1px solid var(--subtle-border);
+            border-radius: 10px;
+            padding: 5mm 6mm;
+            margin-bottom: 5mm;
+        }
+        .desires-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--corporate-navy);
+            margin-bottom: 3.5mm;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .desires-title i {
+            color: var(--primary-crimson);
+        }
+        .desires-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5mm 5mm;
+        }
+        .desire-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 8pt;
+            color: var(--slate-text);
+        }
+        .desire-item i {
+            color: #10B981;
+            font-size: 8pt;
+        }
+        .leadership-box {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 6mm;
+            align-items: center;
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 10px;
+            padding: 4mm;
+        }
+        .leadership-img {
+            height: 48mm;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .leadership-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .leadership-info h4 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            margin-bottom: 1.5mm;
+        }
+        .leadership-info p {
+            font-size: 8pt;
+            color: var(--slate-text);
+            line-height: 1.55;
+        }
+
+        /* ============================================================
+           PAGES 4 & 5: SERVICES (2x2 CARDS PER PAGE)
+        ============================================================ */
+        .services-2x2-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5mm;
+            flex: 1;
+        }
+        .service-full-card {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(7, 27, 45, 0.04);
+        }
+        .service-card-media {
+            height: 40mm;
+            width: 100%;
+            position: relative;
+            background: #0B1C2D;
+            overflow: hidden;
+        }
+        .service-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .service-order-badge {
+            position: absolute;
+            top: 2.5mm;
+            left: 3mm;
+            background: rgba(7, 27, 45, 0.85);
+            color: #FFFFFF;
+            border-radius: 4px;
+            padding: 1mm 3mm;
+            font-size: 7.5pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .service-card-body {
+            padding: 4mm 4.5mm;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .service-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            margin-bottom: 2mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .service-title i {
+            color: var(--primary-crimson);
+            font-size: 10pt;
+        }
+        .service-desc {
+            font-size: 8pt;
+            line-height: 1.55;
+            color: var(--slate-text);
+            margin-bottom: 2.5mm;
+        }
+        .service-bullets {
+            list-style: none;
+            margin-top: auto;
+            border-top: 1px dashed var(--subtle-border);
+            padding-top: 2mm;
+        }
+        .service-bullets li {
+            font-size: 7.5pt;
+            color: var(--corporate-navy);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 1mm;
+            font-weight: 500;
+        }
+        .service-bullets li i {
+            color: var(--primary-crimson);
+            font-size: 6.5pt;
+        }
+
+        /* ============================================================
+           PAGES 6 & 7: CLIENT LOGOS & PORTFOLIO
+        ============================================================ */
+        .clients-a4-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4.5mm;
+            margin-top: 2mm;
+        }
+        .client-logo-box {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 8px;
+            padding: 3mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 30mm;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(7, 27, 45, 0.03);
+        }
+        .client-img-wrap {
+            height: 15mm;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2mm;
+        }
+        .client-img-wrap img {
+            max-height: 100%;
+            max-width: 90%;
+            object-fit: contain;
+        }
+        .client-card-name {
+            font-size: 7pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            line-height: 1.25;
+        }
+        .client-card-sub {
+            font-size: 6pt;
+            color: var(--slate-text);
+            margin-top: 0.8mm;
+        }
+        .client-category-tag {
+            display: inline-block;
+            font-size: 6pt;
+            font-weight: 600;
+            color: var(--primary-crimson);
+            background: rgba(215, 25, 45, 0.08);
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-top: 1mm;
+        }
+        .client-highlight-banner {
+            background: var(--warm-white);
+            border: 1px solid var(--subtle-border);
+            border-radius: 8px;
+            padding: 3.5mm 5mm;
+            margin-top: 4.5mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 8pt;
+        }
+
+        /* ============================================================
+           PAGES 8 & 9: AWARDS & HONOURS
+        ============================================================ */
+        .awards-pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4.5mm;
+            margin-top: 2mm;
+        }
+        .award-pdf-card {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 3px 10px rgba(7, 27, 45, 0.04);
+        }
+        .award-pdf-thumb {
+            height: 38mm;
+            background: #F8FAFC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5mm;
+            border-bottom: 1px solid var(--subtle-border);
+        }
+        .award-pdf-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .award-pdf-body {
+            padding: 3mm 3.5mm;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .award-pdf-year {
+            display: inline-block;
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: var(--primary-crimson);
+            background: rgba(215, 25, 45, 0.08);
+            border: 1px solid rgba(215, 25, 45, 0.2);
+            padding: 1px 6px;
+            border-radius: 10px;
+            margin-bottom: 1.5mm;
+            width: fit-content;
+        }
+        .award-pdf-title {
+            font-size: 8pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            line-height: 1.25;
+            margin-bottom: 1.5mm;
+        }
+        .award-pdf-issuer {
+            font-size: 7pt;
+            color: var(--corporate-navy);
+            font-weight: 600;
+            margin-bottom: 1mm;
+        }
+        .award-pdf-desc {
+            font-size: 6.5pt;
+            color: var(--slate-text);
+            line-height: 1.4;
+            margin-top: auto;
+        }
+
+        /* ============================================================
+           PAGE 10: COMPLIANCE, SAFETY & CONTACT
+        ============================================================ */
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5mm;
+            margin-bottom: 5mm;
+        }
+        .compliance-card {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 8px;
+            padding: 4.5mm;
+        }
+        .compliance-card h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            margin-bottom: 2.5mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .compliance-card h3 i {
+            color: var(--primary-crimson);
+        }
+        .compliance-list {
+            list-style: none;
+        }
+        .compliance-list li {
+            font-size: 7.8pt;
+            color: var(--slate-text);
+            margin-bottom: 1.8mm;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            line-height: 1.4;
+        }
+        .compliance-list li i {
+            color: #10B981;
+            font-size: 7.5pt;
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+
+        .contact-cta-box {
+            background: linear-gradient(135deg, #071B2D 0%, #0B2742 100%);
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 7mm 8mm;
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-cta-box::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(215, 25, 45, 0.25) 0%, transparent 70%);
+        }
+        .cta-header {
+            margin-bottom: 5mm;
+        }
+        .cta-header h3 {
+            font-size: 15pt;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 1.5mm;
+        }
+        .cta-header h3 span {
+            color: var(--coral-accent);
+        }
+        .cta-header p {
+            font-size: 8.5pt;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+        .contact-items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4mm 6mm;
+        }
+        .contact-item-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 8pt;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        .contact-icon-circle {
+            width: 7mm;
+            height: 7mm;
+            border-radius: 50%;
+            background: rgba(215, 25, 45, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--coral-accent);
+            font-size: 8pt;
+            flex-shrink: 0;
+        }
+        .contact-detail-text strong {
+            display: block;
+            color: #FFFFFF;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5mm;
+        }
+        .contact-detail-text a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====================================================================
+         PAGE 1: COVER
+    ==================================================================== -->
+    <div class="pdf-page cover-page">
+        <div class="cover-top">
+            <div class="cover-logo-box">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="SUNRISE STAFFING SOLUTIONS PVT. LTD.">
+            </div>
+            <div class="cover-tag-badge">
+                <i class="fa-solid fa-award"></i> Corporate Capabilities Profile
+            </div>
+        </div>
+
+        <div class="cover-center">
+            <div class="cover-pre-title">Integrated Facility Management & Workforce Solutions</div>
+            <h1 class="cover-title">
+                SUNRISE STAFFING<br>SOLUTIONS <span>PVT. LTD.</span>
+            </h1>
+            <p class="cover-desc">
+                Delivering excellence in facility management, compliant industrial staffing, specialized plant maintenance, and comprehensive operational support for multinational automotive and manufacturing enterprises since 2006.
+            </p>
+
+            <div class="cover-hero-image-wrap">
+                <img src="assets/images/about/sunrise-office.jpg" alt="Sunrise Corporate Headquarters">
+                <div class="cover-hero-overlay">
+                    <div class="cover-hero-caption">
+                        Sunrise Corporate Reception & Facility Operations Center
+                        <span>Shop No. T 16, Old Mumbai Pune Highway, Pune - 411044</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cover-pill-badges">
+                <div class="cover-pill"><i class="fa-solid fa-calendar-check"></i> Established 2006</div>
+                <div class="cover-pill"><i class="fa-solid fa-scale-balanced"></i> 100% Statutory Compliant</div>
+                <div class="cover-pill"><i class="fa-solid fa-building-circle-check"></i> Fortune 500 Trusted</div>
+                <div class="cover-pill"><i class="fa-solid fa-shield-halved"></i> Zero-Harm Safety Protocol</div>
+            </div>
+        </div>
+
+        <div class="cover-bottom">
+            <div><strong>Registered Office:</strong> Pune, Maharashtra, India</div>
+            <div><strong>Official Web Portal:</strong> www.sunriseent.co.in</div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 2: EXECUTIVE OVERVIEW
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Executive Overview</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Corporate Heritage & Capability</span>
+            <h2 class="section-main-title">Pioneering Integrated <span>Facility Excellence</span></h2>
+            <p class="section-subtitle">A heritage of dependable service delivery, rigorous statutory transparency, and strategic enterprise partnerships across India's premier industrial corridors.</p>
+
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p>
+                        <strong>SUNRISE STAFFING SOLUTIONS PVT. LTD.</strong> was established in 2006 under the visionary stewardship of <strong>Mr. Kiran Vishnu Panchpute</strong>. Founded in Pune, Maharashtra, the organization emerged to bridge a vital industrial need: delivering dependable, high-caliber integrated facility management and skilled workforce solutions that allow manufacturing leaders to concentrate entirely on their core production goals.
+                    </p>
+                    <p>
+                        Over nearly two decades of uninterrupted operations, Sunrise has evolved from a boutique labor contractor into a premier integrated facility management partner. Today, Sunrise manages complex manufacturing campuses, automotive assembly lines, IT parks, logistics hubs, and executive guest facilities.
+                    </p>
+                    <p>
+                        Our operational philosophy rests on an uncompromising foundation of 100% statutory adherence, proactive supervision, rigorous workforce training, and continuous investment in human capital.
+                    </p>
+                </div>
+                <div class="overview-image-card">
+                    <img src="assets/images/office/sunrise-office-boardroom.jpg" alt="Sunrise Executive Boardroom">
+                </div>
+            </div>
+
+            <!-- Stats Ribbon -->
+            <div class="stats-ribbon">
+                <div class="stat-box">
+                    <div class="stat-num">2006</div>
+                    <div class="stat-label">Year Established</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">30+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Statutory Compliance</div>
+                </div>
+            </div>
+
+            <!-- 4 Pillars -->
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-title"><i class="fa-solid fa-scale-balanced"></i> 100% Statutory Transparency</div>
+                    <div class="pillar-desc">Flawless compliance with PF, ESIC, Professional Tax, GST, Minimum Wages, and Labour Welfare laws, validated by consecutive corporate awards.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-title"><i class="fa-solid fa-shield-halved"></i> Industrial Safety & Quality</div>
+                    <div class="pillar-desc">Comprehensive PPE enforcement, certified SOPs, and zero-compromise safety protocols recognized by top global industrial manufacturers.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-title"><i class="fa-solid fa-users-gear"></i> Multi-Skilled Workforce</div>
+                    <div class="pillar-desc">Screened, trained, and verified operational personnel deployed seamlessly across manufacturing, logistics, and corporate environments.</div>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-title"><i class="fa-solid fa-handshake-angle"></i> Single-Point Accountability</div>
+                    <div class="pillar-desc">Consolidating housekeeping, security, staffing, and technical support under a single dedicated SLA to optimize operational overheads.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">2</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 3: VISION, MISSION, OBJECTIVES
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Strategic Direction</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Strategic Purpose & Commitments</span>
+            <h2 class="section-main-title">Vision, Mission & <span>Client Commitments</span></h2>
+            <p class="section-subtitle">Setting the national benchmark for world-class integrated facility systems with ethical management, motivated personnel, and client-centric execution.</p>
+
+            <div class="vmo-grid">
+                <div class="vmo-card">
+                    <div class="vmo-icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>"To create a world-class integrated facility management system in India, entailing the finest team of motivated professionals recognized across industries for excellence in FMS."</p>
+                </div>
+                <div class="vmo-card">
+                    <div class="vmo-icon-wrap"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>"While you focus on your core business, we manage your facilities up to your highest expectations with dependable standards, integrity, and proactive care."</p>
+                </div>
+                <div class="vmo-card">
+                    <div class="vmo-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Our Objective</h3>
+                    <p>"To provide efficient property management and fully integrated single-contract solutions that optimize operating costs and elevate campus reliability."</p>
+                </div>
+            </div>
+
+            <!-- Fulfilling Client Desires -->
+            <div class="desires-container">
+                <div class="desires-title"><i class="fa-solid fa-star"></i> What Industry Leaders Expect & How Sunrise Delivers:</div>
+                <div class="desires-grid">
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Reliable Services at Optimum Cost:</strong> Transparent pricing without hidden overheads.</div>
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Rapid & Timely Mobilization:</strong> Strict adherence to on-time workforce scheduling.</div>
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Hygienic & Safe Workplaces:</strong> Cleanroom standards and industrial-grade sanitization.</div>
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Single Point of Contact (SPOC):</strong> Dedicated account managers for immediate resolution.</div>
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Motivated & Skilled Teams:</strong> Regular training, fair compensation, and employee welfare.</div>
+                    <div class="desire-item"><i class="fa-solid fa-circle-check"></i> <strong>Complete Legal Immunity:</strong> 100% compliance shielding clients from statutory liabilities.</div>
+                </div>
+            </div>
+
+            <!-- Leadership Box -->
+            <div class="leadership-box">
+                <div class="leadership-img">
+                    <img src="assets/images/office/sunrise-office-md-cabin.jpg" alt="Sunrise Executive Cabin">
+                </div>
+                <div class="leadership-info">
+                    <h4>Leadership Philosophy</h4>
+                    <p>
+                        "Facility management is the backbone of manufacturing efficiency. Our mandate is simple: ensure that every shop floor, office, and campus we maintain operates seamlessly, safely, and cleanly so our partners can focus on building India's industrial future."
+                    </p>
+                    <p style="margin-top: 2mm; font-weight: 700; color: var(--corporate-navy);">
+                        — Mr. Kiran Vishnu Panchpute, Managing Director
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">3</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 4: SERVICES PORTFOLIO (1 TO 4)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Core Services (1–4)</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Comprehensive Service Capabilities</span>
+            <h2 class="section-main-title">Facility & Staffing <span>Solutions (Part I)</span></h2>
+            <p class="section-subtitle">End-to-end workforce deployment, physical security, executive transportation, and corporate guest house facility management.</p>
+
+            <div class="services-2x2-grid">
+                <!-- 1. Staff Management -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/office/sunrise-office-team-floor.jpg" alt="Staff Management Floor">
+                        <div class="service-order-badge">01 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-user-tie"></i> Staff Management</div>
+                        <div class="service-desc">
+                            We manage staff productivity and morale under challenging situations. Clear communication ensures employees understand exact organizational expectations while cultivating traditions that raise equity.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Productivity optimization & KPI tracking</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Workforce motivation & talent development</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Biometric attendance & computerized records</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Security Management -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/security.jpg" alt="Security Management">
+                        <div class="service-order-badge">02 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-shield-halved"></i> Security Management</div>
+                        <div class="service-desc">
+                            Reliable security personnel and perimeter protection solutions tailored for corporate, governmental, and industrial campuses. Rigorously trained personnel handle emergency and access control protocols.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Round-the-clock manned security guarding</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Visitor management & material gate pass checks</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Emergency response & fire safety drills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Driver Management -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/driver-management.jpg" alt="Driver Management">
+                        <div class="service-order-badge">03 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-car"></i> Driver Management</div>
+                        <div class="service-desc">
+                            Professional transportation support designed around corporate and industrial transit requirements. Licensed, vetted, and courteous chauffeurs ensure punctuality, road safety, and discreet service.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Verified commercial & executive chauffeurs</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Plant transit & internal logistics shuttles</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Vehicle logbook & preventive inspection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Guest House Facility -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/guest-house.jpg" alt="Guest House Facility">
+                        <div class="service-order-badge">04 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-house-chimney"></i> Guest House Facility</div>
+                        <div class="service-desc">
+                            End-to-end hospitality operations for industrial guest houses and visiting international corporate guests. We handle housekeeping, culinary services, laundry, and round-the-clock care.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Complete property upkeep & linen care</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Nutritious dining & chef management</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> 24/7 guest reception & concierge support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">4</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 5: SERVICES PORTFOLIO (5 TO 8)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Core Services (5–8)</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Industrial Operations & Technical Support</span>
+            <h2 class="section-main-title">Facility & Staffing <span>Solutions (Part II)</span></h2>
+            <p class="section-subtitle">Systematic housekeeping, outsourced contract labor, dedicated job work, and heavy industrial material handling.</p>
+
+            <div class="services-2x2-grid">
+                <!-- 5. Housekeeping -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/housekeeping.jpg" alt="Housekeeping Services">
+                        <div class="service-order-badge">05 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-broom"></i> Housekeeping</div>
+                        <div class="service-desc">
+                            Systematic process-driven sanitation for immaculate corporate and factory environments. Our teams utilize modern mechanized cleaning equipment, eco-certified chemicals, and strict hygiene protocols.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Mechanized shop floor & warehouse scrubbers</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Corporate workstation & restroom sanitation</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Waste disposal & environmental compliance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6. Labour Contracts -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/labour-contract.jpg" alt="Labour Contracts">
+                        <div class="service-order-badge">06 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-people-group"></i> Labour Contracts</div>
+                        <div class="service-desc">
+                            Outsourcing screened contract laborers tailored to industry skills and workforce demands. Every laborer is deployed only after rigorous background checks, trade skill tests, and safety orientation.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Skilled, semi-skilled, and general workers</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> 100% PF, ESIC, and Wage Act compliance</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Scalable staffing for seasonal production spikes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 7. Job Work -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/job-work.jpg" alt="Job Work">
+                        <div class="service-order-badge">07 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-screwdriver-wrench"></i> Job Work</div>
+                        <div class="service-desc">
+                            Dedicated operational support for specialized industrial tasks including sub-assembly, quality inspection, deburring, kitting, and secondary packaging under stringent customer-defined tolerances.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Component sorting, visual inspection & deburring</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Secondary packaging & barcoding solutions</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Output-linked service level agreements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 8. Forklift Services -->
+                <div class="service-full-card">
+                    <div class="service-card-media">
+                        <img src="assets/images/services/forklift.jpg" alt="Forklift Services">
+                        <div class="service-order-badge">08 / SERVICE</div>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-title"><i class="fa-solid fa-truck-ramp-box"></i> Forklift Services</div>
+                        <div class="service-desc">
+                            Industrial material-handling support for manufacturing plants, heavy engineering, and logistics hubs. Operated by certified, safety-trained drivers adept with diesel, electric, and reach trucks.
+                        </div>
+                        <ul class="service-bullets">
+                            <li><i class="fa-solid fa-chevron-right"></i> Certified, licensed forklift & stacker drivers</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Warehouse loading, unloading & bay staging</li>
+                            <li><i class="fa-solid fa-chevron-right"></i> Zero-incident safety & daily equipment checks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 6: CLIENT PORTFOLIO (AUTOMOTIVE & MANUFACTURING)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Client Portfolio (Automotive)</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Enterprise Client Partnerships</span>
+            <h2 class="section-main-title">Trusted by Global <span>Automotive Leaders</span></h2>
+            <p class="section-subtitle">Delivering high-standard facility management and compliant staffing across premier manufacturing plants in Pune, Chakan, Talegaon, and across India.</p>
+
+            <div class="clients-a4-grid">
+                <!-- 1. Skoda Auto Volkswagen -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/skoda.png" alt="Skoda Auto Volkswagen"></div>
+                    <div class="client-card-name">Škoda Auto Volkswagen India Pvt. Ltd.</div>
+                    <span class="client-category-tag">Automotive OEM</span>
+                </div>
+
+                <!-- 2. Mercedes-Benz -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/mercedes-benz.png" alt="Mercedes-Benz"></div>
+                    <div class="client-card-name">Mercedes-Benz India Private Limited</div>
+                    <span class="client-category-tag">Luxury Automotive</span>
+                </div>
+
+                <!-- 3. Hyundai Motors -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-motors.png" alt="Hyundai Motors"></div>
+                    <div class="client-card-name">Hyundai Motors India</div>
+                    <span class="client-category-tag">Automotive OEM</span>
+                </div>
+
+                <!-- 4. Audi India -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/audi.png" alt="Audi"></div>
+                    <div class="client-card-name">Audi India</div>
+                    <span class="client-category-tag">Luxury Automotive</span>
+                </div>
+
+                <!-- 5. Volkswagen India -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/volkswagen.png" alt="Volkswagen India"></div>
+                    <div class="client-card-name">Volkswagen India Plant, Chakan</div>
+                    <span class="client-category-tag">Manufacturing Facility</span>
+                </div>
+
+                <!-- 6. POSCO-IPPC -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco-ippc.png" alt="POSCO-IPPC"></div>
+                    <div class="client-card-name">POSCO-India Pune Processing Center Pvt Ltd</div>
+                    <span class="client-category-tag">Steel Processing</span>
+                </div>
+
+                <!-- 7. Posco India Steel -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco-india.png" alt="POSCO Steel"></div>
+                    <div class="client-card-name">Posco India Steel Distribution Center Pvt. Ltd.</div>
+                    <span class="client-category-tag">Distribution Center</span>
+                </div>
+
+                <!-- 8. Posco Flow -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco-flow.png" alt="POSCO Flow"></div>
+                    <div class="client-card-name">Posco Flow India Pvt Ltd</div>
+                    <span class="client-category-tag">Logistics & Supply</span>
+                </div>
+
+                <!-- 9. Endurance Technologies -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/endurance.png" alt="Endurance"></div>
+                    <div class="client-card-name">Endurance Technologies Limited</div>
+                    <span class="client-category-tag">Auto Components</span>
+                </div>
+
+                <!-- 10. Harman International -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/harman.png" alt="Harman"></div>
+                    <div class="client-card-name">Harman International India Pvt Ltd</div>
+                    <span class="client-category-tag">Automotive Audio/Electronics</span>
+                </div>
+
+                <!-- 11. Honeywell Automation -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/honeywell.png" alt="Honeywell"></div>
+                    <div class="client-card-name">Honeywell Automation India Limited</div>
+                    <span class="client-category-tag">Industrial Automation</span>
+                </div>
+
+                <!-- 12. Varroc Group -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/varroc.png" alt="Varroc"></div>
+                    <div class="client-card-name">Varroc Engineering Private Limited</div>
+                    <span class="client-category-tag">Auto Engineering</span>
+                </div>
+
+                <!-- 13. Hyundai Steel -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-steel.png" alt="Hyundai Steel"></div>
+                    <div class="client-card-name">Hyundai Steel India Pvt Ltd</div>
+                    <span class="client-category-tag">Steel Processing</span>
+                </div>
+
+                <!-- 14. Hyundai Materials -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-materials.png" alt="Hyundai Materials"></div>
+                    <div class="client-card-name">Hyundai Materials Pune Pvt. Ltd</div>
+                    <span class="client-category-tag">Automotive Logistics</span>
+                </div>
+
+                <!-- 15. Envision Energy -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/envision.png" alt="Envision Energy"></div>
+                    <div class="client-card-name">Envision Energy India Pvt Ltd</div>
+                    <span class="client-category-tag">Renewable Energy</span>
+                </div>
+
+                <!-- 16. ArcelorMittal Nippon Steel -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/arcelormittal.png" alt="ArcelorMittal"></div>
+                    <div class="client-card-name">ArcelorMittal Nippon Steel India</div>
+                    <span class="client-category-tag">Heavy Industry / Steel</span>
+                </div>
+            </div>
+
+            <div class="client-highlight-banner">
+                <div><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Decade-Long Relationships:</strong> Multi-year operational contracts validated by consecutive supplier excellence awards.</div>
+                <div style="font-weight: 700; color: var(--corporate-navy);">16 Major Industrial Leaders Displayed</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">6</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 7: CLIENT PORTFOLIO (LOGISTICS, TECH & INSTITUTIONS)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Client Portfolio (Tech & Logistics)</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Diversified Enterprise Portfolio</span>
+            <h2 class="section-main-title">Logistics, Tech & <span>Institutional Partners</span></h2>
+            <p class="section-subtitle">Extending integrated facility and workforce support to global supply chain partners, EV tech, and premier educational institutes.</p>
+
+            <div class="clients-a4-grid">
+                <!-- 17. CEVA Logistics -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/ceva.png" alt="CEVA Logistics"></div>
+                    <div class="client-card-name">CEVA Logistics</div>
+                    <span class="client-category-tag">Global Logistics</span>
+                </div>
+
+                <!-- 18. Chasys Automotive -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/chasys.png" alt="Chasys Automotive"></div>
+                    <div class="client-card-name">Chasys Automotive Components Private Limited</div>
+                    <span class="client-category-tag">Auto Components</span>
+                </div>
+
+                <!-- 19. Gabriel India -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/gabriel.png" alt="Gabriel India"></div>
+                    <div class="client-card-name">Gabriel India Limited</div>
+                    <span class="client-category-tag">Ride Control Products</span>
+                </div>
+
+                <!-- 20. SEOYON E-HWA -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/seoyon-ehwa.png" alt="SEOYON E-HWA"></div>
+                    <div class="client-card-name">SEOYON E-HWA SUMMIT AUTOMOTIVE PUNE PVT LTD</div>
+                    <span class="client-category-tag">Automotive Interiors</span>
+                </div>
+
+                <!-- 21. TACO EV Components -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/taco.png" alt="TACO EV"></div>
+                    <div class="client-card-name">TACO EV Components Solutions Pvt Ltd</div>
+                    <span class="client-category-tag">Electric Mobility</span>
+                </div>
+
+                <!-- 22. VW IT Services -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/vw.png" alt="VW IT Services"></div>
+                    <div class="client-card-name">VW IT's Volkswagen IT Services India Pvt Ltd</div>
+                    <span class="client-category-tag">Information Technology</span>
+                </div>
+
+                <!-- 23. Magneti Marelli -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/magneti-marelli.png" alt="Magneti Marelli"></div>
+                    <div class="client-card-name">Magneti Marelli Motherson</div>
+                    <span class="client-category-tag">Powertrain / Electronics</span>
+                </div>
+
+                <!-- 24. Nexteer Automotive -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/nexteer.png" alt="Nexteer Automotive"></div>
+                    <div class="client-card-name">Nexteer Automotive India Pvt Ltd</div>
+                    <span class="client-category-tag">Steering Systems</span>
+                </div>
+
+                <!-- 25. SFC Solutions -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/sfc-solutions.png" alt="SFC Solutions"></div>
+                    <div class="client-card-name">SFC Solutions Poland</div>
+                    <span class="client-category-tag">Automotive Sealing</span>
+                </div>
+
+                <!-- 26. Octillion Power Systems -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/octillion.png" alt="Octillion"></div>
+                    <div class="client-card-name">Octillion Power Systems India Pvt Ltd</div>
+                    <span class="client-category-tag">EV Battery Systems</span>
+                </div>
+
+                <!-- 27. Donaldson India -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/donaldson.png" alt="Donaldson India"></div>
+                    <div class="client-card-name">Donaldson India Filter Systems Pvt Ltd</div>
+                    <span class="client-category-tag">Industrial Filtration</span>
+                </div>
+
+                <!-- 28. Metzeler Automotive -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/metzeler.png" alt="Metzeler"></div>
+                    <div class="client-card-name">Metzeler Automotive Profiles India Pvt. Ltd</div>
+                    <span class="client-category-tag">Sealing Systems</span>
+                </div>
+
+                <!-- 29. Hirotec India -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/hirotec.png" alt="Hirotec India"></div>
+                    <div class="client-card-name">Hirotec India Pvt. Ltd.</div>
+                    <span class="client-category-tag">Tooling & Engineering</span>
+                </div>
+
+                <!-- 30. Govt Engineering College Pune -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/govt-engineering-college.png" alt="COEP"></div>
+                    <div class="client-card-name">Government College of Engineering Pune (COEP)</div>
+                    <span class="client-category-tag">Premier Institute</span>
+                </div>
+
+                <!-- 31. Govt Polytechnic Pune -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/govt-polytechnic.png" alt="Govt Polytechnic"></div>
+                    <div class="client-card-name">Government Polytechnic College Pune</div>
+                    <span class="client-category-tag">Technical Education</span>
+                </div>
+
+                <!-- 32. POSCO Steel -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco.png" alt="POSCO Group"></div>
+                    <div class="client-card-name">POSCO Group India</div>
+                    <span class="client-category-tag">Steel Manufacturing</span>
+                </div>
+            </div>
+
+            <div class="client-highlight-banner">
+                <div><i class="fa-solid fa-shield-halved" style="color: var(--primary-crimson);"></i> <strong>Cross-Sector Competence:</strong> Trusted across automotive Tier-1s, international supply chains, and state campuses.</div>
+                <div style="font-weight: 700; color: var(--corporate-navy);">Zero Client Duplicates</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">7</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 8: AWARDS & HONOURS (2024 - 2021)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Verified Honours (2024–2021)</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Proven Industry Recognition</span>
+            <h2 class="section-main-title">Verified Honours <span>& Accreditations</span></h2>
+            <p class="section-subtitle">Real awards photographed from our corporate collection, validated by Fortune 500 automotive partners and national tax authorities.</p>
+
+            <div class="awards-pdf-grid">
+                <!-- 2024 Skoda VW Trophy -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2024.jpg" alt="Skoda VW 2024 Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2024</span>
+                        <div class="award-pdf-title">Partner for Progress Award 2024</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-desc">Trophy presented at Business Partner Meet 2024 honoring outstanding staffing and operational partnership.</div>
+                    </div>
+                </div>
+
+                <!-- 2024 Skoda VW Certificate -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-cert-2024.jpg" alt="Skoda VW 2024 Certificate">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2024</span>
+                        <div class="award-pdf-title">Partner for Progress Certificate</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-desc">Signed by Group Head HR & EVP Sarma Chillara, Head ER Ramhari Kute, and Head HR Ops Vaibhav Kulkarni.</div>
+                    </div>
+                </div>
+
+                <!-- 2024 Envision Quality Certificate -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/envision-quality-cert-2024.jpg" alt="Envision 2024 Certificate">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2024</span>
+                        <div class="award-pdf-title">Excellence in Quality & Commitment</div>
+                        <div class="award-pdf-issuer">Envision Energy India</div>
+                        <div class="award-pdf-desc">Dated 24th July 2024, Pune. Signed by Managing Director RPV Prasad and Head QA Dinesh Lakshmanan.</div>
+                    </div>
+                </div>
+
+                <!-- 2023 Skoda VW Certificate -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-cert-2023.jpg" alt="Skoda VW 2023 Certificate">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2023</span>
+                        <div class="award-pdf-title">Best Statutory Compliance Certificate</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-desc">Awarded to Sunrise Staffing Solutions for flawless statutory compliance performance across plant operations.</div>
+                    </div>
+                </div>
+
+                <!-- 2023 Skoda VW Diamond Trophy -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2023.jpg" alt="Skoda VW 2023 Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2023</span>
+                        <div class="award-pdf-title">Best Statutory Compliance Diamond Trophy</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-desc">Faceted crystal diamond tower trophy recognizing gold-standard labor law and regulatory adherence.</div>
+                    </div>
+                </div>
+
+                <!-- 2021 Govt of India CBIC -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/govt-of-india-cbic-cert-2021.jpg" alt="Govt of India CBIC">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2021</span>
+                        <div class="award-pdf-title">Ministry of Finance (CBIC) Commendation</div>
+                        <div class="award-pdf-issuer">Govt. of India, Ministry of Finance</div>
+                        <div class="award-pdf-desc">Commendation certificate by CBIC Chairman M. Ajit Kumar for prompt GST returns filing and timely tax remittances.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 9: AWARDS & HONOURS (2019 - 2013 & MEMENTOS)
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Historical Honours & Mementos</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Decade-Long Track Record</span>
+            <h2 class="section-main-title">Consecutive Honours <span>& Mementos</span></h2>
+            <p class="section-subtitle">Consistent recognition across multiple manufacturing cycles, environmental partnerships, and long-standing plant operations.</p>
+
+            <div class="awards-pdf-grid">
+                <!-- 2019 Skoda VW Crystal Trophy -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2019.jpg" alt="VW 2019 Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2019</span>
+                        <div class="award-pdf-title">Best Statutory Compliances Award</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-desc">Crystal pillar trophy honoring consecutive leadership in labor compliance and zero-defect audit records.</div>
+                    </div>
+                </div>
+
+                <!-- 2018 VW Gold Trophy -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/volkswagen-award-2018.jpg" alt="VW 2018 Gold Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2018</span>
+                        <div class="award-pdf-title">Best Statutory Compliances Trophy</div>
+                        <div class="award-pdf-issuer">Volkswagen India Plant, Pune</div>
+                        <div class="award-pdf-desc">Gold trophy bearing the Volkswagen roundel presented for excellence in worker welfare and statutory standards.</div>
+                    </div>
+                </div>
+
+                <!-- 2014 Envision Wind Turbine -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/envision-wind-turbine-award-2014.jpg" alt="Envision 2014 Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2014</span>
+                        <div class="award-pdf-title">Wind Turbine Excellence Award 2014</div>
+                        <div class="award-pdf-issuer">Envision Energy</div>
+                        <div class="award-pdf-desc">Scale model wind turbine trophy recognizing sustainable energy facility and workforce support operations.</div>
+                    </div>
+                </div>
+
+                <!-- 2013 Envision Net Zero Trophy -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/envision-net-zero-award-2013.jpg" alt="Envision 2013 Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2013</span>
+                        <div class="award-pdf-title">Net Zero Tech Partner Award 2013</div>
+                        <div class="award-pdf-issuer">Envision Energy</div>
+                        <div class="award-pdf-desc">Illuminated acrylic turbine blade trophy on dark mahogany base commemorating clean tech alliance.</div>
+                    </div>
+                </div>
+
+                <!-- Endurance Certificates -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/endurance-b20-cert.jpg" alt="Endurance B-20 Certificate">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">Partnership</span>
+                        <div class="award-pdf-title">Appreciation Certificate (Plant B-20)</div>
+                        <div class="award-pdf-issuer">Endurance Technologies Limited</div>
+                        <div class="award-pdf-desc">Presented to Shri Kiran Pachpute for dependable staffing services and plant operational support.</div>
+                    </div>
+                </div>
+
+                <!-- VW 3D Crystal Block -->
+                <div class="award-pdf-card">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/volkswagen-crystal-plant.jpg" alt="VW 3D Crystal Block">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">Commemorative</span>
+                        <div class="award-pdf-title">Volkswagen Plant 3D Crystal Block</div>
+                        <div class="award-pdf-issuer">Volkswagen India Manufacturing</div>
+                        <div class="award-pdf-desc">Precision 3D sub-surface laser-engraved optical crystal block depicting the Chakan vehicle plant.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">9</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 10: COMPLIANCE, SAFETY & CONTACT DIRECTORY
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Compliance & Contact</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Enterprise Governance & Directory</span>
+            <h2 class="section-main-title">Statutory Compliance <span>& Contact</span></h2>
+            <p class="section-subtitle">Zero-liability compliance assurance, rigorous industrial health & safety protocols, and nationwide enterprise enquiry contacts.</p>
+
+            <div class="compliance-grid">
+                <!-- Compliance -->
+                <div class="compliance-card">
+                    <h3><i class="fa-solid fa-scale-balanced"></i> Statutory Transparency Standards</h3>
+                    <ul class="compliance-list">
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>PF & ESIC:</strong> 100% timely monthly filing with digital receipts and individual UAN linkages.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Professional Tax (PT) & LWF:</strong> Strict adherence to Maharashtra state welfare boards.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Goods & Services Tax (GST):</strong> Commended by Ministry of Finance CBIC for prompt filing.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Minimum Wages Act:</strong> Direct bank account disbursements with computerized payslips.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Contract Labour Act:</strong> Valid state licenses, Form XII registers, and inspection clearance.</li>
+                    </ul>
+                </div>
+
+                <!-- Safety -->
+                <div class="compliance-card">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Occupational Health & Safety</h3>
+                    <ul class="compliance-list">
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Mandatory PPE:</strong> ISI-certified helmets, steel-toe shoes, high-vis jackets, and eye protection.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Daily Tool-Box Talks:</strong> Shift-beginning safety orientations and hazard analysis.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Emergency Readiness:</strong> Certified first-aiders and factory floor evacuation drills.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Child Labour:</strong> Strict age verification via Aadhaar, PAN, and police verification.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Accident Insurance:</strong> Comprehensive workmen compensation insurance coverage.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="contact-cta-box">
+                <div class="cta-header">
+                    <h3>Partner With <span>Sunrise Today</span></h3>
+                    <p>Elevate your facility standards, reduce operating friction, and experience 100% compliant workforce management backed by nearly two decades of proven industrial performance.</p>
+                </div>
+
+                <div class="contact-items-grid">
+                    <div class="contact-item-row">
+                        <div class="contact-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Corporate Headquarters</strong>
+                            Shop No. T 16, Near Talera Ford Showroom, Inspiria Sr No. 3/2, CTS No. 984, Old Mumbai Pune Highway, Pune - 411044, Maharashtra
+                        </div>
+                    </div>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-circle"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Direct Business Phone</strong>
+                            <a href="tel:+918446007871">+91 8446007871</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Official Business Email</strong>
+                            <a href="mailto:hr@sunriseent.co.in">hr@sunriseent.co.in</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-row">
+                        <div class="contact-icon-circle"><i class="fa-solid fa-globe"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Web Portal & Inquiries</strong>
+                            <a href="https://sunriseent.co.in">www.sunriseent.co.in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunriseent.co.in</span>
+                <span class="footer-page-num">10</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

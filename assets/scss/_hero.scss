@@ -226,11 +226,7 @@
     }
 
     @include mobile {
-        right: -160px;
-        bottom: -160px;
-        width: 300px;
-        height: 300px;
-        opacity: 0.35;
+        display: none;
     }
 }
 

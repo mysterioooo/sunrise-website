@@ -316,8 +316,65 @@ body {
 }
 
 // ============================================
-// GET A QUOTE CTA BUTTON
+// NAV ACTIONS & CTA BUTTONS
 // ============================================
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nav-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 18px;
+    color: $midnight-navy;
+    background: rgba(7, 27, 45, 0.04);
+    border: 1.5px solid rgba(7, 27, 45, 0.16);
+    border-radius: $radius-sm;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: $transition-fast;
+
+    i {
+        color: $primary-crimson;
+        font-size: 14px;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover {
+        color: $white;
+        background: $corporate-navy;
+        border-color: $corporate-navy;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(7, 27, 45, 0.16);
+
+        i {
+            color: $coral-accent;
+            transform: scale(1.1);
+        }
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.98);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+    }
+}
+
+.mobile-only-item {
+    display: none;
+}
 
 .nav-cta {
     @include button-base;
@@ -402,15 +459,25 @@ body {
     }
 
     .nav-menu {
-        gap: 16px;
+        gap: 14px;
 
         .nav-link {
             font-size: 13px;
         }
     }
 
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-profile-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
     .nav-cta {
-        padding: 10px 16px;
+        padding: 10px 14px;
         font-size: 12px;
     }
 }
@@ -418,24 +485,34 @@ body {
 // Narrow laptop screen adjustment (993px - 1100px)
 @media (min-width: 993px) and (max-width: 1100px) {
     .main-navbar .container {
-        gap: 14px;
+        gap: 12px;
     }
 
     .navbar-logo img {
-        width: 150px;
-        max-width: 150px;
+        width: 145px;
+        max-width: 145px;
     }
 
     .nav-menu {
-        gap: 14px;
+        gap: 12px;
 
         .nav-link {
-            font-size: 13px;
+            font-size: 12.5px;
         }
     }
 
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .nav-profile-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
     .nav-cta {
-        padding: 10px 16px;
+        padding: 10px 14px;
         font-size: 12px;
     }
 }
@@ -474,6 +551,7 @@ body {
         }
     }
 
+    .nav-actions,
     .nav-cta {
         display: none;
     }
@@ -529,6 +607,13 @@ body {
             list-style: none;
         }
 
+        .mobile-only-item {
+            display: block;
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(7, 27, 45, 0.15);
+        }
+
         .nav-link {
             position: relative;
             width: 100%;
@@ -553,9 +638,40 @@ body {
                 color: $primary-crimson;
                 padding-left: 12px;
             }
+
+            &.nav-link-profile {
+                border-bottom: none;
+                justify-content: center;
+                gap: 10px;
+                padding: 14px 18px;
+                background: linear-gradient(135deg, rgba(215, 25, 45, 0.08), rgba(181, 18, 42, 0.04));
+                border: 1.5px solid rgba(215, 25, 45, 0.25);
+                border-radius: 8px;
+                color: $primary-crimson;
+                font-weight: 700;
+                font-size: 14px;
+                text-align: center;
+                box-shadow: 0 4px 12px rgba(215, 25, 45, 0.08);
+
+                i {
+                    font-size: 16px;
+                    color: $primary-crimson;
+                }
+
+                &:hover {
+                    background: $primary-crimson;
+                    color: $white;
+                    border-color: $primary-crimson;
+                    padding-left: 18px;
+
+                    i {
+                        color: $white;
+                    }
+                }
+            }
         }
 
-        li:last-child .nav-link {
+        li:last-child .nav-link:not(.nav-link-profile) {
             border-bottom: none;
         }
     }
