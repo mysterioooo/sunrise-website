@@ -1,93 +1,107 @@
 // ============================================
-// SUNRISE - AWARDS PAGE
+// SUNRISE - AWARDS & RECOGNITION PAGE SCRIPT
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
+    // ----------------------------------------
+    // 1. Year Filter Functionality
+    // ----------------------------------------
+    const filterButtons = document.querySelectorAll(".award-filter-btn");
+    const yearGroups = document.querySelectorAll(".awards-year-group");
 
-    const awardImages =
-        document.querySelectorAll(".award-timeline-image");
+    if (filterButtons.length && yearGroups.length) {
+        filterButtons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const targetFilter = btn.getAttribute("data-filter");
 
-    const modal =
-        document.getElementById("certificateModal");
+                // Update active button state
+                filterButtons.forEach(function (b) {
+                    b.classList.remove("active");
+                });
+                btn.classList.add("active");
 
-    const modalImage =
-        document.getElementById("certificateModalImage");
+                // Filter year groups
+                yearGroups.forEach(function (group) {
+                    const groupYear = group.getAttribute("data-year");
+                    if (targetFilter === "all" || groupYear === targetFilter) {
+                        group.classList.remove("is-hidden");
+                    } else {
+                        group.classList.add("is-hidden");
+                    }
+                });
+            });
+        });
+    }
 
-    const closeButton =
-        document.getElementById("certificateModalClose");
+    // ----------------------------------------
+    // 2. Certificate Lightbox Modal
+    // ----------------------------------------
+    const modal = document.getElementById("certificateModal");
+    const modalImage = document.getElementById("certificateModalImage");
+    const modalTitle = document.getElementById("modalAwardTitle");
+    const modalIssuer = document.getElementById("modalAwardIssuer");
+    const modalDesc = document.getElementById("modalAwardDesc");
+    const closeButton = document.getElementById("certificateModalClose");
 
-
-    if (!awardImages.length || !modal) {
+    if (!modal || !modalImage) {
         return;
     }
 
+    function openModal(triggerElement) {
+        const certPath = triggerElement.getAttribute("data-certificate");
+        if (!certPath) return;
 
-    // Open certificate
+        const title = triggerElement.getAttribute("data-title") || "Award & Recognition";
+        const issuer = triggerElement.getAttribute("data-issuer") || "Sunrise Staffing Solutions Pvt. Ltd.";
+        const desc = triggerElement.getAttribute("data-desc") || "";
 
-    awardImages.forEach(function (awardImage) {
+        modalImage.src = certPath;
+        modalImage.alt = title;
 
-        awardImage.addEventListener("click", function () {
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalIssuer) modalIssuer.textContent = issuer;
+        if (modalDesc) modalDesc.textContent = desc;
 
-            const imagePath =
-                awardImage.getAttribute("data-certificate");
-
-            if (!imagePath) {
-                return;
-            }
-
-            modalImage.src = imagePath;
-
-            modal.classList.add("active");
-
-            document.body.style.overflow = "hidden";
-
-        });
-
-    });
-
-
-    // Close modal
-
-    function closeModal() {
-
-        modal.classList.remove("active");
-
-        document.body.style.overflow = "";
-
-        modalImage.src = "";
-
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
     }
 
+    function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        setTimeout(function () {
+            if (!modal.classList.contains("active")) {
+                modalImage.src = "";
+            }
+        }, 250);
+    }
 
-    closeButton.addEventListener(
-        "click",
-        closeModal
-    );
+    // Attach listeners to clickable elements
+    const triggers = document.querySelectorAll("[data-certificate]");
+    triggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            openModal(trigger);
+        });
+    });
 
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    }
 
-    // Click outside certificate
-
+    // Backdrop click
     modal.addEventListener("click", function (event) {
-
         if (event.target === modal) {
-
             closeModal();
-
         }
-
     });
 
-
-    // ESC key
-
+    // Keyboard ESC
     document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape") {
-
+        if (event.key === "Escape" && modal.classList.contains("active")) {
             closeModal();
-
         }
-
     });
-
 });
