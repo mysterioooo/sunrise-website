@@ -165,21 +165,6 @@
             outline-offset: 3px;
             border-radius: 3px;
         }
-
-        &.footer-profile-link {
-            color: $white;
-            font-weight: 600;
-
-            i {
-                color: $coral-accent;
-                font-size: 12px;
-                opacity: 1;
-            }
-
-            &:hover {
-                color: $coral-accent;
-            }
-        }
     }
 }
 
