@@ -613,22 +613,22 @@
         ============================================================ */
         .clients-a4-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4.5mm;
-            margin-top: 2mm;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3.5mm;
+            margin-top: 2.5mm;
         }
         .client-logo-box {
             background: #FFFFFF;
             border: 1px solid var(--subtle-border);
-            border-radius: 8px;
-            padding: 3mm;
+            border-radius: 7px;
+            padding: 2.5mm 3mm;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 30mm;
+            height: 35mm;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(7, 27, 45, 0.03);
+            box-shadow: 0 2px 6px rgba(7, 27, 45, 0.03);
         }
         .client-img-wrap {
             height: 15mm;
@@ -656,13 +656,16 @@
         }
         .client-category-tag {
             display: inline-block;
-            font-size: 6pt;
-            font-weight: 600;
-            color: var(--primary-crimson);
-            background: rgba(215, 25, 45, 0.08);
-            padding: 1px 5px;
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 1.5px 6px;
             border-radius: 3px;
-            margin-top: 1mm;
+            margin-top: 1.5mm;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
         }
         .client-highlight-banner {
             background: var(--warm-white);
@@ -681,9 +684,125 @@
         ============================================================ */
         .awards-pdf-grid {
             display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2.8mm;
+            margin-top: 2.5mm;
+        }
+        .awards-pdf-grid-3col {
+            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 4.5mm;
-            margin-top: 2mm;
+            gap: 3.5mm;
+            margin-top: 2.5mm;
+        }
+        .award-pdf-card-p9 {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(7, 27, 45, 0.03);
+            height: 52mm;
+        }
+        .award-pdf-card-p9 .award-pdf-thumb {
+            height: 34mm;
+            background: #F8FAFC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2mm;
+            border-bottom: 1px solid var(--subtle-border);
+        }
+        .award-pdf-card-p9 .award-pdf-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .award-pdf-card-p9 .award-pdf-body {
+            padding: 2mm 2.5mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+        .award-pdf-card-p9 .award-pdf-year {
+            font-size: 5.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 0.8px 4px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 1mm;
+            align-self: flex-start;
+        }
+        .award-pdf-card-p9 .award-pdf-title {
+            font-size: 6.8pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            line-height: 1.25;
+            margin-bottom: 0.8mm;
+        }
+        .award-pdf-card-p9 .award-pdf-issuer {
+            font-size: 5.8pt;
+            color: var(--slate-text);
+            line-height: 1.2;
+        }
+        .award-pdf-card-compact {
+            background: #FFFFFF;
+            border: 1px solid var(--subtle-border);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(7, 27, 45, 0.03);
+            height: 72mm;
+        }
+        .award-pdf-card-compact .award-pdf-thumb {
+            height: 48mm;
+            background: #F8FAFC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.8mm;
+            border-bottom: 1px solid var(--subtle-border);
+        }
+        .award-pdf-card-compact .award-pdf-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .award-pdf-card-compact .award-pdf-body {
+            padding: 1.8mm 2mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+        .award-pdf-card-compact .award-pdf-year {
+            font-size: 5.5pt;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 0.8px 4px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 1mm;
+            align-self: flex-start;
+        }
+        .award-pdf-card-compact .award-pdf-title {
+            font-size: 6.2pt;
+            font-weight: 700;
+            color: var(--midnight-navy);
+            line-height: 1.2;
+            margin-bottom: 0.8mm;
+        }
+        .award-pdf-card-compact .award-pdf-issuer {
+            font-size: 5.5pt;
+            color: var(--slate-text);
+            line-height: 1.2;
         }
         .award-pdf-card {
             background: #FFFFFF;
@@ -695,7 +814,7 @@
             box-shadow: 0 3px 10px rgba(7, 27, 45, 0.04);
         }
         .award-pdf-thumb {
-            height: 38mm;
+            height: 48mm;
             background: #F8FAFC;
             display: flex;
             align-items: center;
@@ -938,6 +1057,31 @@
             margin-right: 2px;
         }
 
+            .award-verification-banner {
+            margin-top: 4.5mm;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 3.5px solid var(--primary-crimson);
+            border-radius: 6px;
+            padding: 3mm 4mm;
+            display: flex;
+            align-items: center;
+            gap: 3.5mm;
+        }
+        .award-verification-icon {
+            font-size: 14pt;
+            color: var(--primary-crimson);
+            flex-shrink: 0;
+        }
+        .award-verification-text {
+            font-size: 7pt;
+            color: var(--midnight-navy);
+            line-height: 1.35;
+        }
+        .award-verification-text strong {
+            color: var(--corporate-navy);
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -1001,13 +1145,10 @@
             <div class="overview-grid">
                 <div class="overview-text">
                     <p>
-                        <strong>SUNRISE STAFFING SOLUTIONS PVT. LTD.</strong> was established in 2008 under the visionary stewardship of <strong>Mr. Kiran Vishnu Panchpute</strong>. Founded in Pune, Maharashtra, the organization emerged to bridge a vital industrial need: delivering dependable, high-caliber integrated facility management and skilled workforce solutions that allow manufacturing leaders to concentrate entirely on their core production goals.
+                        <strong>SUNRISE STAFFING SOLUTIONS PVT. LTD.</strong> was established in 2008 under the visionary leadership of <strong>Mr. Kiran Vishnu Panchpute</strong>. The organization was created with a clear focus on providing integrated facility management and specialized workforce support services that empower enterprise clients to manage facility requirements effortlessly while concentrating fully on their core business operations.
                     </p>
                     <p>
-                        Over nearly two decades of uninterrupted operations, Sunrise has evolved from a boutique labor contractor into a premier integrated facility management partner. Today, Sunrise manages complex manufacturing campuses, automotive assembly lines, IT parks, logistics hubs, and executive guest facilities.
-                    </p>
-                    <p>
-                        Our operational philosophy rests on an uncompromising foundation of 100% statutory adherence, proactive supervision, rigorous workforce training, and continuous investment in human capital.
+                        Originally established as <strong>Sunrise Enterprises in 2008</strong>, the organization steadily expanded its operational footprint and capabilities. As operations evolved to meet broader multi-plant workforce demands, it evolved into <strong>Sunrise Staffing Solutions Pvt. Ltd.</strong>, reflecting its specialized growth and expanded mandate in comprehensive staffing and facility management. Today, Sunrise Staffing Solutions Pvt. Ltd. builds upon the <strong>18+ year foundation of trust, excellence, and statutory transparency</strong> established by Sunrise Enterprises since 2008.
                     </p>
                 </div>
                 <div class="overview-image-card">
@@ -1361,7 +1502,6 @@
             <span class="section-eyebrow">Enterprise Client Partnerships</span>
             <h2 class="section-main-title">Trusted by Global <span>Automotive Leaders</span></h2>
             <p class="section-subtitle">Delivering high-standard facility management and compliant staffing across premier manufacturing plants in Pune, Chakan, Talegaon, and across India.</p>
-
             <div class="clients-a4-grid">
                 <!-- 1. Skoda Auto Volkswagen -->
                 <div class="client-logo-box">
@@ -1377,94 +1517,104 @@
                     <span class="client-category-tag">Luxury Automotive</span>
                 </div>
 
-                <!-- 4. Audi India -->
+                <!-- 3. Audi India -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/audi.png" alt="Audi"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/audi.png" alt="Audi India"></div>
                     <div class="client-card-name">Audi India</div>
                     <span class="client-category-tag">Luxury Automotive</span>
                 </div>
 
-                <!-- 5. Volkswagen India -->
+                <!-- 4. Volkswagen India Plant -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/volkswagen.png" alt="Volkswagen India"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/vw.png" alt="Volkswagen India Plant"></div>
                     <div class="client-card-name">Volkswagen India Plant, Chakan</div>
                     <span class="client-category-tag">Manufacturing Facility</span>
                 </div>
 
-                <!-- 6. POSCO-IPPC -->
+                <!-- 5. POSCO-India Processing Center -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/posco-ippc.png" alt="POSCO-IPPC"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco-ippc.png" alt="POSCO-India Pune Processing Center"></div>
                     <div class="client-card-name">POSCO-India Pune Processing Center Pvt Ltd</div>
                     <span class="client-category-tag">Steel Processing</span>
                 </div>
 
-                <!-- 8. Posco Flow -->
+                <!-- 6. Posco Flow India -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/posco-flow.png" alt="POSCO Flow"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/posco-flow.png" alt="Posco Flow India"></div>
                     <div class="client-card-name">Posco Flow India Pvt Ltd</div>
                     <span class="client-category-tag">Logistics & Supply</span>
                 </div>
 
-                <!-- 9. Endurance Technologies -->
+                <!-- 7. Endurance Technologies -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/endurance.png" alt="Endurance"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/endurance.png" alt="Endurance Technologies"></div>
                     <div class="client-card-name">Endurance Technologies Limited</div>
                     <span class="client-category-tag">Auto Components</span>
                 </div>
 
-                <!-- 10. Harman International -->
+                <!-- 8. Harman International -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/harman.png" alt="Harman"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/harman.png" alt="Harman International"></div>
                     <div class="client-card-name">Harman International India Pvt Ltd</div>
                     <span class="client-category-tag">Automotive Audio/Electronics</span>
                 </div>
 
-                <!-- 11. Honeywell Automation -->
+                <!-- 9. Honeywell Automation -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/honeywell.png" alt="Honeywell"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/honeywell.png" alt="Honeywell Automation"></div>
                     <div class="client-card-name">Honeywell Automation India Limited</div>
                     <span class="client-category-tag">Industrial Automation</span>
                 </div>
 
-                <!-- 12. Varroc Group -->
+                <!-- 10. Varroc Engineering -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/varroc.png" alt="Varroc"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/varroc.png" alt="Varroc Engineering"></div>
                     <div class="client-card-name">Varroc Engineering Private Limited</div>
                     <span class="client-category-tag">Auto Engineering</span>
                 </div>
 
-                <!-- 13. Hyundai Steel -->
+                <!-- 11. Hyundai Steel India -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-steel.png" alt="Hyundai Steel"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-steel.png" alt="Hyundai Steel India"></div>
                     <div class="client-card-name">Hyundai Steel India Pvt Ltd</div>
                     <span class="client-category-tag">Steel Processing</span>
                 </div>
 
-                <!-- 14. Hyundai Materials -->
+                <!-- 12. Hyundai Materials Pune -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-materials.png" alt="Hyundai Materials"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/hyundai-materials.png" alt="Hyundai Materials Pune"></div>
                     <div class="client-card-name">Hyundai Materials Pune Pvt. Ltd</div>
                     <span class="client-category-tag">Automotive Logistics</span>
                 </div>
 
-                <!-- 15. Envision Energy -->
+                <!-- 13. Mahindra Logistics (NEW) -->
+                <div class="client-logo-box">
+                    <div class="client-img-wrap"><img src="assets/images/clients/mahindra-logistics.png" alt="Mahindra Logistics"></div>
+                    <div class="client-card-name">Mahindra Logistics Limited</div>
+                    <span class="client-category-tag">Logistics & Supply Chain</span>
+                </div>
+
+                <!-- 14. Envision Energy -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/envision.png" alt="Envision Energy"></div>
                     <div class="client-card-name">Envision Energy India Pvt Ltd</div>
                     <span class="client-category-tag">Renewable Energy</span>
                 </div>
 
-                <!-- 16. ArcelorMittal Nippon Steel -->
+                <!-- 15. ArcelorMittal Nippon Steel -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/arcelormittal.png" alt="ArcelorMittal"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/arcelormittal.png" alt="ArcelorMittal Nippon Steel"></div>
                     <div class="client-card-name">ArcelorMittal Nippon Steel India</div>
                     <span class="client-category-tag">Heavy Industry / Steel</span>
                 </div>
             </div>
 
-            <div class="client-highlight-banner">
-                <div><i class="fa-solid fa-circle-check" style="color: #10B981;"></i> <strong>Decade-Long Relationships:</strong> Multi-year operational contracts validated by consecutive supplier excellence awards.</div>
-                <div style="font-weight: 700; color: var(--corporate-navy);">14 Major Industrial Leaders Displayed</div>
+            <!-- Page 6 Summary Callout Ribbon -->
+            <div class="award-verification-banner" style="margin-top: 4mm;">
+                <div class="award-verification-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div class="award-verification-text">
+                    <strong>Decade-Long Relationships:</strong> Multi-year operational contracts validated by consecutive supplier excellence awards across 15 premier automotive OEMs, tier-1 suppliers, and heavy manufacturing plants.
+                </div>
             </div>
         </div>
 
@@ -1494,107 +1644,100 @@
             <p class="section-subtitle">Extending integrated facility and workforce support to global supply chain partners, EV tech, and premier educational institutes.</p>
 
             <div class="clients-a4-grid">
-                <!-- 17. CEVA Logistics -->
+                <!-- 16. CEVA Logistics -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/ceva.png" alt="CEVA Logistics"></div>
                     <div class="client-card-name">CEVA Logistics</div>
                     <span class="client-category-tag">Global Logistics</span>
                 </div>
 
-                <!-- 18. Chasys Automotive -->
+                <!-- 17. Chasys Automotive -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/chasys.png" alt="Chasys Automotive"></div>
                     <div class="client-card-name">Chasys Automotive Components Private Limited</div>
                     <span class="client-category-tag">Auto Components</span>
                 </div>
 
-                <!-- 19. Gabriel India -->
+                <!-- 18. Gabriel India -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/gabriel.png" alt="Gabriel India"></div>
                     <div class="client-card-name">Gabriel India Limited</div>
                     <span class="client-category-tag">Ride Control Products</span>
                 </div>
 
-                <!-- 20. SEOYON E-HWA -->
+                <!-- 19. SEOYON E-HWA -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/seoyon-ehwa.png" alt="SEOYON E-HWA"></div>
                     <div class="client-card-name">SEOYON E-HWA SUMMIT AUTOMOTIVE PUNE PVT LTD</div>
                     <span class="client-category-tag">Automotive Interiors</span>
                 </div>
 
-                <!-- 21. TACO EV Components -->
+                <!-- 20. TACO EV Components -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/taco.png" alt="TACO EV"></div>
                     <div class="client-card-name">TACO EV Components Solutions Pvt Ltd</div>
                     <span class="client-category-tag">Electric Mobility</span>
                 </div>
 
-                <!-- 22. VW IT Services -->
+                <!-- 21. VW IT Services -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/vw.png" alt="VW IT Services"></div>
                     <div class="client-card-name">VW IT's Volkswagen IT Services India Pvt Ltd</div>
                     <span class="client-category-tag">Information Technology</span>
                 </div>
 
-                <!-- 23. Magneti Marelli -->
+                <!-- 22. Magneti Marelli -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/magneti-marelli.png" alt="Magneti Marelli"></div>
                     <div class="client-card-name">Magneti Marelli Motherson</div>
                     <span class="client-category-tag">Powertrain / Electronics</span>
                 </div>
 
-                <!-- 24. Nexteer Automotive -->
+                <!-- 23. Nexteer Automotive -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/nexteer.png" alt="Nexteer Automotive"></div>
                     <div class="client-card-name">Nexteer Automotive India Pvt Ltd</div>
                     <span class="client-category-tag">Steering Systems</span>
                 </div>
 
-                <!-- 25. SFC Solutions -->
+                <!-- 24. SFC Solutions -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/sfc-solutions.png" alt="SFC Solutions"></div>
                     <div class="client-card-name">SFC Solutions Poland</div>
                     <span class="client-category-tag">Automotive Sealing</span>
                 </div>
 
-                <!-- 26. Octillion Power Systems -->
+                <!-- 25. Octillion Power Systems -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/octillion.png" alt="Octillion"></div>
                     <div class="client-card-name">Octillion Power Systems India Pvt Ltd</div>
                     <span class="client-category-tag">EV Battery Systems</span>
                 </div>
 
-                <!-- 27. Donaldson India -->
+                <!-- 26. Donaldson India -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/donaldson.png" alt="Donaldson India"></div>
                     <div class="client-card-name">Donaldson India Filter Systems Pvt Ltd</div>
                     <span class="client-category-tag">Industrial Filtration</span>
                 </div>
 
-                <!-- 28. Metzeler Automotive -->
-                <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/metzeler.png" alt="Metzeler"></div>
-                    <div class="client-card-name">Metzeler Automotive Profiles India Pvt. Ltd</div>
-                    <span class="client-category-tag">Sealing Systems</span>
-                </div>
-
-                                <!-- 29. Hirotec India -->
+                <!-- 27. Hirotec India -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/hirotec.png" alt="Hirotec India"></div>
                     <div class="client-card-name">Hirotec India Pvt. Ltd.</div>
                     <span class="client-category-tag">Tooling & Engineering</span>
                 </div>
 
-<!-- 30. Govt Engineering College Pune -->
+                <!-- 28. COEP -->
                 <div class="client-logo-box">
                     <div class="client-img-wrap"><img src="assets/images/clients/govt-engineering-college.png" alt="COEP"></div>
                     <div class="client-card-name">Government College of Engineering Pune (COEP)</div>
                     <span class="client-category-tag">Premier Institute</span>
                 </div>
 
-                <!-- 31. Govt Polytechnic Pune -->
+                <!-- 29. Government Polytechnic -->
                 <div class="client-logo-box">
-                    <div class="client-img-wrap"><img src="assets/images/clients/govt-polytechnic.png" alt="Govt Polytechnic"></div>
+                    <div class="client-img-wrap"><img src="assets/images/clients/govt-polytechnic.png" alt="Government Polytechnic"></div>
                     <div class="client-card-name">Government Polytechnic College Pune</div>
                     <span class="client-category-tag">Technical Education</span>
                 </div>
@@ -1630,46 +1773,81 @@
             <span class="section-eyebrow">Proven Industry Recognition</span>
             <h2 class="section-main-title">Verified Honours <span>& Accreditations</span></h2>
             <p class="section-subtitle">Real awards photographed from our corporate collection, validated by Fortune 500 automotive partners and national tax authorities.</p>
-
             <div class="awards-pdf-grid">
-                <!-- 2024 Skoda VW Trophy -->
-                <div class="award-pdf-card">
+                <!-- 1. 2024-25 Govt of India CBIC Commendation -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
-                        <img src="assets/images/awards/skoda-volkswagen-award-2024.jpg" alt="Skoda VW 2024 Trophy">
+                        <img src="assets/images/awards/govt-of-india-cbic-cert-2024.jpg" alt="Govt of India CBIC 2024-25">
                     </div>
                     <div class="award-pdf-body">
-                        <span class="award-pdf-year">2024</span>
-                        <div class="award-pdf-title">Partner for Progress Award 2024</div>
-                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <span class="award-pdf-year">2024-25</span>
+                        <div class="award-pdf-title">Ministry of Finance (CBIC) Commendation</div>
+                        <div class="award-pdf-issuer">Govt. of India, Ministry of Finance</div>
                     </div>
                 </div>
 
-                <!-- 2024 Skoda VW Certificate -->
-                <div class="award-pdf-card">
+                <!-- 2. 2024 Skoda VW Partner for Progress Trophy -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
-                        <img src="assets/images/awards/skoda-volkswagen-cert-2024.jpg" alt="Skoda VW 2024 Certificate">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2024.jpg" alt="Skoda VW 2024 Partner Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2024</span>
+                        <div class="award-pdf-title">Partner for Progress Award Trophy</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India Pvt. Ltd.</div>
+                    </div>
+                </div>
+
+                <!-- 3. 2024 Skoda VW Partner for Progress Certificate -->
+                <div class="award-pdf-card-compact">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-cert-2024.jpg" alt="Skoda VW 2024 Partner Certificate">
                     </div>
                     <div class="award-pdf-body">
                         <span class="award-pdf-year">2024</span>
                         <div class="award-pdf-title">Partner for Progress Certificate</div>
-                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India Pvt. Ltd.</div>
                     </div>
                 </div>
 
-                <!-- 2024 Envision Quality Certificate -->
-                <div class="award-pdf-card">
+                <!-- 4. 2024 Envision Quality Certificate -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
-                        <img src="assets/images/awards/envision-quality-cert-2024.jpg" alt="Envision 2024 Certificate">
+                        <img src="assets/images/awards/envision-quality-cert-2024.jpg" alt="Envision 2024 Quality Certificate">
                     </div>
                     <div class="award-pdf-body">
                         <span class="award-pdf-year">2024</span>
                         <div class="award-pdf-title">Excellence in Quality & Commitment</div>
-                        <div class="award-pdf-issuer">Envision Energy India</div>
+                        <div class="award-pdf-issuer">Envision Energy India Pvt Ltd</div>
                     </div>
                 </div>
 
-                <!-- 2023 Skoda VW Certificate -->
-                <div class="award-pdf-card">
+                <!-- 5. 2024 Envision Net Zero Trophy -->
+                <div class="award-pdf-card-compact">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/envision-trophy-2024.jpg" alt="Envision 2024 Net Zero Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2024</span>
+                        <div class="award-pdf-title">Net Zero Tech Partner Award Trophy</div>
+                        <div class="award-pdf-issuer">Envision Energy India Pvt Ltd</div>
+                    </div>
+                </div>
+
+                <!-- 6. 2023 Skoda VW Diamond Trophy -->
+                <div class="award-pdf-card-compact">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2023.jpg" alt="Skoda VW 2023 Diamond Trophy">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2023</span>
+                        <div class="award-pdf-title">Statutory Compliance Diamond Trophy</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                    </div>
+                </div>
+
+                <!-- 7. 2023 Skoda VW Certificate -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/skoda-volkswagen-cert-2023.jpg" alt="Skoda VW 2023 Certificate">
                     </div>
@@ -1680,28 +1858,48 @@
                     </div>
                 </div>
 
-                <!-- 2023 Skoda VW Diamond Trophy -->
-                <div class="award-pdf-card">
+                <!-- 8. 2022 POSCO Safety Certificate -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
-                        <img src="assets/images/awards/skoda-volkswagen-award-2023.jpg" alt="Skoda VW 2023 Trophy">
+                        <img src="assets/images/awards/posco-safety-cert-2022.jpg" alt="POSCO-IPPC Safety 2022">
                     </div>
                     <div class="award-pdf-body">
-                        <span class="award-pdf-year">2023</span>
-                        <div class="award-pdf-title">Best Statutory Compliance Diamond Trophy</div>
-                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                        <span class="award-pdf-year">2022</span>
+                        <div class="award-pdf-title">Safety Week Appreciation Certificate</div>
+                        <div class="award-pdf-issuer">POSCO-India Pune Processing Center</div>
                     </div>
                 </div>
 
-                <!-- 2024-25 Govt of India CBIC -->
-                <div class="award-pdf-card">
+                <!-- 9. 2022 Govt of India CBIC Certificate -->
+                <div class="award-pdf-card-compact">
                     <div class="award-pdf-thumb">
-                        <img src="assets/images/awards/govt-of-india-cbic-cert-2024.jpg" alt="Govt of India CBIC 2024-25">
+                        <img src="assets/images/awards/govt-of-india-cbic-cert-2022.jpg" alt="Govt of India CBIC 2021-22">
                     </div>
                     <div class="award-pdf-body">
-                        <span class="award-pdf-year">2024-25</span>
-                        <div class="award-pdf-title">Ministry of Finance (CBIC) Commendation</div>
+                        <span class="award-pdf-year">2021-22</span>
+                        <div class="award-pdf-title">Ministry of Finance (CBIC) Certificate</div>
                         <div class="award-pdf-issuer">Govt. of India, Ministry of Finance</div>
                     </div>
+                </div>
+
+                <!-- 10. 2021 Govt of India CBIC Certificate -->
+                <div class="award-pdf-card-compact">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/govt-of-india-cbic-cert-2021.jpg" alt="Govt of India CBIC 2020-21">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2020-21</span>
+                        <div class="award-pdf-title">Ministry of Finance (CBIC) Certificate</div>
+                        <div class="award-pdf-issuer">Govt. of India, Ministry of Finance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 8 Compliance Banner -->
+            <div class="award-verification-banner" style="margin-top: 3.5mm;">
+                <div class="award-verification-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="award-verification-text">
+                    <strong>National Statutory & Tax Governance Seal:</strong> Validated by the Ministry of Finance (CBIC) across three consecutive fiscal cycles and premier Tier-1 automotive awards for flawless PF, ESIC, and statutory audit integrity.
                 </div>
             </div>
         </div>
@@ -1730,10 +1928,21 @@
             <span class="section-eyebrow">Decade-Long Track Record</span>
             <h2 class="section-main-title">Consecutive Honours <span>& Mementos</span></h2>
             <p class="section-subtitle">Consistent recognition across multiple manufacturing cycles, environmental partnerships, and long-standing plant operations.</p>
+            <div class="awards-pdf-grid-3col">
+                <!-- 1. 2021 Skoda VW Plaque -->
+                <div class="award-pdf-card-p9">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/skoda-volkswagen-award-2021.jpg" alt="Skoda VW 2021 Plaque">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">2021</span>
+                        <div class="award-pdf-title">Best Statutory Compliance Plaque</div>
+                        <div class="award-pdf-issuer">Skoda Auto Volkswagen India</div>
+                    </div>
+                </div>
 
-            <div class="awards-pdf-grid">
-                <!-- 2019 Skoda VW Crystal Trophy -->
-                <div class="award-pdf-card">
+                <!-- 2. 2019 Skoda VW Crystal Trophy -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/skoda-volkswagen-award-2019.jpg" alt="VW 2019 Trophy">
                     </div>
@@ -1744,8 +1953,8 @@
                     </div>
                 </div>
 
-                <!-- 2018 VW Gold Trophy -->
-                <div class="award-pdf-card">
+                <!-- 3. 2018 VW Gold Trophy -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/volkswagen-award-2018.jpg" alt="VW 2018 Gold Trophy">
                     </div>
@@ -1756,44 +1965,56 @@
                     </div>
                 </div>
 
-                <!-- 2014 Envision Wind Turbine -->
-                <div class="award-pdf-card">
+                <!-- 4. 2014 Envision Wind Turbine -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/envision-wind-turbine-award-2014.jpg" alt="Envision 2014 Trophy">
                     </div>
                     <div class="award-pdf-body">
                         <span class="award-pdf-year">2014</span>
-                        <div class="award-pdf-title">Wind Turbine Excellence Award 2014</div>
-                        <div class="award-pdf-issuer">Envision Energy</div>
+                        <div class="award-pdf-title">Wind Turbine Excellence Award</div>
+                        <div class="award-pdf-issuer">Envision Energy India</div>
                     </div>
                 </div>
 
-                <!-- 2013 Envision Net Zero Trophy -->
-                <div class="award-pdf-card">
+                <!-- 5. 2013 Envision Net Zero Trophy -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/envision-net-zero-award-2013.jpg" alt="Envision 2013 Trophy">
                     </div>
                     <div class="award-pdf-body">
                         <span class="award-pdf-year">2013</span>
-                        <div class="award-pdf-title">Net Zero Tech Partner Award 2013</div>
-                        <div class="award-pdf-issuer">Envision Energy</div>
+                        <div class="award-pdf-title">Net Zero Tech Partner Award</div>
+                        <div class="award-pdf-issuer">Envision Energy India</div>
                     </div>
                 </div>
 
-                <!-- Endurance Certificates -->
-                <div class="award-pdf-card">
+                <!-- 6. Endurance Plant B-20 Certificate -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/endurance-b20-cert.jpg" alt="Endurance B-20 Certificate">
                     </div>
                     <div class="award-pdf-body">
                         <span class="award-pdf-year">Partnership</span>
-                        <div class="award-pdf-title">Appreciation Certificate (Plant B-20)</div>
+                        <div class="award-pdf-title">Plant B-20 Appreciation Certificate</div>
                         <div class="award-pdf-issuer">Endurance Technologies Limited</div>
                     </div>
                 </div>
 
-                <!-- VW 3D Crystal Block -->
-                <div class="award-pdf-card">
+                <!-- 7. Endurance Plant B-1/2 & B-1/3 Certificate -->
+                <div class="award-pdf-card-p9">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/endurance-b1-cert.jpg" alt="Endurance B-1 Certificate">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">Partnership</span>
+                        <div class="award-pdf-title">Plant B-1/2 & B-1/3 Appreciation Certificate</div>
+                        <div class="award-pdf-issuer">Endurance Technologies Limited</div>
+                    </div>
+                </div>
+
+                <!-- 8. VW 3D Crystal Block -->
+                <div class="award-pdf-card-p9">
                     <div class="award-pdf-thumb">
                         <img src="assets/images/awards/volkswagen-crystal-plant.jpg" alt="VW 3D Crystal Block">
                     </div>
@@ -1802,6 +2023,26 @@
                         <div class="award-pdf-title">Volkswagen Plant 3D Crystal Block</div>
                         <div class="award-pdf-issuer">Volkswagen India Manufacturing</div>
                     </div>
+                </div>
+
+                <!-- 9. Varroc Excellence Memento -->
+                <div class="award-pdf-card-p9">
+                    <div class="award-pdf-thumb">
+                        <img src="assets/images/awards/varroc-excellence-memento.jpg" alt="Varroc Excellence Memento">
+                    </div>
+                    <div class="award-pdf-body">
+                        <span class="award-pdf-year">Commemorative</span>
+                        <div class="award-pdf-title">Varroc Excellence Commemorative Memento</div>
+                        <div class="award-pdf-issuer">Varroc Engineering Group</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 9 Commemorative Banner -->
+            <div class="award-verification-banner" style="margin-top: 3.5mm;">
+                <div class="award-verification-icon"><i class="fa-solid fa-handshake-simple"></i></div>
+                <div class="award-verification-text">
+                    <strong>Decade-Long Client Trust & Commemorative Tokens:</strong> Verified credentials across 19 corporate citations, OEM mementos, and multi-plant operations ensuring zero disruptions and continuous compliance since 2008.
                 </div>
             </div>
         </div>
@@ -2100,7 +2341,7 @@
                         <div class="contact-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="contact-detail-text">
                             <strong>Corporate Headquarters</strong>
-                            Shop No. T 316, 306, 307, Near Talera Ford Showroom, Inspiria Sr No. 3/2, CTS No. 984, Old Mumbai Pune Highway, Pune - 411044, Maharashtra
+                            Shop No. T 316, 306, 307, Inspiria Mall, Near Talera Ford Showroom, Old Mumbai Pune Highway, Pune - 411044
                         </div>
                     </div>
 
