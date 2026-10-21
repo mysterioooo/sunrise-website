@@ -21,7 +21,7 @@ const args = [
     templateUrl
 ];
 
-console.log('Rendering 10-page Corporate Company Profile PDF via Edge headless...');
+console.log('Rendering 11-page Corporate Company Profile PDF via Edge headless...');
 execFile(edgePath, args, (err, stdout, stderr) => {
     if (err) {
         console.error('Error generating PDF:', err);

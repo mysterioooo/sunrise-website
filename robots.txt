@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sunriseent.com/sitemap.xml
+Sitemap: https://sunrisestaffingsolution.com/sitemap.xml

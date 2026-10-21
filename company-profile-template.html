@@ -860,6 +860,84 @@
             text-decoration: none;
             font-weight: 600;
         }
+    
+        /* ============================================================
+           PAGE 10: 35-POINT STATUTORY COMPLIANCE CHECKLIST
+        ============================================================ */
+        .compliance-table-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5mm;
+            margin-top: 2mm;
+            margin-bottom: 3mm;
+        }
+        .compliance-subtable {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.8pt;
+            background: #FFFFFF;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--subtle-border);
+            box-shadow: 0 2px 6px rgba(7, 27, 45, 0.02);
+        }
+        .compliance-subtable th {
+            background: #071B2D;
+            color: #FFFFFF;
+            padding: 2mm 2.5mm;
+            text-align: left;
+            font-weight: 700;
+            font-size: 6.8pt;
+            letter-spacing: 0.3px;
+        }
+        .compliance-subtable th.col-sl {
+            width: 7mm;
+            text-align: center;
+        }
+        .compliance-subtable th.col-title {
+            width: 44mm;
+        }
+        .compliance-subtable th.col-desc {
+            width: auto;
+        }
+        .compliance-subtable td {
+            padding: 1.6mm 2.2mm;
+            border-bottom: 1px solid #E2E8F0;
+            color: var(--midnight-navy);
+            line-height: 1.25;
+            vertical-align: middle;
+        }
+        .compliance-subtable tr:last-child td {
+            border-bottom: none;
+        }
+        .compliance-subtable tr:nth-child(even) td {
+            background: #F8FAFC;
+        }
+        .compliance-subtable td.col-sl {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-crimson);
+            background: #F1F5F9;
+        }
+        .compliance-subtable td.col-title {
+            font-weight: 600;
+            color: #0F172A;
+            border-right: 1px solid #E2E8F0;
+        }
+        .compliance-subtable td.col-desc {
+            color: #334155;
+        }
+        .compliance-tag-pill {
+            display: inline-block;
+            background: #E0F2FE;
+            color: #0369A1;
+            padding: 0.2mm 1.5mm;
+            border-radius: 3px;
+            font-size: 5.6pt;
+            font-weight: 700;
+            margin-right: 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -906,7 +984,7 @@
 
         <div class="cover-bottom">
             <div><strong>Registered Office:</strong> Pune, Maharashtra, India</div>
-            <div><strong>Official Web Portal:</strong> www.sunriseent.co.in</div>
+            <div><strong>Official Web Portal:</strong> www.sunrisestaffingsolution.com</div>
         </div>
     </div>
 
@@ -987,7 +1065,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">2</span>
             </div>
         </div>
@@ -1060,7 +1138,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">3</span>
             </div>
         </div>
@@ -1164,7 +1242,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">4</span>
             </div>
         </div>
@@ -1268,7 +1346,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">5</span>
             </div>
         </div>
@@ -1399,7 +1477,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">6</span>
             </div>
         </div>
@@ -1537,7 +1615,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">7</span>
             </div>
         </div>
@@ -1637,7 +1715,7 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">8</span>
             </div>
         </div>
@@ -1737,50 +1815,281 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
+                <span>www.sunrisestaffingsolution.com</span>
                 <span class="footer-page-num">9</span>
             </div>
         </div>
     </div>
 
-    <!-- ====================================================================
-         PAGE 10: COMPLIANCE, SAFETY & CONTACT DIRECTORY
+        <!-- ====================================================================
+         PAGE 10: 35-POINT STATUTORY COMPLIANCE & AUDIT CHECKLIST
     ==================================================================== -->
     <div class="pdf-page">
         <div class="page-header">
             <div class="header-logo-group">
                 <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
             </div>
-            <div class="header-doc-title">Company Profile | <span>Compliance & Contact</span></div>
+            <div class="header-doc-title">Company Profile | <span>Statutory Compliance Matrix</span></div>
         </div>
 
         <div class="page-body">
-            <span class="section-eyebrow">Enterprise Governance & Directory</span>
-            <h2 class="section-main-title">Statutory Compliance <span>& Contact</span></h2>
-            <p class="section-subtitle">Zero-liability compliance assurance, rigorous industrial health & safety protocols, and nationwide enterprise enquiry contacts.</p>
+            <span class="section-eyebrow">Zero-Liability Statutory Immunity</span>
+            <h2 class="section-main-title">35-Point Statutory <span>Compliance Checklist</span></h2>
+            <p class="section-subtitle">Verified government registers, licenses, challans, and statutory returns maintained with 100% audit readiness for Tier-1 corporate audits.</p>
 
-            <div class="compliance-grid">
-                <!-- Compliance -->
+            <div class="compliance-table-wrap">
+                <table class="compliance-subtable">
+        <thead>
+            <tr>
+                <th class="col-sl">#</th>
+                <th class="col-title">Act / Statutory Title</th>
+                <th class="col-desc">Compliance Deliverable / Checklist Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-sl">1</td>
+                <td class="col-title">Child Labour (Prohibition & Reg.) Act, 1986</td>
+                <td class="col-desc">No contract worker less than 14 years engaged; strict age validation.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">2</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Copy of Contract Labour Licence / App with security deposit in Form IV.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">3</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Commencement / completion of contract in Form VI-A & VI-B.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">4</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Employment cards issued to all deployed contract workers.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">5</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Muster Roll Register in Form XVI.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">6</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Wage registers in Form XVII.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">7</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Register of Overtime in Form XXIII.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">8</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Register of Advances in Form XXII.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">9</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Registers of Fines in Form XXI.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">10</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Register of deduction for Damages in Form XX.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">11</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Contractor Registers (Form VIII).</td>
+            </tr>
+            <tr>
+                <td class="col-sl">12</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Form-XIX Wage Slips generated & distributed monthly.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">13</td>
+                <td class="col-title">Contract Labour (R&A) Act, 1970</td>
+                <td class="col-desc">Service Certificate under Contract Labour Act in Form-XV.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">14</td>
+                <td class="col-title">Maha. Shops & Establishments Act, 2017</td>
+                <td class="col-desc">Form-O Register of Leave maintained.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">15</td>
+                <td class="col-title">Payment of Wages Act, 1936</td>
+                <td class="col-desc">Bank transfer / Cheque verified & tallied with Net Pay of Salary Register.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">16</td>
+                <td class="col-title">EPF & MP Act, 1952</td>
+                <td class="col-desc">PF Electronic Challan cum Return (ECR) copy.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">17</td>
+                <td class="col-title">ESIC Act, 1948</td>
+                <td class="col-desc">ESIC Paid Monthly Challan.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">18</td>
+                <td class="col-title">ESIC Act, 1948</td>
+                <td class="col-desc">ESIC Contribution History with individual linkages.</td>
+            </tr>
+        </tbody>
+    </table>
+                <table class="compliance-subtable">
+        <thead>
+            <tr>
+                <th class="col-sl">#</th>
+                <th class="col-title">Act / Statutory Title</th>
+                <th class="col-desc">Compliance Deliverable / Checklist Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-sl">19</td>
+                <td class="col-title">ESIC Act, 1948</td>
+                <td class="col-desc">ESIC e-Pehchan Cards issued to eligible workforce.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">20</td>
+                <td class="col-title">ESIC Act, 1948</td>
+                <td class="col-desc">ESIC Inspection Book in Form 11.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">21</td>
+                <td class="col-title">Labour Welfare Fund (LWF) Act</td>
+                <td class="col-desc">LWF Paid Challan.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">22</td>
+                <td class="col-title">Labour Welfare Fund (LWF) Act</td>
+                <td class="col-desc">LWF Contribution Report submission.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">23</td>
+                <td class="col-title">Maharashtra Profession Tax Act, 1975</td>
+                <td class="col-desc">Monthly Paid Challan.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">24</td>
+                <td class="col-title">Maharashtra Profession Tax Act, 1975</td>
+                <td class="col-desc">Monthly Return submission.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">25</td>
+                <td class="col-title">Payment of Bonus Act, 1965</td>
+                <td class="col-desc">Statutory Register under Form C.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">26</td>
+                <td class="col-title">Payment of Bonus Act, 1965</td>
+                <td class="col-desc">Annual Bonus Return in Form D.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">27</td>
+                <td class="col-title">Payment of Gratuity Act, 1972</td>
+                <td class="col-desc">Form III nomination filled by all employees.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">28</td>
+                <td class="col-title">Payment of Gratuity Act, 1972</td>
+                <td class="col-desc">Form V - Returns Acknowledgment copy.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">29</td>
+                <td class="col-title">Maternity Benefits Act, 2017</td>
+                <td class="col-desc">Register of maternity benefit employee (Form 10).</td>
+            </tr>
+            <tr>
+                <td class="col-sl">30</td>
+                <td class="col-title">Maternity Benefits Act, 2017</td>
+                <td class="col-desc">Annual Returns (Form 11).</td>
+            </tr>
+            <tr>
+                <td class="col-sl">31</td>
+                <td class="col-title">Equal Remuneration Act</td>
+                <td class="col-desc">Statutory Form B Register.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">32</td>
+                <td class="col-title">Employees Compensation Act, 1923</td>
+                <td class="col-desc">Employee Compensation Policy coverage.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">33</td>
+                <td class="col-title">PSARA Act, 2005</td>
+                <td class="col-desc">PSARA License in Form-VI (Security services).</td>
+            </tr>
+            <tr>
+                <td class="col-sl">34</td>
+                <td class="col-title">Minimum Wages Act, 1948</td>
+                <td class="col-desc">Minimum wages structure validation & timely revisions.</td>
+            </tr>
+            <tr>
+                <td class="col-sl">35</td>
+                <td class="col-title">New Labour Wages Code</td>
+                <td class="col-desc">Salary structure validation as per new definition of wages.</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+
+            <div class="client-highlight-banner" style="margin-top: auto;">
+                <div><i class="fa-solid fa-shield-halved" style="color: #10B981;"></i> <strong>Zero-Defect Audit Record:</strong> 100% statutory clearance across multi-year audits by Škoda Auto Volkswagen, Envision Energy, and Ministry of Finance (CBIC).</div>
+                <div style="font-weight: 700; color: var(--corporate-navy);">35/35 Auditable Items</div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
+            <div class="footer-right">
+                <span>www.sunrisestaffingsolution.com</span>
+                <span class="footer-page-num">10</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         PAGE 11: SAFETY PROTOCOLS & CORPORATE DIRECTORY
+    ==================================================================== -->
+    <div class="pdf-page">
+        <div class="page-header">
+            <div class="header-logo-group">
+                <img src="assets/images/logo/sunrise-logo.jpg" alt="Sunrise Logo">
+            </div>
+            <div class="header-doc-title">Company Profile | <span>Safety & Corporate Directory</span></div>
+        </div>
+
+        <div class="page-body">
+            <span class="section-eyebrow">Enterprise Safety & Contacts</span>
+            <h2 class="section-main-title">Occupational Safety <span>& Directory</span></h2>
+            <p class="section-subtitle">Zero-harm safety protocols, industrial accident prevention standards, and direct nationwide enterprise enquiry directory.</p>
+
+            <div class="compliance-grid" style="margin-bottom: 4mm;">
+                <!-- Safety -->
                 <div class="compliance-card">
-                    <h3><i class="fa-solid fa-scale-balanced"></i> Statutory Transparency Standards</h3>
+                    <h3><i class="fa-solid fa-shield-halved"></i> Occupational Health & Industrial Safety</h3>
                     <ul class="compliance-list">
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>PF & ESIC:</strong> 100% timely monthly filing with digital receipts and individual UAN linkages.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Professional Tax (PT) & LWF:</strong> Strict adherence to Maharashtra state welfare boards.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Goods & Services Tax (GST):</strong> Commended by Ministry of Finance CBIC for prompt filing.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Minimum Wages Act:</strong> Direct bank account disbursements with computerized payslips.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Contract Labour Act:</strong> Valid state licenses, Form XII registers, and inspection clearance.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Mandatory Industrial PPE:</strong> ISI-certified helmets, steel-toe shoes, high-vis jackets, and eye protection.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Daily Tool-Box Talks:</strong> Shift-beginning safety orientations, hazard analysis, and SOP briefings.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Emergency Readiness:</strong> Certified first-aiders, onsite hazard marshals, and plant evacuation drills.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Child Labour:</strong> Child Labour Act 1986 strict compliance; mandatory Aadhaar & police verification.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Accident Insurance:</strong> Comprehensive Workmen Compensation & Group Personal Accident coverage.</li>
                     </ul>
                 </div>
 
-                <!-- Safety -->
+                <!-- Governance -->
                 <div class="compliance-card">
-                    <h3><i class="fa-solid fa-shield-halved"></i> Occupational Health & Safety</h3>
+                    <h3><i class="fa-solid fa-building-circle-check"></i> Corporate Governance & Immunity</h3>
                     <ul class="compliance-list">
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Mandatory PPE:</strong> ISI-certified helmets, steel-toe shoes, high-vis jackets, and eye protection.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Daily Tool-Box Talks:</strong> Shift-beginning safety orientations and hazard analysis.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Emergency Readiness:</strong> Certified first-aiders and factory floor evacuation drills.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Child Labour:</strong> Strict age verification via Aadhaar, PAN, and police verification.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Accident Insurance:</strong> Comprehensive workmen compensation insurance coverage.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Principal Employer Shield:</strong> 100% legal indemnity protecting clients against third-party labor liabilities.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Direct Bank Transfers:</strong> Salary disbursement directly to worker accounts with computerized payslips.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Digital Compliance Portal:</strong> Monthly challans, ECR copies, and inspection clearance uploaded to client portal.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Statutory Awards:</strong> Recognized by Skoda Auto VW India & Ministry of Finance for compliance excellence.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Multi-Site Capability:</strong> Turnkey deployments across Pune, Chakan, Talegaon, and national industrial hubs.</li>
                     </ul>
                 </div>
             </div>
@@ -1789,7 +2098,7 @@
             <div class="contact-cta-box">
                 <div class="cta-header">
                     <h3>Partner With <span>Sunrise Today</span></h3>
-                    <p>Elevate your facility standards, reduce operating friction, and experience 100% compliant workforce management backed by nearly two decades of proven industrial performance.</p>
+                    <p>Elevate your facility standards, eliminate operational friction, and experience 100% compliant workforce management backed by nearly two decades of proven industrial performance.</p>
                 </div>
 
                 <div class="contact-items-grid">
@@ -1813,7 +2122,7 @@
                         <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
                         <div class="contact-detail-text">
                             <strong>Official Business Email</strong>
-                            <a href="mailto:hr@sunriseent.co.in">hr@sunriseent.co.in</a>
+                            <a href="mailto:hr@sunrisestaffingsolution.com">hr@sunrisestaffingsolution.com</a>
                         </div>
                     </div>
 
@@ -1821,7 +2130,7 @@
                         <div class="contact-icon-circle"><i class="fa-solid fa-globe"></i></div>
                         <div class="contact-detail-text">
                             <strong>Web Portal & Inquiries</strong>
-                            <a href="https://sunriseent.co.in">www.sunriseent.co.in</a>
+                            <a href="https://sunrisestaffingsolution.com">www.sunrisestaffingsolution.com</a>
                         </div>
                     </div>
                 </div>
@@ -1831,11 +2140,10 @@
         <div class="page-footer">
             <div class="footer-left">SUNRISE STAFFING SOLUTIONS PVT. LTD.</div>
             <div class="footer-right">
-                <span>www.sunriseent.co.in</span>
-                <span class="footer-page-num">10</span>
+                <span>www.sunrisestaffingsolution.com</span>
+                <span class="footer-page-num">11</span>
             </div>
         </div>
     </div>
-
 </body>
 </html>
