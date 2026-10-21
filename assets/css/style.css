@@ -4955,7 +4955,11 @@ body {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
   border-left: 3.5px solid #D7192D;
   max-width: 380px;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .map-brand-title {
   font-size: 13px;
@@ -4999,4 +5003,116 @@ body {
   .contact-map-embed {
     height: 320px;
   }
+}
+
+
+/* Directions & Clickable Address Enhancements */
+.map-brand-badge {
+  pointer-events: auto !important;
+}
+.map-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #D7192D;
+  color: #FFFFFF !important;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(215, 25, 45, 0.25);
+  pointer-events: auto;
+}
+.map-directions-btn:hover {
+  background: #B51424;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+.contact-address-wrapper {
+  background: #FFFFFF;
+  border-top: 1px solid #E3E8EF;
+}
+.contact-address-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+.contact-address-link:hover {
+  background: #F8FAFC;
+}
+.contact-address-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex: 1;
+}
+.contact-loc-icon {
+  font-size: 20px;
+  color: #D7192D;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.contact-address-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contact-address-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #D7192D;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.contact-address-val {
+  font-size: 13.5px;
+  color: #071B2D;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.btn-directions-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  background: #071B2D;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.contact-address-link:hover .btn-directions-action {
+  background: #D7192D;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .contact-address-link {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+  }
+  .btn-directions-action {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.map-brand-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.24);
+}
+.map-brand-badge:hover .map-directions-btn {
+  background: #B51424;
 }
