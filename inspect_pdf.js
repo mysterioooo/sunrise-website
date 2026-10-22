@@ -14,7 +14,7 @@ console.log('Detected Page Count:', pageMatches ? pageMatches.length : 'unknown'
 // Check key terms in PDF stream
 const checks = [
     'SUNRISE STAFFING SOLUTIONS',
-    'Kiran Vishnu Panchpute',
+    'Kiran Panchpute',
     'Staff Management',
     'Security Management',
     'Driver Management',
